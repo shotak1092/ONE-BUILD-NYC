@@ -23,7 +23,7 @@ a{color:inherit;text-decoration:none}
 .brand-text{display:flex;flex-direction:column;line-height:1.1}
 .brand-text b{font-weight:800;font-size:19px;letter-spacing:.14em;text-transform:uppercase}
 .brand-text small{font-weight:700;font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--accent)}
-.nav{display:flex;align-items:center;gap:26px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.nav{display:flex;align-items:center;gap:24px;white-space:nowrap;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
 .nav a{color:var(--ink2);padding:6px 0}
 .nav a:hover,.nav a[aria-current=page]{color:var(--accent)}
 .nav .dd{position:relative}
@@ -42,7 +42,7 @@ a{color:inherit;text-decoration:none}
 .btn-line{border-color:rgba(42,40,38,.5);color:var(--ink)}
 .btn-sm{min-height:44px;padding:0 18px;font-size:12px}
 .menu-toggle{display:none}
-@media (max-width:1060px){
+@media (max-width:1240px){
   .nav,.header-cta .btn-line{display:none}
   .menu-toggle{display:block}
   .menu-toggle>summary{list-style:none;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line)}
@@ -100,7 +100,7 @@ h1,h2,h3{margin:0}
 /* grids & cards */
 .grid{display:grid;gap:18px}
 .g2{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
-.g3{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(max(290px,30%),1fr))}
 .g4{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 .card{display:flex;flex-direction:column;background:#fff;border:1px solid rgba(42,40,38,.1);transition:transform .15s,box-shadow .15s}
 a.card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(0,0,0,.1)}
@@ -185,3 +185,12 @@ a.card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(0,0,0,.1)}
 .site-footer a:hover{color:#fff}
 .site-footer .legal{border-top:1px solid rgba(255,255,255,.15);padding-top:22px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13px;color:rgba(255,255,255,.6)}
 .foot-brand .brand-text b{color:#fff}
+
+/* FAQ */
+.faq{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 44px 22px 0;position:relative;font-family:var(--serif);font-size:22px;line-height:1.3}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:6px;top:18px;font-family:var(--sans);font-size:26px;color:var(--accent)}
+.faq details[open] summary::after{content:"–"}
+.faq p{margin:0 0 24px;color:var(--ink2);font-size:16.5px;max-width:760px}

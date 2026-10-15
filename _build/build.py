@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Generates the One Build NYC static site. Run: python3 _build/build.py
 Edit content in this file, rerun, commit. Output goes to the repo root."""
-import os, json, html
+import os, json, html, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from content_seo import FAQS, AREAS_LIST
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOMAIN = "https://onebuildnyc.com"
@@ -167,40 +169,47 @@ def ld_json():
 def header(active):
     svc_links = "".join(f'<a href="/services/{s["slug"]}/">{s["name"]}</a>' for s in SERVICES)
     mob_svc = "".join(f'<a class="sub" href="/services/{s["slug"]}/">{s["name"]}</a>' for s in SERVICES)
+    area_links = "".join(f'<a href="/areas/{a["slug"]}/">{a["name"]}</a>' for a in AREAS_LIST)
+    mob_area = "".join(f'<a class="sub" href="/areas/{a["slug"]}/">{a["name"]}</a>' for a in AREAS_LIST)
     def cur(k): return ' aria-current="page"' if active == k else ''
     return f'''<a class="skip" href="#main">Skip to content</a>
 <header class="site-header"><div class="wrap">
 <a class="brand" href="/" aria-label="One Build NYC home"><span class="brand-mark">1</span><span class="brand-text"><b>One Build</b><small>New York</small></span></a>
 <nav class="nav" aria-label="Main">
 <details class="dd"><summary>Services</summary><div class="dd-menu"><a href="/services/"><b>All services</b></a>{svc_links}</div></details>
+<details class="dd"><summary>Areas</summary><div class="dd-menu">{area_links}</div></details>
 <a href="/work/"{cur("work")}>Our Work</a>
 <a href="/process/"{cur("process")}>Process</a>
+<a href="/faq/"{cur("faq")}>FAQ</a>
 <a href="/contact/"{cur("contact")}>Contact</a>
 </nav>
 <div class="header-cta">
 <a class="btn btn-line btn-sm" href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>
 <a class="btn btn-accent btn-sm" href="/contact/">Book a Walkthrough</a>
 <details class="menu-toggle"><summary aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></summary>
-<div class="mobile-menu"><a href="/">Home</a><a href="/services/">Services</a>{mob_svc}<a href="/work/">Our Work</a><a href="/process/">Process</a><a href="/contact/">Contact</a><a href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a></div></details>
+<div class="mobile-menu"><a href="/">Home</a><a href="/services/">Services</a>{mob_svc}<a href="/work/">Our Work</a><a href="/process/">Process</a><a href="/faq/">FAQ</a><span style="padding:12px 0 4px;font-weight:700">Areas</span>{mob_area}<a href="/contact/">Contact</a><a href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a></div></details>
 </div>
 </div></header>'''
 
 def footer():
     svc = "".join(f'<a href="/services/{s["slug"]}/">{s["name"]}</a>' for s in SERVICES)
+    areas_f = "".join(f'<a href="/areas/{a["slug"]}/">{a["name"]}</a>' for a in AREAS_LIST)
     return f'''<footer class="site-footer"><div class="wrap">
 <div class="cols">
 <div class="foot-brand"><a class="brand" href="/"><span class="brand-mark">1</span><span class="brand-text"><b>One Build</b><small>New York</small></span></a>
 <p style="margin:18px 0 0;max-width:300px">Licensed contractors, plumbers, electricians and automation specialists. One contract, one crew, one schedule.</p></div>
 <div><h4>Services</h4>{svc}</div>
-<div><h4>Company</h4><a href="/work/">Our Work</a><a href="/process/">Process</a><a href="/services/">All Services</a><a href="/contact/">Contact</a></div>
+<div><h4>Areas</h4>{areas_f}</div>
+<div><h4>Company</h4><a href="/work/">Our Work</a><a href="/process/">Process</a><a href="/faq/">FAQ</a><a href="/services/">All Services</a><a href="/contact/">Contact</a></div>
 <div><h4>Contact</h4><a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a><a href="mailto:{EMAIL}">{EMAIL}</a><p style="margin:10px 0 0">{AREAS}</p></div>
 </div>
 <div class="legal"><span>© 2026 One Build NYC. Licensed &amp; insured. NYC Home Improvement Contractor License #621290</span><span>Design-Build · NYC · New Jersey</span></div>
 </div></footer>'''
 
-def page(path, title, desc, body, active="", og=None):
+def page(path, title, desc, body, active="", og=None, extra_ld=None):
     canon = DOMAIN + path
     ogimg = DOMAIN + img(og or "glass-house-kitchen")
+    extra = "".join('<script type="application/ld+json">' + json.dumps(x) + '</script>' for x in (extra_ld or []))
     doc = f'''<!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -211,7 +220,7 @@ def page(path, title, desc, body, active="", og=None):
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 {FONTS}
 <link rel="stylesheet" href="/assets/site.css">
-{ld_json()}
+{ld_json()}{extra}
 </head><body>
 {header(active)}
 <main id="main">
@@ -441,6 +450,55 @@ contact = f'''<section class="page-hero" style="min-height:380px"><img src="{img
 </form>
 </div></section>'''
 page("/contact/", "Contact | Book a Walkthrough | One Build NYC", "Book a walkthrough with One Build NYC. Call (888) 781-7547 or email info@onebuildnyc.com.", contact, active="contact")
+
+
+# ---------------------------------------------------------------- FAQ + areas
+def faq_html(items):
+    return '<div class="faq">' + "".join(f'<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in items) + '</div>'
+def faq_ld(items):
+    return {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q, a in items]}
+
+faq_body = f"""<section class="page-hero" style="min-height:380px"><img src="{img("ceiling-rough-in")}" alt="" fetchpriority="high"><div class="wrap">
+<div class="crumbs"><a href="/">Home</a> / FAQ</div><div class="eyebrow">FAQ</div>
+<h1>Questions we get before every project.</h1><p>Permits, timelines, buildings, pricing and how one contract works.</p></div></section>
+<section class="section"><div class="wrap" style="max-width:900px">{faq_html(FAQS)}</div></section>
+{cta()}"""
+page("/faq/", "Renovation FAQ: Permits, Timelines & Costs in NYC | One Build NYC",
+     "Answers about NYC renovation permits, co-op alterations, bathroom and gut renovation timelines, pricing, and adding smart home or theater during a remodel.",
+     faq_body, active="faq", og="ceiling-rough-in", extra_ld=[faq_ld(FAQS)])
+
+for a in AREAS_LIST:
+    pts = "".join(f'<div class="point"><b>{esc(t)}</b><span>{esc(d)}</span></div>' for t, d in a["points"])
+    items = [FAQS[i] for i in a["faq"]]
+    others = "".join(f'<a class="btn btn-line btn-sm" href="/areas/{o["slug"]}/">{o["name"]}</a>' for o in AREAS_LIST if o["slug"] != a["slug"])
+    body = f"""<section class="page-hero"><img src="{img(a["hero"])}" alt="" fetchpriority="high"><div class="wrap">
+<div class="crumbs"><a href="/">Home</a> / Areas / {esc(a["name"])}</div><div class="eyebrow">{esc(a["name"])}</div>
+<h1>{esc(a["title"])}</h1><p>{esc(a["lead"])}</p>
+<div class="btn-row" style="margin-top:26px"><a class="btn btn-accent" href="/contact/">Book a Walkthrough</a><a class="btn btn-line" style="color:#fff;border-color:rgba(255,255,255,.6)" href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a></div>
+</div></section>
+<section class="section"><div class="wrap split">
+<div style="display:flex;flex-direction:column;gap:18px"><div class="eyebrow">One Build in {esc(a["name"])}</div>
+<h2 class="h2">Four licensed trades. One crew.</h2><p class="lead" style="margin:0">{esc(a["intro"])}</p></div>
+<div class="points">{pts}</div>
+</div></section>
+<section class="section alt"><div class="wrap">
+<div class="section-head"><div class="eyebrow">Services in {esc(a["name"])}</div><h2 class="h2">What we build here.</h2></div>
+{svc_cards([SVC[x] for x in a["services"]])}
+</div></section>
+<section class="section"><div class="wrap">
+<div class="section-head"><div class="eyebrow">Our Work</div><h2 class="h2">Recent projects.</h2></div>
+{gallery(a["gallery"], wide=[a["gallery"][0]])}
+</div></section>
+<section class="section alt"><div class="wrap" style="max-width:900px">
+<div class="section-head"><div class="eyebrow">Questions</div><h2 class="h2">Common questions from {esc(a["name"])} clients.</h2></div>
+{faq_html(items)}
+<p style="margin-top:22px"><a href="/faq/" style="color:var(--accent);font-weight:700">See all questions →</a></p>
+</div></section>
+<section class="section" style="padding:56px 0"><div class="wrap"><div class="eyebrow" style="margin-bottom:16px">Other areas we serve</div><div class="btn-row">{others}</div></div></section>
+{cta(bg=a["hero"])}"""
+    page(f'/areas/{a["slug"]}/', f'{a["title"]} | One Build NYC',
+         f'{a["lead"]} Licensed contractors, plumbers, electricians and automation under one contract. Call (888) 781-7547.',
+         body, og=a["hero"], extra_ld=[faq_ld(items)])
 
 thanks = f'''<section class="section" style="min-height:60vh;display:flex;align-items:center"><div class="wrap" style="display:flex;flex-direction:column;gap:20px;max-width:760px">
 <div class="eyebrow">Thank you</div><h1 class="h2">We got your request.</h1>
