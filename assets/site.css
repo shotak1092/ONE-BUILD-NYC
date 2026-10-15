@@ -89,7 +89,7 @@ h1,h2,h3{margin:0}
 /* page hero (inner pages) */
 .page-hero{position:relative;min-height:460px;display:flex;align-items:flex-end;overflow:hidden;background:var(--charcoal)}
 .page-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.page-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(20,18,16,.82) 0%,rgba(20,18,16,.35) 55%,rgba(20,18,16,.1) 100%)}
+.page-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,18,16,.55) 0%,rgba(20,18,16,.25) 50%,rgba(20,18,16,0) 78%),linear-gradient(0deg,rgba(20,18,16,.82) 0%,rgba(20,18,16,.35) 55%,rgba(20,18,16,.1) 100%)}
 .page-hero .wrap{position:relative;z-index:1;width:100%;padding-top:120px;padding-bottom:56px;color:#fff}
 .page-hero .eyebrow{color:var(--gold)}
 .page-hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5.4vw,72px);line-height:1.04;margin:14px 0 12px;max-width:900px}

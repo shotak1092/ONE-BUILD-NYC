@@ -11,7 +11,7 @@ DOMAIN = "https://onebuildnyc.com"
 PHONE_DISPLAY = "(888) 781-7547"
 PHONE_TEL = "8887817547"
 EMAIL = "info@onebuildnyc.com"
-AREAS = "Manhattan · Brooklyn · Queens · Long Island · Westchester · New Jersey"
+AREAS = "Manhattan · Brooklyn · Queens · Staten Island · Long Island · Westchester · New Jersey"
 
 def img(name): return f"/images/{name}.jpg"
 
@@ -87,6 +87,20 @@ SERVICES = [
   intro="We build the room and the system together: framing for the screen and speakers, dedicated circuits, acoustic treatment, lighting scenes, then calibrated audio and video. From a clean media wall to a full LED-wall lounge.",
   includes=["Dedicated theaters and media rooms","Projection screens and large-format displays","LED video walls","In-wall and in-ceiling surround audio","Acoustic treatment and seating layout","Lighting scenes and blackout shades","Concealed wiring and equipment racks","Calibration and one-remote control"],
   gallery=["private-theater","led-wall-lounge","led-theater-lounge","walnut-media-wall","fireplace-tv-after","media-wall-after","lounge-bar","glass-cantilever-stair"]),
+ dict(slug="led-walls", name="LED Walls", kicker="LED Video Walls", extra=True,
+  title="LED Video Wall Installation in NYC & New Jersey",
+  hero="led-wall-lounge",
+  short="Fine-pitch LED walls for theaters, lounges, retail and event spaces, framed, powered and processed properly.",
+  intro="An LED wall is a structure, a power load and a video system at the same time. We build the support and framing, run dedicated circuits, mount and align the cabinets seam-free, then configure the processor, scaling and color so the image holds up from the front row and the back of the room.",
+  includes=["Pixel pitch and viewing-distance planning","Structural framing, mounts and bezel trim","Dedicated circuits and power distribution","Seam alignment and cabinet calibration","Video processor setup and mapping","Multi-wall sync and content playback","Lighting and audio integrated with the wall","Serviceable access and spare modules"],
+  gallery=["led-wall-lounge","led-theater-lounge","lounge-bar","glass-cantilever-stair","private-theater","equipment-rack","electrical-panel-drivers"]),
+ dict(slug="commercial", name="Commercial", kicker="Commercial Build-Outs & AV", extra=True,
+  title="Commercial Build-Outs & AV in NYC & New Jersey",
+  hero="lounge-bar",
+  short="Retail, offices, restaurants, dispensaries and houses of worship: construction, power and technology from one team.",
+  intro="Commercial spaces open on a date, not when the trades finish arguing. We build out the space, run the power, and install the systems the business runs on: network and Wi-Fi, cameras, conference rooms, background music, displays, LED walls and live streaming, all handed over tested and documented.",
+  includes=["Interior build-outs and renovations","Licensed electrical and plumbing","Network, Wi-Fi and structured cabling","Security cameras and remote viewing","Conference rooms and video calling","Background music and paging","Digital signage, displays and LED walls","Live streaming and broadcast for churches and events"],
+  gallery=["lounge-bar","led-wall-lounge","led-theater-lounge","equipment-rack","dimming-panel","electrical-panel-drivers","gallery-lighting","shade-power-panels"]),
 ]
 SVC = {s["slug"]: s for s in SERVICES}
 
@@ -162,7 +176,7 @@ FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="p
 def ld_json():
     data = {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"One Build NYC","legalName":"ISL Progress Inc.",
             "url":DOMAIN,"telephone":"+1-888-781-7547","email":EMAIL,
-            "areaServed":["Manhattan","Brooklyn","Queens","Long Island","Westchester","New Jersey"],
+            "areaServed":["Manhattan","Brooklyn","Queens","Staten Island","Long Island","Westchester","New Jersey"],
             "description":"Design-build renovation company with licensed contractors, plumbers, electricians and automation specialists under one contract.",
             "image":DOMAIN+img("glass-house-kitchen")}
     return '<script type="application/ld+json">'+json.dumps(data)+'</script>'
@@ -189,7 +203,7 @@ def header(active):
 <a class="btn btn-line btn-sm" href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>
 <a class="btn btn-accent btn-sm" href="/contact/">Book a Walkthrough</a>
 <details class="menu-toggle"><summary aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></summary>
-<div class="mobile-menu"><a href="/">Home</a><a href="/services/">Services</a>{mob_svc}<a href="/work/">Our Work</a><a href="/process/">Process</a><a href="/faq/">FAQ</a><a href="/blog/">Blog</a><a href="/blog/">Blog</a><span style="padding:12px 0 4px;font-weight:700">Areas</span>{mob_area}<a href="/contact/">Contact</a><a href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a></div></details>
+<div class="mobile-menu"><a href="/">Home</a><a href="/services/">Services</a>{mob_svc}<a href="/work/">Our Work</a><a href="/process/">Process</a><a href="/faq/">FAQ</a><a href="/blog/">Blog</a><span style="padding:12px 0 4px;font-weight:700">Areas</span>{mob_area}<a href="/contact/">Contact</a><a href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a></div></details>
 </div>
 </div></header>'''
 
@@ -275,7 +289,7 @@ def service_ld(s):
     return {"@context":"https://schema.org","@type":"Service","name":s["name"],"serviceType":s["kicker"],
             "description":s["intro"],"url":f'{DOMAIN}/services/{s["slug"]}/',
             "provider":{"@type":"HomeAndConstructionBusiness","name":"One Build NYC","url":DOMAIN,"telephone":"+1-888-781-7547"},
-            "areaServed":["Manhattan","Brooklyn","Queens","Long Island","Westchester","New Jersey"]}
+            "areaServed":["Manhattan","Brooklyn","Queens","Staten Island","Long Island","Westchester","New Jersey"]}
 
 # ---------------------------------------------------------------- pieces
 def fig(name, cls="", cap=None, eager=False):
@@ -323,7 +337,7 @@ STEPS = '''<ol class="steps">
 </ol>'''
 
 # ---------------------------------------------------------------- home
-cats = "".join(f'<li><a href="/services/{s["slug"]}/">{s["name"]}</a></li>' for s in SERVICES)
+cats = "".join(f'<li><a href="/services/{s["slug"]}/">{s["name"]}</a></li>' for s in SERVICES if not s.get("extra"))
 home = f'''<section class="hero">
 <div class="hero-collage" aria-hidden="true">
 <img src="{img("glass-house-kitchen")}" alt="" fetchpriority="high"><img src="{img("led-wall-lounge")}" alt=""><img src="{img("brass-zellige-bathroom")}" alt=""><img src="{img("vaulted-framing")}" alt=""><img src="{img("walnut-media-wall")}" alt="">
