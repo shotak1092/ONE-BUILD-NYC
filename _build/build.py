@@ -195,7 +195,7 @@ def footer():
 <div><h4>Company</h4><a href="/work/">Our Work</a><a href="/process/">Process</a><a href="/services/">All Services</a><a href="/contact/">Contact</a></div>
 <div><h4>Contact</h4><a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a><a href="mailto:{EMAIL}">{EMAIL}</a><p style="margin:10px 0 0">{AREAS}</p></div>
 </div>
-<div class="legal"><span>© 2026 One Build NYC. Licensed &amp; insured.</span><span>Design-Build · NYC · New Jersey</span></div>
+<div class="legal"><span>© 2026 One Build NYC. Licensed &amp; insured. NYC Home Improvement Contractor License #621290</span><span>Design-Build · NYC · New Jersey</span></div>
 </div></footer>'''
 
 def page(path, title, desc, body, active="", og=None):
