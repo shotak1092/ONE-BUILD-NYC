@@ -4,6 +4,7 @@ Edit content in this file, rerun, commit. Output goes to the repo root."""
 import os, json, html, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from content_seo import FAQS, AREAS_LIST
+from content_blog import POSTS
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOMAIN = "https://onebuildnyc.com"
@@ -181,13 +182,14 @@ def header(active):
 <a href="/work/"{cur("work")}>Our Work</a>
 <a href="/process/"{cur("process")}>Process</a>
 <a href="/faq/"{cur("faq")}>FAQ</a>
+<a href="/blog/"{cur("blog")}>Blog</a>
 <a href="/contact/"{cur("contact")}>Contact</a>
 </nav>
 <div class="header-cta">
 <a class="btn btn-line btn-sm" href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>
 <a class="btn btn-accent btn-sm" href="/contact/">Book a Walkthrough</a>
 <details class="menu-toggle"><summary aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></summary>
-<div class="mobile-menu"><a href="/">Home</a><a href="/services/">Services</a>{mob_svc}<a href="/work/">Our Work</a><a href="/process/">Process</a><a href="/faq/">FAQ</a><span style="padding:12px 0 4px;font-weight:700">Areas</span>{mob_area}<a href="/contact/">Contact</a><a href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a></div></details>
+<div class="mobile-menu"><a href="/">Home</a><a href="/services/">Services</a>{mob_svc}<a href="/work/">Our Work</a><a href="/process/">Process</a><a href="/faq/">FAQ</a><a href="/blog/">Blog</a><a href="/blog/">Blog</a><span style="padding:12px 0 4px;font-weight:700">Areas</span>{mob_area}<a href="/contact/">Contact</a><a href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a></div></details>
 </div>
 </div></header>'''
 
@@ -200,7 +202,7 @@ def footer():
 <p style="margin:18px 0 0;max-width:300px">Licensed contractors, plumbers, electricians and automation specialists. One contract, one crew, one schedule.</p></div>
 <div><h4>Services</h4>{svc}</div>
 <div><h4>Areas</h4>{areas_f}</div>
-<div><h4>Company</h4><a href="/work/">Our Work</a><a href="/process/">Process</a><a href="/faq/">FAQ</a><a href="/services/">All Services</a><a href="/contact/">Contact</a></div>
+<div><h4>Company</h4><a href="/work/">Our Work</a><a href="/process/">Process</a><a href="/faq/">FAQ</a><a href="/blog/">Blog</a><a href="/services/">All Services</a><a href="/contact/">Contact</a></div>
 <div><h4>Contact</h4><a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a><a href="mailto:{EMAIL}">{EMAIL}</a><p style="margin:10px 0 0">{AREAS}</p></div>
 </div>
 <div class="legal"><span>© 2026 One Build NYC. Licensed &amp; insured. NYC Home Improvement Contractor License #621290</span><span>Design-Build · NYC · New Jersey</span></div>
@@ -209,7 +211,9 @@ def footer():
 def page(path, title, desc, body, active="", og=None, extra_ld=None):
     canon = DOMAIN + path
     ogimg = DOMAIN + img(og or "glass-house-kitchen")
-    extra = "".join('<script type="application/ld+json">' + json.dumps(x) + '</script>' for x in (extra_ld or []))
+    lds = list(extra_ld or [])
+    lds.append(breadcrumb_ld(path, title))
+    extra = "".join('<script type="application/ld+json">' + json.dumps(x) + '</script>' for x in lds)
     doc = f'''<!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -217,9 +221,10 @@ def page(path, title, desc, body, active="", og=None, extra_ld=None):
 <meta name="description" content="{esc(desc)}">
 <link rel="canonical" href="{canon}">
 <meta property="og:type" content="website"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{canon}"><meta property="og:image" content="{ogimg}">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#2E2B27">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 {FONTS}
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css?v={CSS_V}">
 {ld_json()}{extra}
 </head><body>
 {header(active)}
@@ -230,10 +235,47 @@ def page(path, title, desc, body, active="", og=None, extra_ld=None):
 </body></html>'''
     out = os.path.join(ROOT, path.strip("/"), "index.html") if path != "/" else os.path.join(ROOT, "index.html")
     os.makedirs(os.path.dirname(out), exist_ok=True)
+    doc = add_img_dims(doc)
     with open(out, "w") as f: f.write(doc)
     PAGES.append(path)
 
 PAGES = []
+import hashlib
+CSS_V = hashlib.md5(open(os.path.join(ROOT,'assets','site.css'),'rb').read()).hexdigest()[:8]
+import datetime
+BUILD_DATE = datetime.date.today().isoformat()
+
+import re
+from PIL import Image as _PIL
+_DIMS = {}
+def _dims(name):
+    if name not in _DIMS:
+        with _PIL.open(os.path.join(ROOT, "images", name)) as im: _DIMS[name] = im.size
+    return _DIMS[name]
+def add_img_dims(doc):
+    def rep(m):
+        tag = m.group(0)
+        if " width=" in tag: return tag
+        w, h = _dims(m.group(1))
+        return tag.replace("<img ", f'<img width="{w}" height="{h}" ', 1)
+    return re.sub(r'<img src="/images/([^"]+)"[^>]*>', rep, doc)
+
+SEG_NAMES = {"services":"Services","areas":"Areas","work":"Our Work","process":"Process","faq":"FAQ","contact":"Contact","blog":"Blog"}
+def breadcrumb_ld(path, title):
+    parts = [p for p in path.strip("/").split("/") if p]
+    items = [{"@type":"ListItem","position":1,"name":"Home","item":DOMAIN + "/"}]
+    acc = ""
+    for i, seg in enumerate(parts):
+        acc += "/" + seg
+        name = SEG_NAMES.get(seg) or title.split(" | ")[0]
+        items.append({"@type":"ListItem","position":i + 2,"name":name,"item":DOMAIN + acc + "/"})
+    return {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":items}
+
+def service_ld(s):
+    return {"@context":"https://schema.org","@type":"Service","name":s["name"],"serviceType":s["kicker"],
+            "description":s["intro"],"url":f'{DOMAIN}/services/{s["slug"]}/',
+            "provider":{"@type":"HomeAndConstructionBusiness","name":"One Build NYC","url":DOMAIN,"telephone":"+1-888-781-7547"},
+            "areaServed":["Manhattan","Brooklyn","Queens","Long Island","Westchester","New Jersey"]}
 
 # ---------------------------------------------------------------- pieces
 def fig(name, cls="", cap=None, eager=False):
@@ -365,13 +407,15 @@ for s in SERVICES:
 {WHY}
 </div></section>
 
+<section class="section" style="padding:56px 0"><div class="wrap"><div class="eyebrow" style="margin-bottom:16px">{esc(s["name"])} across NYC &amp; New Jersey</div><div class="btn-row">{"".join(f'<a class="btn btn-line btn-sm" href="/areas/{a["slug"]}/">{a["name"]}</a>' for a in AREAS_LIST)}</div></div></section>
+
 <section class="section alt"><div class="wrap">
 <div class="section-head"><div class="eyebrow">Related Services</div><h2 class="h2">Usually part of the same project.</h2></div>
 {svc_cards(related)}
 </div></section>
 {cta(bg=s["hero"])}'''
     page(f'/services/{s["slug"]}/', f'{s["title"]} | One Build NYC',
-         f'{s["short"]} {s["name"]} by One Build NYC: licensed trades, one contract. Call (888) 781-7547.', body, og=s["hero"])
+         f'{s["short"]} {s["name"]} by One Build NYC: licensed trades, one contract. Call (888) 781-7547.', body, og=s["hero"], extra_ld=[service_ld(s)])
 
 # ---------------------------------------------------------------- work
 baths = SVC["bathrooms"]["gallery"]
@@ -500,6 +544,42 @@ for a in AREAS_LIST:
          f'{a["lead"]} Licensed contractors, plumbers, electricians and automation under one contract. Call (888) 781-7547.',
          body, og=a["hero"], extra_ld=[faq_ld(items)])
 
+
+# ---------------------------------------------------------------- blog
+import datetime as _dt
+def _fmt(d): return _dt.date.fromisoformat(d).strftime("%B %-d, %Y")
+def _para(x):
+    if isinstance(x, tuple) and x[0] == "ul":
+        return '<ul class="checklist" style="grid-template-columns:1fr;margin:8px 0 22px">' + "".join(f"<li>{esc(i)}</li>" for i in x[1]) + "</ul>"
+    return f"<p>{esc(x)}</p>"
+def post_card(pst):
+    return f"""<a class="card" href="/blog/{pst["slug"]}/"><div class="ph"><img src="{img(pst["hero"])}" alt="{esc(ALT[pst["hero"]])}" loading="lazy"></div>
+<div class="body"><span class="kicker">{_fmt(pst["date"])}</span><h3>{esc(pst["title"])}</h3><p>{esc(pst["desc"])}</p><span class="more">Read article →</span></div></a>"""
+
+for pst in POSTS:
+    secs = "".join(f"<h2>{esc(h)}</h2>" + "".join(_para(x) for x in paras) for h, paras in pst["sections"])
+    more = [o for o in POSTS if o["slug"] != pst["slug"]]
+    body = f"""<section class="page-hero" style="min-height:420px"><img src="{img(pst["hero"])}" alt="" fetchpriority="high"><div class="wrap">
+<div class="crumbs"><a href="/">Home</a> / <a href="/blog/">Blog</a></div><div class="eyebrow">{_fmt(pst["date"])}</div>
+<h1>{esc(pst["title"])}</h1><p>{esc(pst["desc"])}</p></div></section>
+<section class="section"><div class="wrap"><article class="article"><p class="lead">{esc(pst["intro"])}</p>{secs}
+<div class="article-cta"><b>Planning a project?</b><span>One Build NYC brings licensed contractors, plumbers, electricians and automation specialists to one walkthrough.</span><div class="btn-row"><a class="btn btn-accent" href="/contact/">Book a Walkthrough</a><a class="btn btn-line" href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a></div></div>
+</article></div></section>
+<section class="section alt"><div class="wrap"><div class="section-head"><div class="eyebrow">Related Services</div><h2 class="h2">Where this applies.</h2></div>{svc_cards([SVC[x] for x in pst["services"]][:3])}</div></section>
+<section class="section"><div class="wrap"><div class="section-head"><div class="eyebrow">More from the blog</div></div><div class="grid g3">{"".join(post_card(o) for o in more)}</div></div></section>"""
+    art = {"@context":"https://schema.org","@type":"BlogPosting","headline":pst["title"],"description":pst["desc"],
+           "datePublished":pst["date"],"dateModified":pst["date"],"image":DOMAIN + img(pst["hero"]),
+           "author":{"@type":"Organization","name":"One Build NYC"},"publisher":{"@type":"Organization","name":"One Build NYC"},
+           "mainEntityOfPage":f'{DOMAIN}/blog/{pst["slug"]}/'}
+    page(f'/blog/{pst["slug"]}/', f'{pst["title"]} | One Build NYC', pst["desc"], body, active="blog", og=pst["hero"], extra_ld=[art])
+
+blog_idx = f"""<section class="page-hero" style="min-height:380px"><img src="{img("vaulted-scaffolding")}" alt="" fetchpriority="high"><div class="wrap">
+<div class="crumbs"><a href="/">Home</a> / Blog</div><div class="eyebrow">Blog</div>
+<h1>Notes from the job site.</h1><p>How renovations actually get built in NYC and New Jersey: permits, sequencing, technology and what to plan before the walls close.</p></div></section>
+<section class="section"><div class="wrap"><div class="grid g3">{"".join(post_card(p_) for p_ in POSTS)}</div></div></section>
+{cta()}"""
+page("/blog/", "Renovation & Smart Home Blog | One Build NYC", "Practical guides on NYC renovations, co-op alterations, bathroom sequencing and pre-wiring for smart home and theater.", blog_idx, active="blog", og="vaulted-scaffolding")
+
 thanks = f'''<section class="section" style="min-height:60vh;display:flex;align-items:center"><div class="wrap" style="display:flex;flex-direction:column;gap:20px;max-width:760px">
 <div class="eyebrow">Thank you</div><h1 class="h2">We got your request.</h1>
 <p class="lead" style="margin:0">We'll call you shortly to schedule the walkthrough. Need us sooner? Call <a href="tel:{PHONE_TEL}" style="color:var(--accent);font-weight:700">{PHONE_DISPLAY}</a>.</p>
@@ -515,7 +595,7 @@ PAGES.remove("/404/"); PAGES.remove("/thank-you/")
 
 with open(os.path.join(ROOT, "sitemap.xml"), "w") as f:
     f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
-            "".join(f"  <url><loc>{DOMAIN}{p}</loc></url>\n" for p in PAGES) + "</urlset>\n")
+            "".join(f"  <url><loc>{DOMAIN}{p}</loc><lastmod>{BUILD_DATE}</lastmod></url>\n" for p in PAGES) + "</urlset>\n")
 with open(os.path.join(ROOT, "robots.txt"), "w") as f:
     f.write(f"User-agent: *\nAllow: /\nSitemap: {DOMAIN}/sitemap.xml\n")
 with open(os.path.join(ROOT, "assets", "favicon.svg"), "w") as f:
