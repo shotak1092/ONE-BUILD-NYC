@@ -194,3 +194,9 @@ a.card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(0,0,0,.1)}
 .faq summary::after{content:"+";position:absolute;right:6px;top:18px;font-family:var(--sans);font-size:26px;color:var(--accent)}
 .faq details[open] summary::after{content:"–"}
 .faq p{margin:0 0 24px;color:var(--ink2);font-size:16.5px;max-width:760px}
+
+/* white contour on hero text so it reads over photos */
+.hero .eyebrow{text-shadow:-1px -1px 0 #fff,1px -1px 0 #fff,-1px 1px 0 #fff,1px 1px 0 #fff,0 0 8px #fff}
+.hero h1{text-shadow:-2px -2px 0 #fff,2px -2px 0 #fff,-2px 2px 0 #fff,2px 2px 0 #fff,0 -2px 0 #fff,0 2px 0 #fff,-2px 0 0 #fff,2px 0 0 #fff,0 0 14px rgba(255,255,255,.9)}
+.hero h1 span{text-shadow:-2px -2px 0 #fff,2px -2px 0 #fff,-2px 2px 0 #fff,2px 2px 0 #fff,0 -2px 0 #fff,0 2px 0 #fff,-2px 0 0 #fff,2px 0 0 #fff,0 0 12px rgba(255,255,255,.9)}
+.cats{text-shadow:-1px -1px 0 #fff,1px -1px 0 #fff,-1px 1px 0 #fff,1px 1px 0 #fff,0 -1px 0 #fff,0 1px 0 #fff,-1px 0 0 #fff,1px 0 0 #fff,0 0 8px #fff}
