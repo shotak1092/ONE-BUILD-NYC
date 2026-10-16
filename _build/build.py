@@ -390,7 +390,7 @@ LUTRON = '<div class="lutron-badge"><img src="/assets/lutron-platinum-2026.png" 
 cats = "".join(f'<li><a href="/services/{s["slug"]}/">{s["name"]}</a></li>' for s in SERVICES if not s.get("extra"))
 home = f'''<section class="hero">
 <div class="hero-collage" aria-hidden="true">
-<img src="{img("glass-house-kitchen")}" alt="" fetchpriority="high"><img src="{img("led-wall-lounge")}" alt=""><img src="{img("brass-zellige-bathroom")}" alt=""><img src="{img("vaulted-framing")}" alt=""><img src="{img("walnut-media-wall")}" alt="">
+<img src="{img("glass-house-kitchen")}" alt="" fetchpriority="high"><img src="{img("condo-shades-track-lighting")}" alt=""><img src="{img("brass-zellige-bathroom")}" alt=""><img src="{img("vaulted-framing")}" alt=""><img src="{img("walnut-media-wall")}" alt="">
 </div><div class="hero-veil" aria-hidden="true"></div>
 <div class="wrap"><div class="hero-inner">
 <div class="eyebrow">Design-Build · NYC · New Jersey</div>
