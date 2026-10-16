@@ -30,7 +30,7 @@ SERVICES = [
   short="Layout, cabinetry, plumbing, appliance circuits and lighting, built as one job.",
   intro="A kitchen touches every trade at once: gas and water lines, dedicated appliance circuits, venting, under-cabinet and scene lighting, and often built-in audio. We plan all of it on day one so the walls only get closed once.",
   includes=["Layout and cabinetry installation","Countertops, backsplash and tile","Sink, dishwasher, gas and water lines","Dedicated appliance circuits and panel work","Recessed, under-cabinet and pendant lighting","Lighting control scenes and keypads","Built-in ceiling speakers","Laundry and pantry build-outs"],
-  gallery=["glass-house-kitchen","brick-loft-kitchen","beamed-kitchen","kitchen-demo","kitchen-laundry-after","brick-loft-before"]),
+  gallery=["glass-house-kitchen","white-shaker-kitchen","brick-loft-kitchen","beamed-kitchen","kitchen-demo","kitchen-laundry-after","brick-loft-before"]),
  dict(slug="bathrooms", name="Bathrooms", kicker="Bathroom Remodeling",
   title="Bathroom Remodeling in NYC & New Jersey",
   hero="double-vanity-marble-shower",
@@ -58,35 +58,35 @@ SERVICES = [
   short="Licensed in New York. Panels, circuits, lighting, dedicated lines and permits.",
   intro="Licensed New York electricians handle panels, new circuits and every line that feeds the lighting, shades and AV, so power and control are designed as one system instead of patched together.",
   includes=["Panel upgrades and new circuits","Dedicated lines for appliances and equipment","Recessed, track and cove lighting","Lighting control and dimming panels","Shade power and motor circuits","Outdoor and landscape lighting power","EV charger circuits","Permits, filings and inspections"],
-  gallery=["dimming-panel","electrical-panel-drivers","shade-power-panels","ceiling-rough-in","gallery-lighting","framing-rough-in"]),
+  gallery=["dimming-panel","electrical-panel-drivers","shade-power-panels","camera-conduit-brick","ceiling-rough-in","gallery-lighting","framing-rough-in"]),
  dict(slug="smart-home", name="Smart Home", kicker="Licensed Automation & Low Voltage",
   title="Smart Home Automation in NYC & New Jersey",
   hero="walnut-media-wall",
   short="Lighting, shades, audio, video, network and cameras, on one control system.",
   intro="We design and install the systems that make a home run itself: whole-home Wi-Fi and network, multi-room audio, video distribution, cameras, lighting and shades, all on one app and a few clean keypads. Wiring goes in during rough-in, so nothing is surface-mounted later.",
   includes=["Whole-home Wi-Fi and network","Equipment racks and structured wiring","Multi-room audio and video","Lighting and shade integration","Security cameras","Keypads, remotes and app control","Pre-wire during construction","Programming and owner training"],
-  gallery=["walnut-media-wall","equipment-rack","fireplace-tv-after","media-wall-before","primary-suite-shades","shade-power-panels","dining-room"]),
+  gallery=["high-rise-bedroom-tv","condo-shades-track-lighting","walnut-media-wall","equipment-rack","cable-headend-rack","corner-cameras-conduit","fireplace-tv-after","media-wall-before","primary-suite-shades","shade-power-panels","dining-room"]),
  dict(slug="window-treatments", name="Window Treatments", kicker="Motorized Shades",
   title="Motorized Shades & Window Treatments in NYC & New Jersey",
   hero="primary-suite-shades",
   short="Motorized roller, Roman and blackout shades, recessed and wired during construction.",
   intro="The cleanest shades are planned before the ceiling closes: recessed pockets, power where it belongs, and fabrics chosen in the room. We handle selections, measuring, wiring, installation and programming.",
   includes=["Motorized roller and Roman shades","Blackout and solar fabrics","Drapery and track systems","Recessed shade pockets","Shade power panels and wiring","Keypad, app and schedule control","Fabric selection on site","Programming and scenes"],
-  gallery=["primary-suite-shades","shade-selections","addition-interior","shade-power-panels","glass-house-kitchen"]),
+  gallery=["bay-window-shades-after","condo-shades-track-lighting","edison-chandelier-shades","primary-suite-shades","bay-window-shades-before","shade-selections","addition-interior","shade-power-panels"]),
  dict(slug="lighting-control", name="Lighting Control", kicker="Lighting & Control",
   title="Lighting Control & Design in NYC & New Jersey",
   hero="gallery-lighting",
   short="Dimming, scenes and keypads, with track, cove and landscape lighting.",
   intro="Good lighting is designed with the room, not added after. We lay out fixtures, run the circuits, install the dimming panels and program scenes, so one button sets the whole space.",
   includes=["Lighting layout and fixture selection","Recessed, track and cove lighting","Dimming panels and keypads","Scenes, schedules and app control","Landscape and step lighting","Art and gallery lighting","Integration with shades and AV","Programming and fine-tuning"],
-  gallery=["gallery-lighting","dimming-panel","electrical-panel-drivers","led-wall-lounge","patio-lighting-rendering","beamed-kitchen"]),
+  gallery=["gallery-lighting","condo-shades-track-lighting","edison-chandelier-shades","led-accent-theater","dimming-panel","electrical-panel-drivers","led-wall-lounge","patio-lighting-rendering","beamed-kitchen"]),
  dict(slug="home-theater", name="Home Theater", kicker="Home Theater & Media Rooms",
   title="Home Theater Installation in NYC & New Jersey",
   hero="private-theater",
   short="Dedicated theaters, media walls, LED walls and lounges, built around the system.",
   intro="We build the room and the system together: framing for the screen and speakers, dedicated circuits, acoustic treatment, lighting scenes, then calibrated audio and video. From a clean media wall to a full LED-wall lounge.",
   includes=["Dedicated theaters and media rooms","Projection screens and large-format displays","LED video walls","In-wall and in-ceiling surround audio","Acoustic treatment and seating layout","Lighting scenes and blackout shades","Concealed wiring and equipment racks","Calibration and one-remote control"],
-  gallery=["private-theater","led-wall-lounge","led-theater-lounge","walnut-media-wall","fireplace-tv-after","media-wall-after","lounge-bar","glass-cantilever-stair"]),
+  gallery=["private-theater","led-accent-theater","theater-seats-screen","theater-riser-seating","audio-listening-room","projector-install","led-wall-lounge","led-theater-lounge","walnut-media-wall","fireplace-tv-after","media-wall-after","lounge-bar"]),
  dict(slug="led-walls", name="LED Walls", kicker="LED Video Walls", extra=True,
   title="LED Video Wall Installation in NYC & New Jersey",
   hero="led-wall-lounge",
@@ -96,11 +96,11 @@ SERVICES = [
   gallery=["led-wall-lounge","led-theater-lounge","lounge-bar","glass-cantilever-stair","private-theater","equipment-rack","electrical-panel-drivers"]),
  dict(slug="commercial", name="Commercial", kicker="Commercial Build-Outs & AV", extra=True,
   title="Commercial Build-Outs & AV in NYC & New Jersey",
-  hero="lounge-bar",
+  hero="boardroom-av",
   short="Retail, offices, restaurants, dispensaries and houses of worship: construction, power and technology from one team.",
   intro="Commercial spaces open on a date, not when the trades finish arguing. We build out the space, run the power, and install the systems the business runs on: network and Wi-Fi, cameras, conference rooms, background music, displays, LED walls and live streaming, all handed over tested and documented.",
   includes=["Interior build-outs and renovations","Licensed electrical and plumbing","Network, Wi-Fi and structured cabling","Security cameras and remote viewing","Conference rooms and video calling","Background music and paging","Digital signage, displays and LED walls","Live streaming and broadcast for churches and events"],
-  gallery=["lounge-bar","led-wall-lounge","led-theater-lounge","equipment-rack","dimming-panel","electrical-panel-drivers","gallery-lighting","shade-power-panels"]),
+  gallery=["boardroom-av","conference-displays","conference-projection","corner-cameras-conduit","camera-conduit-brick","cable-headend-rack","lounge-bar","led-wall-lounge","led-theater-lounge","electrical-panel-drivers"]),
 ]
 SVC = {s["slug"]: s for s in SERVICES}
 
@@ -164,6 +164,26 @@ ALT = {
  "vanity-wainscot":"Vanity with medicine cabinet and subway tile wainscot",
  "subway-tub-surround":"Subway tile tub surround with brushed nickel fixtures",
 }
+ALT.update({
+ "white-shaker-kitchen":"White shaker kitchen with glass-front uppers, quartz counters and marble mosaic backsplash",
+ "dated-kitchen-before":"Dated kitchen before renovation",
+ "bay-window-shades-before":"Living room protected during shade installation in a bay window",
+ "bay-window-shades-after":"Motorized roller shades across a bay window and living room windows",
+ "audio-listening-room":"Listening room with floor-standing, center and in-wall speakers",
+ "edison-chandelier-shades":"Edison bulb chandelier and roller shades in a corner high-rise dining room",
+ "conference-projection":"Conference room with drop-down projection screen",
+ "conference-displays":"Boardroom with three wall displays and a ceiling projector",
+ "boardroom-av":"Boardroom with three displays, projector, screen and table connectivity",
+ "led-accent-theater":"Home theater with LED accent lighting around the screen and acoustic panels",
+ "cable-headend-rack":"Equipment rack with labeled sources for every room",
+ "projector-install":"Installer mounting a projector in a media room",
+ "theater-riser-seating":"Theater seating on a riser with purple carpet",
+ "theater-seats-screen":"Theater seating facing a fixed screen and tower speakers",
+ "camera-conduit-brick":"Security camera with conduit on a brick wall",
+ "corner-cameras-conduit":"Dome and bullet cameras on a building corner with conduit",
+ "condo-shades-track-lighting":"Condo living area with roller shades, track lighting and a wall-mounted TV",
+ "high-rise-bedroom-tv":"High-rise bedroom with a wall-mounted TV and soundbar",
+})
 CAP = {
  "patio-lighting-rendering":"Lighting design rendering",
 }
@@ -341,6 +361,7 @@ def faq_html(items):
 def faq_ld(items):
     return {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q, a in items]}
 
+LUTRON = '<div class="lutron-badge"><img src="/assets/lutron-platinum-2026.png" alt="Lutron Platinum Dealer 2026" width="120" height="109" loading="lazy"><div><b>Lutron Platinum Dealer</b><span>Lighting control and motorized shades designed, installed and programmed by a 2026 Lutron Platinum Dealer.</span></div></div>'
 # ---------------------------------------------------------------- home
 cats = "".join(f'<li><a href="/services/{s["slug"]}/">{s["name"]}</a></li>' for s in SERVICES if not s.get("extra"))
 home = f'''<section class="hero">
@@ -418,7 +439,7 @@ for s in SERVICES:
 <section class="section"><div class="wrap split">
 <div style="display:flex;flex-direction:column;gap:18px"><div class="eyebrow">{esc(s["name"])}</div>
 <h2 class="h2">One crew. One schedule.</h2><p class="lead" style="margin:0">{esc(s["intro"])}</p></div>
-<div><h3 style="font-size:13px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:18px">What's included</h3><ul class="checklist">{inc}</ul></div>
+<div><h3 style="font-size:13px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:18px">What's included</h3><ul class="checklist">{inc}</ul>{LUTRON if s["slug"] in ("smart-home","lighting-control","window-treatments") else ""}</div>
 </div></section>
 
 <section class="section alt"><div class="wrap">
@@ -469,16 +490,20 @@ work = f'''<section class="page-hero"><img src="{img("led-wall-lounge")}" alt=""
 {pair("Living room media wall","media-wall-before","media-wall-after")}
 {pair("Country house addition","addition-exterior","addition-interior","Shell","Interior")}
 {pair("Decks & pavers","composite-deck","deck-paver-patio","Composite deck","Deck with paver patio")}
+{pair("Bay window shades","bay-window-shades-before","bay-window-shades-after","Install day","Finished")}
 </div>
 
 <div class="block"><div class="block-head"><h3>Bathrooms</h3><span>Tile · plumbing · lighting · fixtures</span></div>
 {gallery(baths, wide=["double-vanity-marble-shower","black-white-smart-bath"])}</div>
 
 <div class="block"><div class="block-head"><h3>Theaters, lounges &amp; media</h3><span>Low voltage · lighting · AV</span></div>
-{gallery(["led-wall-lounge","led-theater-lounge","private-theater","glass-cantilever-stair","lounge-bar","walnut-media-wall","dining-room"], wide=["led-wall-lounge"])}</div>
+{gallery(["led-wall-lounge","led-theater-lounge","private-theater","led-accent-theater","theater-seats-screen","theater-riser-seating","audio-listening-room","glass-cantilever-stair","lounge-bar","walnut-media-wall","dining-room"], wide=["led-wall-lounge"])}</div>
+
+<div class="block"><div class="block-head"><h3>Commercial &amp; conference rooms</h3><span>AV · network · cameras</span></div>
+{gallery(["boardroom-av","conference-displays","conference-projection","corner-cameras-conduit","camera-conduit-brick","cable-headend-rack"], wide=["boardroom-av"])}</div>
 
 <div class="block" style="margin-bottom:0"><div class="block-head"><h3>Homes &amp; outdoor</h3><span>Renovation · lighting · exterior</span></div>
-{gallery(["glass-house-kitchen","beamed-kitchen","primary-suite-shades","gallery-lighting","paver-patio","patio-lighting-rendering"], wide=["glass-house-kitchen","patio-lighting-rendering"])}</div>
+{gallery(["glass-house-kitchen","white-shaker-kitchen","beamed-kitchen","condo-shades-track-lighting","high-rise-bedroom-tv","edison-chandelier-shades","primary-suite-shades","gallery-lighting","paver-patio","patio-lighting-rendering"], wide=["glass-house-kitchen","patio-lighting-rendering"])}</div>
 </div></section>
 {cta()}'''
 page("/work/", "Our Work | Renovation, Bathroom & Home Theater Projects | One Build NYC",
@@ -493,7 +518,7 @@ proc = f'''<section class="page-hero"><img src="{img("ceiling-rough-in")}" alt="
 <div class="section-head"><div class="eyebrow">On the Job</div><h2 class="h2">What each stage looks like.</h2></div>
 <div class="gallery">
 {fig("kitchen-demo", cap="Demo")}{fig("shade-selections", cap="Selections")}{fig("framing-rough-in", cap="Framing & plumbing")}{fig("ceiling-rough-in", cap="Rough-in")}
-{fig("equipment-rack", cap="Low-voltage head end")}{fig("protected-job-site", cap="Protected job site")}{fig("electrical-panel-drivers", cap="Panel & drivers")}{fig("shade-power-panels", cap="Commissioned")}
+{fig("projector-install", cap="Install day")}{fig("equipment-rack", cap="Low-voltage head end")}{fig("protected-job-site", cap="Protected job site")}{fig("electrical-panel-drivers", cap="Panel & drivers")}{fig("shade-power-panels", cap="Commissioned")}
 </div></div></section>
 <section class="section"><div class="wrap">
 <div class="section-head"><div class="eyebrow">Why One Build</div><h2 class="h2">One contract. One number to call.</h2></div>{WHY}</div></section>

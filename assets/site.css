@@ -216,3 +216,7 @@ a.card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(0,0,0,.1)}
 .faq-group{font-family:var(--serif);font-weight:400;font-size:30px;margin:52px 0 14px;display:flex;align-items:baseline;justify-content:space-between;gap:16px;scroll-margin-top:100px}
 .faq-group:first-of-type{margin-top:0}
 .faq-group a{font-family:inherit;font-size:13px;font-weight:700;color:var(--accent);white-space:nowrap}
+.lutron-badge{display:flex;align-items:center;gap:20px;margin-top:30px;padding:18px 22px;background:#fff;border:1px solid var(--line,#d9d3c9)}
+.lutron-badge img{width:96px;height:auto;flex:none}
+.lutron-badge b{display:block;font-size:16px;margin-bottom:4px}
+.lutron-badge span{font-size:14px;color:var(--ink2,#5b544c);line-height:1.5}
