@@ -87,3 +87,68 @@ AREAS_LIST = [
   gallery=["led-wall-lounge","led-theater-lounge","glass-cantilever-stair","onyx-shower-sauna","lounge-bar","private-theater"],
   faq=[8,10,12]),
 ]
+
+SVC_FAQS = {
+ "renovations": [
+  ("Can you renovate one room at a time, or only whole houses?", "Both. We take on single rooms, full floors and whole houses. On smaller jobs we still check what's behind the walls so plumbing, electrical and wiring are updated while it's open."),
+  ("Do you build additions, decks and patios?", "Yes. Additions, composite decks, paver patios and exterior lighting are part of our renovation work, with framing, electrical and drainage handled by the same crew."),
+  ("Who manages the project day to day?", "One project lead runs the schedule for every trade and is your single point of contact from walkthrough to final handoff."),
+ ],
+ "kitchens": [
+  ("Can you move the sink, range or island?", "Usually, yes. Moving plumbing, gas or electrical is routine for us; it typically requires permits, which our licensed plumbers and electricians file. In co-ops, the building may also need to approve the new layout."),
+  ("Do you supply cabinets and countertops?", "We can source and install them, or install what you or your designer select. Either way, we coordinate measurements, templates and delivery with the rest of the schedule."),
+  ("What electrical work does a new kitchen need?", "Most kitchens need dedicated circuits for appliances, GFCI protection near water, and new lighting circuits. We plan recessed, under-cabinet and pendant lighting with dimming, and can add keypads and ceiling speakers while the walls are open."),
+ ],
+ "bathrooms": [
+  ("Can you convert a tub to a walk-in shower?", "Yes. We remove the tub, move the drain and valve as needed, waterproof the new shower pan and walls, and finish with tile and glass. It's one of our most common bathroom projects."),
+  ("How do you prevent leaks in a new shower?", "Every wet area gets a waterproofing membrane over proper backer board, and the shower pan is flood-tested before tile goes on. That step is not skipped."),
+  ("Can you add heated floors, a smart toilet or speakers?", "Yes. Heated floors, smart toilets, lit mirrors and moisture-rated ceiling speakers are planned during rough-in, so the circuits and wiring are in place before tile."),
+ ],
+ "gut-renovations": [
+  ("What does a gut renovation include?", "Everything inside the walls is replaced or brought to current code: framing changes, plumbing supply and drains, electrical panel and circuits, insulation, drywall and all finishes, plus low-voltage and network wiring."),
+  ("Do I need an architect for a gut renovation?", "Often, yes, especially when layouts change or the building requires stamped drawings. We work alongside your architect or can tell you upfront when one is required."),
+  ("Why is one contract better for a gut renovation?", "Gut renovations are where trades collide. With one contract, rough-in, inspections and close-up happen in one coordinated sequence instead of four companies waiting on each other."),
+ ],
+ "plumbing": [
+  ("Are your plumbers licensed in New York?", "Yes. Plumbing is performed by licensed New York plumbers, who file permits under their own licenses when the work requires it."),
+  ("Do you only do plumbing as part of a renovation?", "Plumbing is usually part of a larger project, but we also take on standalone work such as fixture replacements, water heaters, gas lines and line upgrades."),
+  ("Can you run a gas line for a new range?", "Yes. Gas work is done by licensed plumbers with the required permits and inspections."),
+ ],
+ "electrical": [
+  ("Are your electricians licensed in New York?", "Yes. Electrical work is performed by licensed New York electricians and filed and inspected as required."),
+  ("Do I need a panel upgrade?", "If you're adding major appliances, an EV charger, heated floors or a lot of new circuits, often yes. We check your existing service and panel at the walkthrough and tell you what the plan needs."),
+  ("Can you install an EV charger?", "Yes. We run the dedicated circuit, install the charger and handle the permit."),
+ ],
+ "smart-home": [
+  ("What brands do you work with?", "We design around the right system for the home, including Lutron lighting and shades, Sonos and whole-home audio, URC and Crestron control, and enterprise-grade networking and cameras."),
+  ("Can you add a smart home to a house that's already finished?", "Yes. Wireless lighting control, shades, audio and mesh Wi-Fi can be added without opening walls. A renovation is still the best time, because everything can be hardwired and hidden."),
+  ("Will I need a different app for everything?", "No. We set up one app, a few keypads and one remote, so lights, shades, music, TV and cameras work together."),
+ ],
+ "window-treatments": [
+  ("Do motorized shades need wiring?", "Hardwired shades need power or low-voltage at the top of each window, which is easiest during construction. Battery-powered shades are available for finished spaces."),
+  ("Can shades be recessed into the ceiling?", "Yes. Recessed pockets are framed before the ceiling goes up, so the shade disappears when it's open. That decision needs to be made during framing."),
+  ("Can shades run on a schedule?", "Yes. Shades can follow sunrise and sunset, run on schedules, and be grouped into scenes with your lighting."),
+ ],
+ "lighting-control": [
+  ("What is lighting control?", "Lighting control replaces rows of switches with keypads and scenes. One button can set every light in a room, or the whole house, to the right level for cooking, dinner, a movie or leaving."),
+  ("Can lighting control work with my existing fixtures?", "In most cases, yes, as long as the fixtures are dimmable and compatible with the dimmers. We check fixture and driver compatibility before installation."),
+  ("Do you design the lighting layout too?", "Yes. We lay out recessed, track, cove, accent and landscape lighting with the room, then wire, install and program it."),
+ ],
+ "home-theater": [
+  ("Projector or large TV for a theater?", "It depends on room size, light control and how the room is used. Dedicated dark rooms favor projection; multi-use media rooms often work better with a large display or an LED wall. We'll recommend at the walkthrough."),
+  ("Do you build the room or just install the equipment?", "Both. We frame for the screen and speakers, run dedicated circuits, add acoustic treatment and lighting, then install and calibrate the system."),
+  ("Can the theater be controlled with one remote?", "Yes. Every theater we finish is programmed for one-remote or one-app control, including lights and shades."),
+ ],
+ "led-walls": [
+  ("What pixel pitch do I need?", "It depends mainly on how close people will sit or stand. Closer viewing needs a finer pitch. We size the pitch to the room and viewing distance so the wall looks seamless without overspending."),
+  ("LED wall or projector?", "LED walls are brighter, work in lit rooms and have no fan noise at the screen, which makes them ideal for lounges, retail and multi-use spaces. Projection is still a strong choice for dedicated dark theaters."),
+  ("What does an LED wall need behind it?", "A properly built support structure, dedicated power, a video processor and service access. We plan all of it with the construction so the wall is aligned and serviceable."),
+ ],
+ "commercial": [
+  ("What kinds of commercial spaces do you work in?", "Retail stores, offices, restaurants and bars, dispensaries, houses of worship and event spaces, from interior build-outs to the AV, network and camera systems they run on."),
+  ("Can you work around our opening date or business hours?", "Yes. We schedule around openings and operating hours and can phase work so the business keeps running."),
+  ("Do you provide live streaming for churches and events?", "Yes. We design and install camera, audio and switching systems for live streaming and broadcast, and train your team to run them."),
+ ],
+}
+
+HOME_FAQ = [0, 2, 3, 8, 7]

@@ -3,7 +3,7 @@
 Edit content in this file, rerun, commit. Output goes to the repo root."""
 import os, json, html, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from content_seo import FAQS, AREAS_LIST
+from content_seo import FAQS, AREAS_LIST, SVC_FAQS, HOME_FAQ
 from content_blog import POSTS
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -336,6 +336,11 @@ STEPS = '''<ol class="steps">
 <li><span class="n">V</span><b>Commission &amp; Handoff</b><span>Systems tested, programmed and explained to you.</span></li>
 </ol>'''
 
+def faq_html(items):
+    return '<div class="faq">' + "".join(f'<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in items) + '</div>'
+def faq_ld(items):
+    return {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q, a in items]}
+
 # ---------------------------------------------------------------- home
 cats = "".join(f'<li><a href="/services/{s["slug"]}/">{s["name"]}</a></li>' for s in SERVICES if not s.get("extra"))
 home = f'''<section class="hero">
@@ -379,9 +384,14 @@ home = f'''<section class="hero">
 {STEPS}
 <div style="margin-top:36px"><a class="btn btn-line" href="/process/">How we work</a></div>
 </div></section>
+<section class="section alt"><div class="wrap" style="max-width:900px">
+<div class="section-head"><div class="eyebrow">Questions &amp; Answers</div><h2 class="h2">What people ask before they call.</h2></div>
+{faq_html([FAQS[i] for i in HOME_FAQ])}
+<p style="margin-top:22px"><a href="/faq/" style="color:var(--accent);font-weight:700">See all questions &amp; answers →</a></p>
+</div></section>
 {cta()}'''
 page("/", "One Build NYC | Design-Build Renovations, Kitchens, Bathrooms & Home Theater",
-     "Design-build renovation in NYC and New Jersey. Licensed contractors, plumbers, electricians and automation under one contract. Call (888) 781-7547.", home, og="glass-house-kitchen")
+     "Design-build renovation in NYC and New Jersey. Licensed contractors, plumbers, electricians and automation under one contract. Call (888) 781-7547.", home, og="glass-house-kitchen", extra_ld=[faq_ld([FAQS[i] for i in HOME_FAQ])])
 
 # ---------------------------------------------------------------- services index
 idx = f'''<section class="page-hero"><img src="{img("vaulted-feature-wall")}" alt="" fetchpriority="high"><div class="wrap">
@@ -423,13 +433,19 @@ for s in SERVICES:
 
 <section class="section" style="padding:56px 0"><div class="wrap"><div class="eyebrow" style="margin-bottom:16px">{esc(s["name"])} across NYC &amp; New Jersey</div><div class="btn-row">{"".join(f'<a class="btn btn-line btn-sm" href="/areas/{a["slug"]}/">{a["name"]}</a>' for a in AREAS_LIST)}</div></div></section>
 
-<section class="section alt"><div class="wrap">
+<section class="section alt"><div class="wrap" style="max-width:900px">
+<div class="section-head"><div class="eyebrow">Questions &amp; Answers</div><h2 class="h2">{esc(s["name"])} questions.</h2></div>
+{faq_html(SVC_FAQS[s["slug"]])}
+<p style="margin-top:22px"><a href="/faq/" style="color:var(--accent);font-weight:700">See all questions &amp; answers →</a></p>
+</div></section>
+
+<section class="section"><div class="wrap">
 <div class="section-head"><div class="eyebrow">Related Services</div><h2 class="h2">Usually part of the same project.</h2></div>
 {svc_cards(related)}
 </div></section>
 {cta(bg=s["hero"])}'''
     page(f'/services/{s["slug"]}/', f'{s["title"]} | One Build NYC',
-         f'{s["short"]} {s["name"]} by One Build NYC: licensed trades, one contract. Call (888) 781-7547.', body, og=s["hero"], extra_ld=[service_ld(s)])
+         f'{s["short"]} {s["name"]} by One Build NYC: licensed trades, one contract. Call (888) 781-7547.', body, og=s["hero"], extra_ld=[service_ld(s), faq_ld(SVC_FAQS[s["slug"]])])
 
 # ---------------------------------------------------------------- work
 baths = SVC["bathrooms"]["gallery"]
@@ -511,19 +527,19 @@ page("/contact/", "Contact | Book a Walkthrough | One Build NYC", "Book a walkth
 
 
 # ---------------------------------------------------------------- FAQ + areas
-def faq_html(items):
-    return '<div class="faq">' + "".join(f'<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in items) + '</div>'
-def faq_ld(items):
-    return {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q, a in items]}
 
 faq_body = f"""<section class="page-hero" style="min-height:380px"><img src="{img("ceiling-rough-in")}" alt="" fetchpriority="high"><div class="wrap">
 <div class="crumbs"><a href="/">Home</a> / FAQ</div><div class="eyebrow">FAQ</div>
-<h1>Questions we get before every project.</h1><p>Permits, timelines, buildings, pricing and how one contract works.</p></div></section>
-<section class="section"><div class="wrap" style="max-width:900px">{faq_html(FAQS)}</div></section>
+<h1>Questions &amp; answers.</h1><p>Permits, timelines, buildings, pricing, and how each trade works under one contract.</p></div></section>
+<section class="section"><div class="wrap" style="max-width:900px">
+<nav class="faq-jump"><a href="#general">General</a>{"".join(f'<a href="#{x["slug"]}">{x["name"]}</a>' for x in SERVICES)}</nav>
+<h2 class="faq-group" id="general">General</h2>{faq_html(FAQS)}
+{"".join(f'<h2 class="faq-group" id="{x["slug"]}">{esc(x["name"])} <a href="/services/{x["slug"]}/">View service →</a></h2>' + faq_html(SVC_FAQS[x["slug"]]) for x in SERVICES)}
+</div></section>
 {cta()}"""
 page("/faq/", "Renovation FAQ: Permits, Timelines & Costs in NYC | One Build NYC",
      "Answers about NYC renovation permits, co-op alterations, bathroom and gut renovation timelines, pricing, and adding smart home or theater during a remodel.",
-     faq_body, active="faq", og="ceiling-rough-in", extra_ld=[faq_ld(FAQS)])
+     faq_body, active="faq", og="ceiling-rough-in", extra_ld=[faq_ld(FAQS + [q for x in SERVICES for q in SVC_FAQS[x["slug"]]])])
 
 for a in AREAS_LIST:
     pts = "".join(f'<div class="point"><b>{esc(t)}</b><span>{esc(d)}</span></div>' for t, d in a["points"])

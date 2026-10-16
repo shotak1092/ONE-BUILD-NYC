@@ -210,3 +210,9 @@ a.card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(0,0,0,.1)}
 .article p{margin:0 0 18px}
 .article-cta{margin-top:48px;padding:28px;background:#fff;border:1px solid rgba(42,40,38,.1);border-left:4px solid var(--accent);display:flex;flex-direction:column;gap:12px;font-size:16px}
 .article-cta b{font-size:20px;color:var(--ink)}
+.faq-jump{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px}
+.faq-jump a{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:8px 12px;border:1px solid var(--line,#d9d3c9);color:var(--ink)}
+.faq-jump a:hover{border-color:var(--accent);color:var(--accent)}
+.faq-group{font-family:var(--serif);font-weight:400;font-size:30px;margin:52px 0 14px;display:flex;align-items:baseline;justify-content:space-between;gap:16px;scroll-margin-top:100px}
+.faq-group:first-of-type{margin-top:0}
+.faq-group a{font-family:inherit;font-size:13px;font-weight:700;color:var(--accent);white-space:nowrap}
