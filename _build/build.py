@@ -44,7 +44,7 @@ SERVICES = [
   short="Apartments, brownstones, lofts and houses, rebuilt from the studs out.",
   intro="A gut renovation is where coordination matters most. With the walls open, plumbing, electrical and low-voltage go in together, get inspected together, and are documented before anything is closed up.",
   includes=["Demolition down to the structure","New framing and layout changes","Plumbing supply, drain and venting rough-in","New panel, circuits and lighting rough-in","Low-voltage, network and speaker pre-wire","Insulation, drywall and finishes","Permits, filings and inspections","Final commissioning and walkthrough"],
-  gallery=["vaulted-framing","framing-rough-in","ceiling-rough-in","vaulted-scaffolding","vaulted-finishes","vaulted-feature-wall","kitchen-demo","kitchen-laundry-after","protected-job-site"]),
+  gallery=["vaulted-framing","brownstone-rough-in","steel-stud-rough-in","framing-rough-in","ceiling-rough-in","drywall-low-voltage","vaulted-scaffolding","vaulted-finishes","vaulted-feature-wall","kitchen-demo","kitchen-laundry-after","protected-job-site"]),
  dict(slug="plumbing", name="Plumbing", kicker="Licensed Plumbers",
   title="Licensed Plumbing in NYC & New Jersey",
   hero="marble-shower",
@@ -65,14 +65,14 @@ SERVICES = [
   short="Lighting, shades, audio, video, network and cameras, on one control system.",
   intro="We design and install the systems that make a home run itself: whole-home Wi-Fi and network, multi-room audio, video distribution, cameras, lighting and shades, all on one app and a few clean keypads. Wiring goes in during rough-in, so nothing is surface-mounted later.",
   includes=["Whole-home Wi-Fi and network","Equipment racks and structured wiring","Multi-room audio and video","Lighting and shade integration","Security cameras","Keypads, remotes and app control","Pre-wire during construction","Programming and owner training"],
-  gallery=["high-rise-bedroom-tv","condo-shades-track-lighting","walnut-media-wall","equipment-rack","cable-headend-rack","corner-cameras-conduit","fireplace-tv-after","media-wall-before","primary-suite-shades","shade-power-panels","dining-room"]),
+  gallery=["fireplace-tv-vaulted","high-rise-bedroom-tv","loft-ceiling-speakers","condo-shades-track-lighting","walnut-media-wall","dual-equipment-racks","equipment-rack","cable-headend-rack","corner-cameras-conduit","fireplace-tv-after","media-wall-before","primary-suite-shades","shade-power-panels","dining-room"]),
  dict(slug="window-treatments", name="Window Treatments", kicker="Motorized Shades",
   title="Motorized Shades & Window Treatments in NYC & New Jersey",
   hero="primary-suite-shades",
   short="Motorized roller, Roman and blackout shades, recessed and wired during construction.",
   intro="The cleanest shades are planned before the ceiling closes: recessed pockets, power where it belongs, and fabrics chosen in the room. We handle selections, measuring, wiring, installation and programming.",
   includes=["Motorized roller and Roman shades","Blackout and solar fabrics","Drapery and track systems","Recessed shade pockets","Shade power panels and wiring","Keypad, app and schedule control","Fabric selection on site","Programming and scenes"],
-  gallery=["bay-window-shades-after","condo-shades-track-lighting","edison-chandelier-shades","primary-suite-shades","bay-window-shades-before","shade-selections","addition-interior","shade-power-panels"]),
+  gallery=["bay-window-shades-after","condo-shades-track-lighting","shade-install-high-rise","edison-chandelier-shades","primary-suite-shades","bay-window-shades-before","shade-selections","addition-interior","shade-power-panels"]),
  dict(slug="lighting-control", name="Lighting Control", kicker="Lighting & Control",
   title="Lighting Control & Design in NYC & New Jersey",
   hero="gallery-lighting",
@@ -86,7 +86,7 @@ SERVICES = [
   short="Dedicated theaters, media walls, LED walls and lounges, built around the system.",
   intro="We build the room and the system together: framing for the screen and speakers, dedicated circuits, acoustic treatment, lighting scenes, then calibrated audio and video. From a clean media wall to a full LED-wall lounge.",
   includes=["Dedicated theaters and media rooms","Projection screens and large-format displays","LED video walls","In-wall and in-ceiling surround audio","Acoustic treatment and seating layout","Lighting scenes and blackout shades","Concealed wiring and equipment racks","Calibration and one-remote control"],
-  gallery=["private-theater","led-accent-theater","theater-seats-screen","theater-riser-seating","audio-listening-room","projector-install","led-wall-lounge","led-theater-lounge","walnut-media-wall","fireplace-tv-after","media-wall-after","lounge-bar"]),
+  gallery=["private-theater","led-accent-theater","fireplace-tv-sunlight","theater-seats-screen","theater-riser-seating","audio-listening-room","projector-install","theater-speaker-backboxes","theater-wall-prep","speaker-backbox-framing","led-wall-lounge","led-theater-lounge","walnut-media-wall","fireplace-tv-after","media-wall-after","lounge-bar"]),
  dict(slug="led-walls", name="LED Walls", kicker="LED Video Walls", extra=True,
   title="LED Video Wall Installation in NYC & New Jersey",
   hero="led-wall-lounge",
@@ -100,7 +100,7 @@ SERVICES = [
   short="Retail, offices, restaurants, dispensaries and houses of worship: construction, power and technology from one team.",
   intro="Commercial spaces open on a date, not when the trades finish arguing. We build out the space, run the power, and install the systems the business runs on: network and Wi-Fi, cameras, conference rooms, background music, displays, LED walls and live streaming, all handed over tested and documented.",
   includes=["Interior build-outs and renovations","Licensed electrical and plumbing","Network, Wi-Fi and structured cabling","Security cameras and remote viewing","Conference rooms and video calling","Background music and paging","Digital signage, displays and LED walls","Live streaming and broadcast for churches and events"],
-  gallery=["boardroom-av","conference-displays","conference-projection","corner-cameras-conduit","camera-conduit-brick","cable-headend-rack","lounge-bar","led-wall-lounge","led-theater-lounge","electrical-panel-drivers"]),
+  gallery=["boardroom-av","slat-wall-camera-monitor","slat-wall-install","conference-displays","conference-projection","corner-cameras-conduit","camera-conduit-brick","cable-headend-rack","lounge-bar","led-wall-lounge","led-theater-lounge","electrical-panel-drivers"]),
 ]
 SVC = {s["slug"]: s for s in SERVICES}
 
@@ -165,6 +165,19 @@ ALT = {
  "subway-tub-surround":"Subway tile tub surround with brushed nickel fixtures",
 }
 ALT.update({
+ "fireplace-tv-vaulted":"Vaulted great room with a TV and soundbar over a fluted black stone fireplace",
+ "fireplace-tv-sunlight":"Media wall over a linear fireplace in afternoon light",
+ "speaker-backbox-framing":"In-wall speaker back box installed in framing before drywall",
+ "brownstone-rough-in":"Brownstone parlor floor during rough-in with speaker back boxes on exposed brick",
+ "dual-equipment-racks":"Two equipment racks with network, audio and camera recorder in a basement",
+ "slat-wall-camera-monitor":"Wood slat wall with a camera monitoring display in a retail back office",
+ "shade-install-high-rise":"Installer preparing a concrete ceiling for shades in a high-rise corner unit",
+ "steel-stud-rough-in":"Steel stud framing with low-voltage and electrical rough-in in a basement",
+ "slat-wall-install":"Crew installing a wood slat wall and TV mount",
+ "loft-ceiling-speakers":"Loft with painted timber ceiling, pendant lights and in-ceiling speakers",
+ "drywall-low-voltage":"Drywall stage with network and speaker cable pulled to each location",
+ "theater-speaker-backboxes":"Theater wall framed with speaker and subwoofer back boxes",
+ "theater-wall-prep":"Theater room after drywall with recessed speaker bays and wiring",
  "white-shaker-kitchen":"White shaker kitchen with glass-front uppers, quartz counters and marble mosaic backsplash",
  "dated-kitchen-before":"Dated kitchen before renovation",
  "bay-window-shades-before":"Living room protected during shade installation in a bay window",
@@ -483,6 +496,9 @@ work = f'''<section class="page-hero"><img src="{img("led-wall-lounge")}" alt=""
 <figure><div class="ph"><img src="{img("vaulted-feature-wall")}" alt="{esc(ALT["vaulted-feature-wall"])}" loading="lazy"></div><figcaption><b>04</b> · Feature wall</figcaption></figure>
 </div></div>
 
+<div class="block"><div class="block-head"><h3>Before the walls close</h3><span>Rough-in · pre-wire · back boxes</span></div>
+{gallery(["brownstone-rough-in","theater-speaker-backboxes","steel-stud-rough-in","speaker-backbox-framing","theater-wall-prep","drywall-low-voltage"], wide=["brownstone-rough-in"])}</div>
+
 <div class="block grid g2" style="gap:44px 28px">
 {pair("Kitchen & laundry, gutted and rebuilt","kitchen-demo","kitchen-laundry-after")}
 {pair("Brick loft kitchen","brick-loft-before","brick-loft-kitchen")}
@@ -490,6 +506,7 @@ work = f'''<section class="page-hero"><img src="{img("led-wall-lounge")}" alt=""
 {pair("Living room media wall","media-wall-before","media-wall-after")}
 {pair("Country house addition","addition-exterior","addition-interior","Shell","Interior")}
 {pair("Decks & pavers","composite-deck","deck-paver-patio","Composite deck","Deck with paver patio")}
+{pair("Back office slat wall","slat-wall-install","slat-wall-camera-monitor","Install","Finished")}
 {pair("Bay window shades","bay-window-shades-before","bay-window-shades-after","Install day","Finished")}
 </div>
 
@@ -503,7 +520,7 @@ work = f'''<section class="page-hero"><img src="{img("led-wall-lounge")}" alt=""
 {gallery(["boardroom-av","conference-displays","conference-projection","corner-cameras-conduit","camera-conduit-brick","cable-headend-rack"], wide=["boardroom-av"])}</div>
 
 <div class="block" style="margin-bottom:0"><div class="block-head"><h3>Homes &amp; outdoor</h3><span>Renovation · lighting · exterior</span></div>
-{gallery(["glass-house-kitchen","white-shaker-kitchen","beamed-kitchen","condo-shades-track-lighting","high-rise-bedroom-tv","edison-chandelier-shades","primary-suite-shades","gallery-lighting","paver-patio","patio-lighting-rendering"], wide=["glass-house-kitchen","patio-lighting-rendering"])}</div>
+{gallery(["glass-house-kitchen","fireplace-tv-vaulted","white-shaker-kitchen","loft-ceiling-speakers","beamed-kitchen","condo-shades-track-lighting","high-rise-bedroom-tv","edison-chandelier-shades","primary-suite-shades","gallery-lighting","paver-patio","patio-lighting-rendering"], wide=["glass-house-kitchen","patio-lighting-rendering"])}</div>
 </div></section>
 {cta()}'''
 page("/work/", "Our Work | Renovation, Bathroom & Home Theater Projects | One Build NYC",
@@ -517,7 +534,7 @@ proc = f'''<section class="page-hero"><img src="{img("ceiling-rough-in")}" alt="
 <section class="section alt"><div class="wrap">
 <div class="section-head"><div class="eyebrow">On the Job</div><h2 class="h2">What each stage looks like.</h2></div>
 <div class="gallery">
-{fig("kitchen-demo", cap="Demo")}{fig("shade-selections", cap="Selections")}{fig("framing-rough-in", cap="Framing & plumbing")}{fig("ceiling-rough-in", cap="Rough-in")}
+{fig("kitchen-demo", cap="Demo")}{fig("brownstone-rough-in", cap="Rough-in on brick")}{fig("shade-selections", cap="Selections")}{fig("framing-rough-in", cap="Framing & plumbing")}{fig("ceiling-rough-in", cap="Rough-in")}
 {fig("projector-install", cap="Install day")}{fig("equipment-rack", cap="Low-voltage head end")}{fig("protected-job-site", cap="Protected job site")}{fig("electrical-panel-drivers", cap="Panel & drivers")}{fig("shade-power-panels", cap="Commissioned")}
 </div></div></section>
 <section class="section"><div class="wrap">
