@@ -388,7 +388,7 @@ def faq_ld(items):
 
 LUTRON = '<div class="lutron-badge"><img src="/assets/lutron-platinum-2026.png" alt="Lutron Platinum Dealer 2026" width="120" height="109" loading="lazy"><div><b>Lutron Platinum Dealer</b><span>Lighting control and motorized shades designed, installed and programmed by a 2026 Lutron Platinum Dealer.</span></div></div>'
 # ---------------------------------------------------------------- home
-HERO_CATS = ["renovations", "kitchens", "bathrooms", "smart-home", "home-theater"]
+HERO_CATS = ["renovations", "kitchens", "bathrooms", "window-treatments", "electrical", "smart-home"]
 _svc = {s["slug"]: s for s in SERVICES}
 cats = "".join(f'<li><a href="/services/{k}/">{_svc[k]["name"]}</a></li>' for k in HERO_CATS)
 home = f'''<section class="hero">
