@@ -202,7 +202,7 @@ a.card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(0,0,0,.1)}
 .hero .eyebrow{color:var(--gold);text-shadow:none}
 .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(46px,6vw,88px);line-height:1.02;letter-spacing:-.01em;color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.35)}
 .hero h1 span{font-family:var(--sans);font-weight:400;font-size:clamp(19px,1.8vw,24px);line-height:1.5;letter-spacing:0;color:rgba(255,255,255,.9);max-width:640px;margin-top:22px;text-shadow:none}
-.cats{color:rgba(255,255,255,.88);font-size:13px;text-shadow:none}
+.cats{color:#fff;font-size:13px;text-shadow:0 1px 8px rgba(0,0,0,.5)}
 .cats a:hover{color:var(--gold);text-decoration:none}
 .hero .btn-row .btn{min-width:min(100%,340px)}
 .hero .btn-dark{background:transparent;border-color:rgba(255,255,255,.75);color:#fff}

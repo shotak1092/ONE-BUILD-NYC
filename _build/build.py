@@ -396,8 +396,8 @@ home = f'''<section class="hero">
 <div class="wrap"><div class="hero-inner">
 <div class="eyebrow">Design-Build · NYC · New Jersey</div>
 <h1>Four licensed trades.<span>One crew. One schedule. One contract. One number to call. No finger-pointing.</span></h1>
-<ul class="cats">{cats}</ul>
 <div class="btn-row"><a class="btn btn-accent" href="/contact/">Book a Walkthrough</a><a class="btn btn-dark" href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a></div>
+<ul class="cats">{cats}</ul>
 <div class="trust"><span><b>✓</b> Licensed Contractors</span><span><b>✓</b> Licensed Plumbers</span><span><b>✓</b> Licensed Electricians</span><span><b>✓</b> Licensed Automation &amp; Low Voltage</span><span>Fully Insured</span></div>
 </div></div></section>
 
