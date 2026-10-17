@@ -388,7 +388,9 @@ def faq_ld(items):
 
 LUTRON = '<div class="lutron-badge"><img src="/assets/lutron-platinum-2026.png" alt="Lutron Platinum Dealer 2026" width="120" height="109" loading="lazy"><div><b>Lutron Platinum Dealer</b><span>Lighting control and motorized shades designed, installed and programmed by a 2026 Lutron Platinum Dealer.</span></div></div>'
 # ---------------------------------------------------------------- home
-cats = "".join(f'<li><a href="/services/{s["slug"]}/">{s["name"]}</a></li>' for s in SERVICES if not s.get("extra"))
+HERO_CATS = ["renovations", "kitchens", "bathrooms", "smart-home", "home-theater"]
+_svc = {s["slug"]: s for s in SERVICES}
+cats = "".join(f'<li><a href="/services/{k}/">{_svc[k]["name"]}</a></li>' for k in HERO_CATS)
 home = f'''<section class="hero">
 <div class="hero-collage" aria-hidden="true">
 <img src="{img("glass-house-kitchen")}" alt="" fetchpriority="high"><img src="{img("shades-dining-glass")}" alt=""><img src="{img("brass-zellige-bathroom")}" alt=""><img src="{img("vaulted-framing")}" alt=""><img src="{img("walnut-media-wall")}" alt="">
