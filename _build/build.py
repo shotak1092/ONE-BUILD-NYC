@@ -25,7 +25,7 @@ SERVICES = [
   short="Room-by-room or whole-house, with plumbing, electrical and technology on the same schedule.",
   intro="Most renovations stall in the gaps between trades. We run every trade from one office, so framing, rough-in, inspections and finishes happen in the right order and nobody waits on anybody.",
   includes=["Design walkthrough and single written scope","Demolition and debris removal","Framing, drywall and taping","Flooring, tile and millwork","Paint and finish carpentry","Additions, decks and paver patios","Licensed plumbing and electrical","Lighting, shades, audio and network planned in"],
-  gallery=["oak-wardrobe-tile-wall","platform-room-pendants","oak-panel-wall-cabinet","walk-in-closet-led","vaulted-framing","vaulted-scaffolding","vaulted-finishes","vaulted-feature-wall","brick-loft-before","brick-loft-kitchen","addition-framing","addition-exterior","addition-interior","composite-deck","deck-paver-patio","paver-patio","protected-job-site"]),
+  gallery=["loft-oak-bookcase-shades","slat-wall-fireplace-speakers","oak-wardrobe-tile-wall","platform-room-pendants","oak-panel-wall-cabinet","walk-in-closet-led","vaulted-framing","vaulted-scaffolding","vaulted-finishes","vaulted-feature-wall","brick-loft-before","brick-loft-kitchen","addition-framing","addition-exterior","addition-interior","composite-deck","deck-paver-patio","paver-patio","protected-job-site"]),
  dict(slug="kitchens", name="Kitchens", kicker="Kitchen Remodeling",
   title="Kitchen Remodeling in NYC & New Jersey",
   hero="glass-house-kitchen",
@@ -46,14 +46,14 @@ SERVICES = [
   short="Apartments, brownstones, lofts and houses, rebuilt from the studs out.",
   intro="A gut renovation is where coordination matters most. With the walls open, plumbing, electrical and low-voltage go in together, get inspected together, and are documented before anything is closed up.",
   includes=["Demolition down to the structure","New framing and layout changes","Plumbing supply, drain and venting rough-in","New panel, circuits and lighting rough-in","Low-voltage, network and speaker pre-wire","Insulation, drywall and finishes","Permits, filings and inspections","Final commissioning and walkthrough"],
-  gallery=["zellige-bath-freestanding-tub","oak-wardrobe-tile-wall","walk-in-closet-led","vaulted-framing","brownstone-rough-in","steel-stud-rough-in","framing-rough-in","ceiling-rough-in","drywall-low-voltage","vaulted-scaffolding","vaulted-finishes","vaulted-feature-wall","kitchen-demo","kitchen-laundry-after","protected-job-site"]),
+  gallery=["high-rise-prewire-protected","zellige-bath-freestanding-tub","oak-wardrobe-tile-wall","walk-in-closet-led","vaulted-framing","brownstone-rough-in","steel-stud-rough-in","framing-rough-in","ceiling-rough-in","drywall-low-voltage","vaulted-scaffolding","vaulted-finishes","vaulted-feature-wall","kitchen-demo","kitchen-laundry-after","protected-job-site"]),
  dict(slug="plumbing", name="Plumbing", kicker="Licensed Plumbers",
   title="Licensed Plumbing in NYC & New Jersey",
   hero="marble-shower",
   short="Licensed in New York. Kitchen and bath rough-in, fixtures, gas and water heaters.",
   intro="Our plumbing is done by licensed New York plumbers, permitted and inspected. Because they work on the same schedule as the rest of the crew, rough-in is finished before tile and drywall, not squeezed in after.",
   includes=["Kitchen and bathroom rough-in","Supply and drain line replacement","Shower valves, tubs and fixtures","Gas lines for ranges and appliances","Water heaters","Washer and laundry hookups","Permits and DOB filings","Leak repairs and upgrades"],
-  gallery=["zellige-double-vanity","framing-rough-in","marble-shower","onyx-shower-sauna","walk-in-glass-shower","black-fixture-tub","greek-key-shower","soaking-tub","subway-window-shower","kitchen-laundry-after"]),
+  gallery=["hydronic-manifold-pumps","wall-hung-navien-units","zellige-double-vanity","framing-rough-in","marble-shower","onyx-shower-sauna","walk-in-glass-shower","black-fixture-tub","greek-key-shower","soaking-tub","subway-window-shower","kitchen-laundry-after"]),
  dict(slug="electrical", name="Electrical", kicker="Licensed Electricians",
   title="Licensed Electricians in NYC & New Jersey",
   hero="shade-power-panels",
@@ -67,28 +67,28 @@ SERVICES = [
   short="Lighting, shades, audio, video, network and cameras, on one control system.",
   intro="We design and install the systems that make a home run itself: whole-home Wi-Fi and network, multi-room audio, video distribution, cameras, lighting and shades, all on one app and a few clean keypads. Wiring goes in during rough-in, so nothing is surface-mounted later.",
   includes=["Whole-home Wi-Fi and network","Equipment racks and structured wiring","Multi-room audio and video","Lighting and shade integration","Security cameras","Keypads, remotes and app control","Pre-wire during construction","Programming and owner training"],
-  gallery=["loft-shades-three-windows","waterfront-bedroom-blackout","terrace-slider-shade","fireplace-tv-vaulted","drop-screen-river-view","savant-remote","high-rise-bedroom-tv","loft-ceiling-speakers","condo-shades-track-lighting","walnut-media-wall","dual-equipment-racks","equipment-rack","cable-headend-rack","corner-cameras-conduit","fireplace-tv-after","media-wall-before","primary-suite-shades","shade-power-panels","dining-room"]),
+  gallery=["slat-wall-fireplace-speakers","lighting-keypad-gang","loft-shades-three-windows","waterfront-bedroom-blackout","terrace-slider-shade","fireplace-tv-vaulted","drop-screen-river-view","savant-remote","high-rise-bedroom-tv","loft-ceiling-speakers","condo-shades-track-lighting","walnut-media-wall","dual-equipment-racks","equipment-rack","cable-headend-rack","corner-cameras-conduit","fireplace-tv-after","media-wall-before","primary-suite-shades","shade-power-panels","dining-room"]),
  dict(slug="window-treatments", name="Window Treatments", kicker="Motorized Shades",
   title="Motorized Shades & Window Treatments in NYC & New Jersey",
   hero="primary-suite-shades",
   short="Motorized roller, Roman and blackout shades, recessed and wired during construction.",
   intro="The cleanest shades are planned before the ceiling closes: recessed pockets, power where it belongs, and fabrics chosen in the room. We handle selections, measuring, wiring, installation and programming.",
   includes=["Motorized roller and Roman shades","Blackout and solar fabrics","Drapery and track systems","Recessed shade pockets","Shade power panels and wiring","Keypad, app and schedule control","Fabric selection on site","Programming and scenes"],
-  gallery=["loft-shades-three-windows","gable-window-shades-drapery","waterfront-bedroom-blackout","loft-recessed-shade-pocket","loft-shade-side-channel","shade-hembar-brush-seal","loft-sheer-arched-windows","waterfront-bedroom-shades-half","terrace-slider-shade","loft-blackout-evening","bay-window-shades-after","condo-shades-track-lighting","shade-install-high-rise","edison-chandelier-shades","primary-suite-shades","bay-window-shades-before","shade-selections","addition-interior","shade-power-panels"]),
+  gallery=["loft-oak-bookcase-shades","loft-shades-three-windows","gable-window-shades-drapery","waterfront-bedroom-blackout","loft-recessed-shade-pocket","loft-shade-side-channel","shade-hembar-brush-seal","loft-sheer-arched-windows","waterfront-bedroom-shades-half","terrace-slider-shade","loft-blackout-evening","bay-window-shades-after","condo-shades-track-lighting","shade-install-high-rise","edison-chandelier-shades","primary-suite-shades","bay-window-shades-before","shade-selections","addition-interior","shade-power-panels"]),
  dict(slug="lighting-control", name="Lighting Control", kicker="Lighting & Control",
   title="Lighting Control & Design in NYC & New Jersey",
   hero="gallery-lighting",
   short="Dimming, scenes and keypads, with track, cove and landscape lighting.",
   intro="Good lighting is designed with the room, not added after. We lay out fixtures, run the circuits, install the dimming panels and program scenes, so one button sets the whole space.",
   includes=["Lighting layout and fixture selection","Recessed, track and cove lighting","Dimming panels and keypads","Scenes, schedules and app control","Landscape and step lighting","Art and gallery lighting","Integration with shades and AV","Programming and fine-tuning"],
-  gallery=["platform-room-pendants","walk-in-closet-led","gallery-lighting","brick-stair-step-lights","lit-oak-shelving","cabinet-led-install","condo-shades-track-lighting","edison-chandelier-shades","led-accent-theater","dimming-panel","electrical-panel-drivers","led-wall-lounge","patio-lighting-rendering","beamed-kitchen"]),
+  gallery=["lighting-keypad-gang","platform-room-pendants","walk-in-closet-led","gallery-lighting","brick-stair-step-lights","lit-oak-shelving","cabinet-led-install","condo-shades-track-lighting","edison-chandelier-shades","led-accent-theater","dimming-panel","electrical-panel-drivers","led-wall-lounge","patio-lighting-rendering","beamed-kitchen"]),
  dict(slug="home-theater", name="Home Theater", kicker="Home Theater & Media Rooms",
   title="Home Theater Installation in NYC & New Jersey",
   hero="private-theater",
   short="Dedicated theaters, media walls, LED walls and lounges, built around the system.",
   intro="We build the room and the system together: framing for the screen and speakers, dedicated circuits, acoustic treatment, lighting scenes, then calibrated audio and video. From a clean media wall to a full LED-wall lounge.",
   includes=["Dedicated theaters and media rooms","Projection screens and large-format displays","LED video walls","In-wall and in-ceiling surround audio","Acoustic treatment and seating layout","Lighting scenes and blackout shades","Concealed wiring and equipment racks","Calibration and one-remote control"],
-  gallery=["private-theater","drop-screen-river-view","led-accent-theater","projector-media-room","fireplace-tv-sunlight","theater-seats-screen","theater-riser-seating","audio-listening-room","projector-install","theater-speaker-backboxes","theater-wall-prep","speaker-backbox-framing","led-wall-lounge","led-theater-lounge","walnut-media-wall","fireplace-tv-after","media-wall-after","lounge-bar"]),
+  gallery=["slat-wall-fireplace-speakers","private-theater","drop-screen-river-view","led-accent-theater","projector-media-room","fireplace-tv-sunlight","theater-seats-screen","theater-riser-seating","audio-listening-room","projector-install","theater-speaker-backboxes","theater-wall-prep","speaker-backbox-framing","led-wall-lounge","led-theater-lounge","walnut-media-wall","fireplace-tv-after","media-wall-after","lounge-bar"]),
  dict(slug="led-walls", name="LED Walls", kicker="LED Video Walls", extra=True,
   title="LED Video Wall Installation in NYC & New Jersey",
   hero="led-wall-lounge",
@@ -107,6 +107,12 @@ SERVICES = [
 SVC = {s["slug"]: s for s in SERVICES}
 
 ALT = {
+ "lighting-keypad-gang":"Four-gang lighting control station with dimmers and scene keypads",
+ "loft-oak-bookcase-shades":"Built-in oak bookcase and floating desk beside loft windows with roller shades",
+ "hydronic-manifold-pumps":"Hydronic heating manifold with zone circulator pumps and isolation valves",
+ "wall-hung-navien-units":"Three wall-hung Navien units on a mechanical room wall",
+ "high-rise-prewire-protected":"High-rise apartment protected during finish work, with speaker openings cut in the ceiling",
+ "slat-wall-fireplace-speakers":"Wood slat fireplace wall with in-wall speakers, sconces and a recessed TV box",
  "gable-window-shades-drapery":"Motorized roller shades under drapery on tall gable windows in a living room",
  "waterfront-bedroom-shades-open":"Bedroom roller shade raised to a waterfront view",
  "waterfront-bedroom-shades-half":"Motorized roller shades partly lowered on two bedroom windows",
@@ -532,7 +538,7 @@ work = f'''<section class="page-hero"><img src="{img("led-wall-lounge")}" alt=""
 </div></div>
 
 <div class="block"><div class="block-head"><h3>Before the walls close</h3><span>Rough-in · pre-wire · back boxes</span></div>
-{gallery(["brownstone-rough-in","theater-speaker-backboxes","steel-stud-rough-in","speaker-backbox-framing","theater-wall-prep","drywall-low-voltage"], wide=["brownstone-rough-in"])}</div>
+{gallery(["brownstone-rough-in","hydronic-manifold-pumps","wall-hung-navien-units","high-rise-prewire-protected","theater-speaker-backboxes","steel-stud-rough-in","speaker-backbox-framing","theater-wall-prep","drywall-low-voltage"], wide=["brownstone-rough-in"])}</div>
 
 <div class="block grid g2" style="gap:44px 28px">
 {pair("Kitchen & laundry, gutted and rebuilt","kitchen-demo","kitchen-laundry-after")}
@@ -547,7 +553,7 @@ work = f'''<section class="page-hero"><img src="{img("led-wall-lounge")}" alt=""
 </div>
 
 <div class="block"><div class="block-head"><h3>Manhattan loft, finished end to end</h3><span>Millwork · recessed shades · lighting · bath</span></div>
-{gallery(["loft-shades-three-windows","loft-recessed-shade-pocket","loft-shade-side-channel","shade-hembar-brush-seal","loft-sheer-arched-windows","platform-room-pendants","walk-in-closet-led","oak-wardrobe-tile-wall","oak-panel-wall-cabinet","terrace-slider-shade","zellige-bath-freestanding-tub","zellige-double-vanity"])}</div>
+{gallery(["loft-oak-bookcase-shades","loft-shades-three-windows","loft-recessed-shade-pocket","loft-shade-side-channel","shade-hembar-brush-seal","loft-sheer-arched-windows","platform-room-pendants","walk-in-closet-led","oak-wardrobe-tile-wall","oak-panel-wall-cabinet","terrace-slider-shade","zellige-bath-freestanding-tub","zellige-double-vanity"])}</div>
 
 <div class="block grid g2" style="gap:44px 28px">
 {pair("Waterfront bedroom shades","waterfront-bedroom-shades-half","waterfront-bedroom-blackout","Daytime","Blackout")}
@@ -564,7 +570,7 @@ work = f'''<section class="page-hero"><img src="{img("led-wall-lounge")}" alt=""
 {gallery(["boardroom-av","digital-pricing-displays","display-wall-install","conference-displays","conference-projection","corner-cameras-conduit","camera-conduit-brick","cable-headend-rack"], wide=["boardroom-av"])}</div>
 
 <div class="block" style="margin-bottom:0"><div class="block-head"><h3>Homes &amp; outdoor</h3><span>Renovation · lighting · exterior</span></div>
-{gallery(["glass-house-kitchen","gray-shaker-kitchen","brick-stair-step-lights","lit-oak-shelving","fireplace-tv-vaulted","white-shaker-kitchen","loft-ceiling-speakers","beamed-kitchen","condo-shades-track-lighting","high-rise-bedroom-tv","edison-chandelier-shades","primary-suite-shades","gallery-lighting","paver-patio","patio-lighting-rendering"], wide=["glass-house-kitchen","patio-lighting-rendering"])}</div>
+{gallery(["glass-house-kitchen","slat-wall-fireplace-speakers","gray-shaker-kitchen","lighting-keypad-gang","brick-stair-step-lights","lit-oak-shelving","fireplace-tv-vaulted","white-shaker-kitchen","loft-ceiling-speakers","beamed-kitchen","condo-shades-track-lighting","high-rise-bedroom-tv","edison-chandelier-shades","primary-suite-shades","gallery-lighting","paver-patio","patio-lighting-rendering"], wide=["glass-house-kitchen","patio-lighting-rendering"])}</div>
 </div></section>
 {cta()}'''
 page("/work/", "Our Work | Renovation, Bathroom & Home Theater Projects | One Build NYC",
