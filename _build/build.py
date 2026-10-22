@@ -5,6 +5,8 @@ import os, json, html, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from content_seo import FAQS, AREAS_LIST, SVC_FAQS, HOME_FAQ
 from content_blog import POSTS
+from content_posts_md import load_md_posts
+POSTS = sorted(POSTS + load_md_posts(), key=lambda x: x["date"], reverse=True)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOMAIN = "https://onebuildnyc.com"
@@ -644,12 +646,18 @@ def post_card(pst):
 <div class="body"><span class="kicker">{_fmt(pst["date"])}</span><h3>{esc(pst["title"])}</h3><p>{esc(pst["desc"])}</p><span class="more">Read article →</span></div></a>"""
 
 for pst in POSTS:
-    secs = "".join(f"<h2>{esc(h)}</h2>" + "".join(_para(x) for x in paras) for h, paras in pst["sections"])
-    more = [o for o in POSTS if o["slug"] != pst["slug"]]
+    if pst["hero"] not in ALT: pst["hero"] = "vaulted-scaffolding"
+    pst["services"] = [x for x in pst["services"] if x in SVC] or ["renovations"]
+    if pst.get("body_html"):
+        secs = pst["body_html"]
+    else:
+        secs = "".join(f"<h2>{esc(h)}</h2>" + "".join(_para(x) for x in paras) for h, paras in pst["sections"])
+    more = [o for o in POSTS if o["slug"] != pst["slug"]][:3]
+    lead = f'<p class="lead">{esc(pst["intro"])}</p>' if pst.get("intro") else ""
     body = f"""<section class="page-hero" style="min-height:420px"><img src="{img(pst["hero"])}" alt="" fetchpriority="high"><div class="wrap">
 <div class="crumbs"><a href="/">Home</a> / <a href="/blog/">Blog</a></div><div class="eyebrow">{_fmt(pst["date"])}</div>
 <h1>{esc(pst["title"])}</h1><p>{esc(pst["desc"])}</p></div></section>
-<section class="section"><div class="wrap"><article class="article"><p class="lead">{esc(pst["intro"])}</p>{secs}
+<section class="section"><div class="wrap"><article class="article">{lead}{secs}
 <div class="article-cta"><b>Planning a project?</b><span>One Build NYC brings licensed contractors, plumbers, electricians and automation specialists to one walkthrough.</span><div class="btn-row"><a class="btn btn-accent" href="/contact/">Book a Walkthrough</a><a class="btn btn-line" href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a></div></div>
 </article></div></section>
 <section class="section alt"><div class="wrap"><div class="section-head"><div class="eyebrow">Related Services</div><h2 class="h2">Where this applies.</h2></div>{svc_cards([SVC[x] for x in pst["services"]][:3])}</div></section>
