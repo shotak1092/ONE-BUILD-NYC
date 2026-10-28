@@ -1,6 +1,6 @@
 ---
 title: Bathroom Remodels on a Budget: What Works and What to Skip
-description: Where a bathroom budget actually goes in NYC and New Jersey, where to save, what never to cut, and the permit rules that can wreck a low-cost plan.
+description: Where a bathroom budget actually goes in New York City, where to save, what never to cut, and the permit rules that can wreck a low-cost plan.
 date: 2026-10-22
 hero: blue-subway-bath
 services: bathrooms, plumbing, electrical
@@ -8,7 +8,7 @@ intro: A budget bathroom works when you keep the plumbing where it is, spend on 
 ---
 ## What a bathroom actually costs in NYC
 
-Most price guides online quote national averages, and some promise a full remodel for under $5,000. Those numbers don't hold in New York City or northern New Jersey, where licensed plumbers and electricians, building insurance requirements, limited co-op work hours, freight elevator bookings and debris removal all add cost.
+Most price guides online quote national averages, and some promise a full remodel for under $5,000. Those numbers don't hold in New York City, where licensed plumbers and electricians, building insurance requirements, limited co-op work hours, freight elevator bookings and debris removal all add cost.
 
 Here's how we price it:
 

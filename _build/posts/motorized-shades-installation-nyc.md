@@ -135,7 +135,7 @@ National cost guides give wide ranges because these variables are so large, and 
 
 Our [motorized shades and window treatments](/services/window-treatments/) are installed by the same team that does our [smart home automation](/services/smart-home/), [lighting control](/services/lighting-control/) and [licensed electrical work](/services/electrical/), so the shade, the power and the controls are planned together. We hold NYC Home Improvement Contractor License #621290 and handle DOB permits, co-op and condo alteration requirements, insurance certificates and building work hours.
 
-When shades are part of a bigger job, they fit into a [full renovation](/services/renovations/) with one contract and one schedule. We work across [Manhattan](/areas/manhattan/), [Brooklyn](/areas/brooklyn/), [Queens](/areas/queens/) and [Staten Island](/areas/staten-island/), plus Long Island and Westchester, and we also work in New Jersey. Call (888) 781-7547 or email info@onebuildnyc.com to set up a walkthrough.
+When shades are part of a bigger job, they fit into a [full renovation](/services/renovations/) with one contract and one schedule. We work across [Manhattan](/areas/manhattan/), [Brooklyn](/areas/brooklyn/), [Queens](/areas/queens/) and [Staten Island](/areas/staten-island/), plus Long Island and Westchester. Call (888) 781-7547 or email info@onebuildnyc.com to set up a walkthrough.
 
 ## FAQ
 

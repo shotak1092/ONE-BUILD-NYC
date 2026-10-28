@@ -109,7 +109,7 @@ Technology belongs in the plan, not on the punch list. If you want dimmable scen
 
 And we'd rather tell you early that a layout won't pass your building's rules than let you design around it. A short conversation about your alteration agreement can save weeks.
 
-We remodel bathrooms across [Manhattan](/areas/manhattan/), [Brooklyn](/areas/brooklyn/), [Queens](/areas/queens/) and [Staten Island](/areas/staten-island/), plus Long Island and Westchester, and we also work in New Jersey. See our [bathroom remodeling](/services/bathrooms/) page, or call (888) 781-7547 or email info@onebuildnyc.com to set up a walkthrough.
+We remodel bathrooms across [Manhattan](/areas/manhattan/), [Brooklyn](/areas/brooklyn/), [Queens](/areas/queens/) and [Staten Island](/areas/staten-island/), plus Long Island and Westchester. See our [bathroom remodeling](/services/bathrooms/) page, or call (888) 781-7547 or email info@onebuildnyc.com to set up a walkthrough.
 
 ## FAQ
 

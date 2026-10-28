@@ -1,6 +1,6 @@
 ---
 title: Electrical Panel Upgrade: Costs, Signs, Permits and Planning
-description: What a panel upgrade costs in NYC and New Jersey, the signs you need one, how DOB permits work, and how to plan it with a renovation so you pay once.
+description: What a panel upgrade costs in New York City, the signs you need one, how DOB permits work, and how to plan it with a renovation so you pay once.
 date: 2026-10-22
 hero: electrical-panel-drivers
 services: electrical, renovations, smart-home

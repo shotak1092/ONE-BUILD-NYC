@@ -148,7 +148,7 @@ It also means one schedule. When one office sequences rough-in, inspections and 
 
 One Build NYC runs construction, plumbing, electrical and low-voltage under one contract and one schedule. Our [smart home automation](/services/smart-home/) work covers lighting control, motorized shades, audio, networking and home theater, planned with the renovation and installed by our [licensed electricians](/services/electrical/) and low-voltage team. We handle DOB permits, co-op and condo alteration requirements, insurance certificates and building work hours. NYC Home Improvement Contractor License #621290.
 
-We work across [Manhattan](/areas/manhattan/), [Brooklyn](/areas/brooklyn/), [Queens](/areas/queens/) and [Staten Island](/areas/staten-island/), plus [Long Island](/areas/long-island/) and [Westchester](/areas/westchester/), and we also work in New Jersey. Call (888) 781-7547 or email info@onebuildnyc.com to set up a walkthrough.
+We work across [Manhattan](/areas/manhattan/), [Brooklyn](/areas/brooklyn/), [Queens](/areas/queens/) and [Staten Island](/areas/staten-island/), plus [Long Island](/areas/long-island/) and [Westchester](/areas/westchester/). Call (888) 781-7547 or email info@onebuildnyc.com to set up a walkthrough.
 
 ## FAQ
 

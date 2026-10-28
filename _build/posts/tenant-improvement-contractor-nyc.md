@@ -86,7 +86,7 @@ DOB fees vary with the scope of work, and an expediter's fees sit on top. Ignore
 | Schedule | A sequenced plan tied to lease commencement and rent abatement, with inspections built in |
 | Closeout | A plan for punch list, sign-offs and any certificate of occupancy work |
 
-A license from New Jersey or another state doesn't carry over. The permit has to come from a contractor licensed with NYC DOB.
+A license from another state doesn't carry over. The permit has to come from a contractor licensed with NYC DOB.
 
 ### Questions to ask at the first meeting
 
@@ -114,7 +114,7 @@ If you're comparing bids, compare the sequence and the exclusions, not just the 
 
 Our [commercial build-out service](/services/commercial/) covers interior construction plus plumbing, electrical and low-voltage systems such as [lighting control](/services/lighting-control/), audio-visual and [LED video walls](/services/led-walls/), all under one contract and one schedule. We handle DOB permits, building insurance certificates and work-hour limits as part of the job, and we plan lighting, AV and networking before the walls close.
 
-We work across [Manhattan](/areas/manhattan/), [Brooklyn](/areas/brooklyn/), [Queens](/areas/queens/) and [Staten Island](/areas/staten-island/), plus Long Island and Westchester, and we also work in New Jersey. Pricing depends on scope and building, so we quote after a walkthrough. Call (888) 781-7547 or email info@onebuildnyc.com, and we'll walk the space with you before the lease is final.
+We work across [Manhattan](/areas/manhattan/), [Brooklyn](/areas/brooklyn/), [Queens](/areas/queens/) and [Staten Island](/areas/staten-island/), plus Long Island and Westchester. Pricing depends on scope and building, so we quote after a walkthrough. Call (888) 781-7547 or email info@onebuildnyc.com, and we'll walk the space with you before the lease is final.
 
 ## A short pre-lease checklist
 

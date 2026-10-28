@@ -110,7 +110,7 @@ One Build NYC is a design-build company: general construction, plumbing, electri
 
 Our advice: settle the lease terms, the filing path and the building rules at the first walkthrough. They set your schedule and budget far more than finishes do.
 
-We handle [commercial build-outs](/services/commercial/) across [Manhattan](/areas/manhattan/), [Brooklyn](/areas/brooklyn/), [Queens](/areas/queens/) and [Staten Island](/areas/staten-island/), plus [Long Island](/areas/long-island/) and [Westchester](/areas/westchester/), and we also work in New Jersey. NYC HIC License #621290. Call (888) 781-7547 or email [info@onebuildnyc.com](mailto:info@onebuildnyc.com) to set up a walkthrough, or see [our work](/work/).
+We handle [commercial build-outs](/services/commercial/) across [Manhattan](/areas/manhattan/), [Brooklyn](/areas/brooklyn/), [Queens](/areas/queens/) and [Staten Island](/areas/staten-island/), plus [Long Island](/areas/long-island/) and [Westchester](/areas/westchester/). NYC HIC License #621290. Call (888) 781-7547 or email [info@onebuildnyc.com](mailto:info@onebuildnyc.com) to set up a walkthrough, or see [our work](/work/).
 
 ## FAQ
 
