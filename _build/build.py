@@ -32,7 +32,7 @@ SERVICES = [
   short="Layout, cabinetry, plumbing, appliance circuits and lighting, built as one job.",
   intro="A kitchen touches every trade at once: gas and water lines, dedicated appliance circuits, venting, under-cabinet and scene lighting, and often built-in audio. We plan all of it on day one so the walls only get closed once.",
   includes=["Layout and cabinetry installation","Countertops, backsplash and tile","Sink, dishwasher, gas and water lines","Dedicated appliance circuits and panel work","Recessed, under-cabinet and pendant lighting","Lighting control scenes and keypads","Built-in ceiling speakers","Laundry and pantry build-outs"],
-  gallery=["white-slab-kitchen-peninsula","white-slab-kitchen-front","white-shaker-pantry-wall","glass-house-kitchen","gray-shaker-kitchen","white-shaker-kitchen","brick-loft-kitchen","beamed-kitchen","kitchen-laundry-after","brick-loft-before"]),
+  gallery=["blue-shaker-kitchen-waterfall-peninsula","white-slab-kitchen-peninsula","white-slab-kitchen-front","white-shaker-pantry-wall","glass-house-kitchen","gray-shaker-kitchen","white-shaker-kitchen","brick-loft-kitchen","beamed-kitchen","kitchen-laundry-after","brick-loft-before"]),
  dict(slug="bathrooms", name="Bathrooms", kicker="Bathroom Remodeling",
   title="Bathroom Remodeling in NYC & New Jersey",
   hero="double-vanity-marble-shower",
@@ -221,6 +221,7 @@ ALT = {
  "greek-key-shower":"Rain shower with black and gold Greek key tile band",
  "black-white-smart-bath":"Black and white bath with smart toilet and lit mirror",
  "soaking-tub":"Deep soaking tub with subway tile surround and niche",
+ "blue-shaker-kitchen-waterfall-peninsula":"Two-tone shaker kitchen with navy base cabinets, waterfall quartz peninsula and LED toe-kick lighting",
  "kitchen-laundry-after":"Kitchen and laundry with checkerboard floor and stainless appliances",
  "vanity-wainscot":"Vanity with medicine cabinet and subway tile wainscot",
  "subway-tub-surround":"Subway tile tub surround with brushed nickel fixtures",
@@ -605,7 +606,7 @@ work = f'''<section class="page-hero"><img src="{img("led-wall-lounge")}" alt=""
 {gallery(["boardroom-av","digital-pricing-displays","display-wall-install","conference-displays","conference-projection","corner-cameras-conduit","camera-conduit-brick","cable-headend-rack"], wide=["boardroom-av"])}</div>
 
 <div class="block" style="margin-bottom:0"><div class="block-head"><h3>Homes &amp; outdoor</h3><span>Renovation · lighting · exterior</span></div>
-{gallery(["penthouse-river-view-shades","glass-house-kitchen","white-slab-kitchen-peninsula","dining-room-shades-track-lighting","sky-ceiling-led-bathroom","slat-wall-fireplace-speakers","gray-shaker-kitchen","lighting-keypad-gang","lutron-scene-keypad","video-intercom-door","brick-stair-step-lights","lit-oak-shelving","fireplace-tv-vaulted","white-shaker-kitchen","white-shaker-pantry-wall","loft-ceiling-speakers","beamed-kitchen","condo-shades-track-lighting","high-rise-bedroom-tv","edison-chandelier-shades","primary-suite-shades","gallery-lighting","paver-patio","patio-lighting-rendering"], wide=["glass-house-kitchen","patio-lighting-rendering"])}</div>
+{gallery(["penthouse-river-view-shades","glass-house-kitchen","blue-shaker-kitchen-waterfall-peninsula","white-slab-kitchen-peninsula","dining-room-shades-track-lighting","sky-ceiling-led-bathroom","slat-wall-fireplace-speakers","gray-shaker-kitchen","lighting-keypad-gang","lutron-scene-keypad","video-intercom-door","brick-stair-step-lights","lit-oak-shelving","fireplace-tv-vaulted","white-shaker-kitchen","white-shaker-pantry-wall","loft-ceiling-speakers","beamed-kitchen","condo-shades-track-lighting","high-rise-bedroom-tv","edison-chandelier-shades","primary-suite-shades","gallery-lighting","paver-patio","patio-lighting-rendering"], wide=["glass-house-kitchen","patio-lighting-rendering"])}</div>
 </div></section>
 {cta()}'''
 page("/work/", "Our Work | Renovation, Bathroom & Home Theater Projects | One Build NYC",
