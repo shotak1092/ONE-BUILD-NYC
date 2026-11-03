@@ -32,7 +32,7 @@ SERVICES = [
   short="Layout, cabinetry, plumbing, appliance circuits and lighting, built as one job.",
   intro="A kitchen touches every trade at once: gas and water lines, dedicated appliance circuits, venting, under-cabinet and scene lighting, and often built-in audio. We plan all of it on day one so the walls only get closed once.",
   includes=["Layout and cabinetry installation","Countertops, backsplash and tile","Sink, dishwasher, gas and water lines","Dedicated appliance circuits and panel work","Recessed, under-cabinet and pendant lighting","Lighting control scenes and keypads","Built-in ceiling speakers","Laundry and pantry build-outs"],
-  gallery=["white-slab-kitchen-peninsula","white-slab-kitchen-front","white-shaker-pantry-wall","glass-house-kitchen","gray-shaker-kitchen","white-shaker-kitchen","brick-loft-kitchen","beamed-kitchen","kitchen-demo","kitchen-laundry-after","brick-loft-before"]),
+  gallery=["white-slab-kitchen-peninsula","white-slab-kitchen-front","white-shaker-pantry-wall","glass-house-kitchen","gray-shaker-kitchen","white-shaker-kitchen","brick-loft-kitchen","beamed-kitchen","kitchen-laundry-after","brick-loft-before"]),
  dict(slug="bathrooms", name="Bathrooms", kicker="Bathroom Remodeling",
   title="Bathroom Remodeling in NYC & New Jersey",
   hero="double-vanity-marble-shower",
@@ -46,7 +46,7 @@ SERVICES = [
   short="Apartments, brownstones, lofts and houses, rebuilt from the studs out.",
   intro="A gut renovation is where coordination matters most. With the walls open, plumbing, electrical and low-voltage go in together, get inspected together, and are documented before anything is closed up.",
   includes=["Demolition down to the structure","New framing and layout changes","Plumbing supply, drain and venting rough-in","New panel, circuits and lighting rough-in","Low-voltage, network and speaker pre-wire","Insulation, drywall and finishes","Permits, filings and inspections","Final commissioning and walkthrough"],
-  gallery=["basement-theater-framing","high-rise-prewire-protected","zellige-bath-freestanding-tub","oak-wardrobe-tile-wall","walk-in-closet-led","vaulted-framing","brownstone-rough-in","steel-stud-rough-in","framing-rough-in","ceiling-rough-in","drywall-low-voltage","vaulted-scaffolding","vaulted-finishes","vaulted-feature-wall","kitchen-demo","kitchen-laundry-after","protected-job-site"]),
+  gallery=["basement-theater-framing","high-rise-prewire-protected","zellige-bath-freestanding-tub","oak-wardrobe-tile-wall","walk-in-closet-led","vaulted-framing","brownstone-rough-in","steel-stud-rough-in","framing-rough-in","ceiling-rough-in","drywall-low-voltage","vaulted-scaffolding","vaulted-finishes","vaulted-feature-wall","kitchen-laundry-after","protected-job-site"]),
  dict(slug="plumbing", name="Plumbing", kicker="Licensed Plumbers",
   title="Licensed Plumbing in NYC & New Jersey",
   hero="marble-shower",
@@ -206,7 +206,6 @@ ALT = {
  "hex-niche-bath-2":"Full bath with tub, hex mosaic niche and vanity",
  "deck-paver-patio":"Raised deck and stairs over a new gray paver patio",
  "composite-deck":"New composite deck with white railings over a lawn",
- "kitchen-demo":"Kitchen gutted during demolition",
  "octagon-floor-bath":"Subway tile tub apron with octagon mosaic floor",
  "black-fixture-tub":"Marble-look tile tub surround with matte black fixtures and niche",
  "blue-subway-bath":"Bath with subway tile tub, niche and pale blue walls",
@@ -576,7 +575,6 @@ work = f'''<section class="page-hero"><img src="{img("led-wall-lounge")}" alt=""
 {gallery(["brownstone-rough-in","hydronic-manifold-pumps","wall-hung-navien-units","high-rise-prewire-protected","basement-theater-framing","tv-niche-drywall-prewire","led-wall-cabinets-back","theater-speaker-backboxes","steel-stud-rough-in","speaker-backbox-framing","theater-wall-prep","drywall-low-voltage"], wide=["brownstone-rough-in"])}</div>
 
 <div class="block grid g2" style="gap:44px 28px">
-{pair("Kitchen & laundry, gutted and rebuilt","kitchen-demo","kitchen-laundry-after")}
 {pair("Brick loft kitchen","brick-loft-before","brick-loft-kitchen")}
 {pair("Brownstone fireplace wall","fireplace-tv-before","fireplace-tv-after")}
 {pair("Living room media wall","media-wall-before","media-wall-after")}
@@ -621,7 +619,7 @@ proc = f'''<section class="page-hero"><img src="{img("ceiling-rough-in")}" alt="
 <section class="section alt"><div class="wrap">
 <div class="section-head"><div class="eyebrow">On the Job</div><h2 class="h2">What each stage looks like.</h2></div>
 <div class="gallery">
-{fig("kitchen-demo", cap="Demo")}{fig("brownstone-rough-in", cap="Rough-in on brick")}{fig("shade-selections", cap="Selections")}{fig("framing-rough-in", cap="Framing & plumbing")}{fig("ceiling-rough-in", cap="Rough-in")}
+{fig("brownstone-rough-in", cap="Rough-in on brick")}{fig("shade-selections", cap="Selections")}{fig("framing-rough-in", cap="Framing & plumbing")}{fig("ceiling-rough-in", cap="Rough-in")}
 {fig("projector-install", cap="Install day")}{fig("equipment-rack", cap="Low-voltage head end")}{fig("protected-job-site", cap="Protected job site")}{fig("electrical-panel-drivers", cap="Panel & drivers")}{fig("shade-power-panels", cap="Commissioned")}
 </div></div></section>
 <section class="section"><div class="wrap">

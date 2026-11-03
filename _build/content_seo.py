@@ -52,7 +52,7 @@ AREAS_LIST = [
   intro="Queens homes range from attached houses to co-ops, and most renovations here touch plumbing and electrical. We handle the permits, rebuild kitchens and baths, finish basements, and add smart home, network and media wiring as part of the same job.",
   points=[("Kitchens and baths","Full rebuilds with licensed plumbing and electrical."),("Basements and media rooms","Finished lower levels with theaters, bars and lounges."),("Permits handled","Filings and inspections managed for you.")],
   services=["kitchens","bathrooms","renovations","plumbing","electrical","home-theater"],
-  gallery=["kitchen-laundry-after","kitchen-demo","blue-subway-bath","vanity-wainscot","black-white-smart-bath","walk-in-glass-shower"],
+  gallery=["kitchen-laundry-after","blue-subway-bath","vanity-wainscot","black-white-smart-bath","walk-in-glass-shower"],
   faq=[1,5,9]),
  dict(slug="staten-island", name="Staten Island", hero="deck-paver-patio",
   title="Renovation & Design-Build Contractor in Staten Island",
