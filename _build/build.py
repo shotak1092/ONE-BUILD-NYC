@@ -67,14 +67,14 @@ SERVICES = [
   short="Lighting, shades, audio, video, network and cameras, on one control system.",
   intro="We design and install the systems that make a home run itself: whole-home Wi-Fi and network, multi-room audio, video distribution, cameras, lighting and shades, all on one app and a few clean keypads. Wiring goes in during rough-in, so nothing is surface-mounted later.",
   includes=["Whole-home Wi-Fi and network","Equipment racks and structured wiring","Multi-room audio and video","Lighting and shade integration","Security cameras","Keypads, remotes and app control","Pre-wire during construction","Programming and owner training"],
-  gallery=["lutron-keypads-four-gang","luxul-structured-media-enclosure","structured-media-panel-basement","ceiling-tv-lift-install","window-niche-sonos-arc","lutron-scene-keypad","video-intercom-door","living-room-tv-cellular-shades","projector-ceiling-speakers","greek-key-tile-thermostat","slat-wall-fireplace-speakers","lighting-keypad-gang","loft-shades-three-windows","waterfront-bedroom-blackout","terrace-slider-shade","fireplace-tv-vaulted","drop-screen-river-view","savant-remote","high-rise-bedroom-tv","loft-ceiling-speakers","condo-shades-track-lighting","walnut-media-wall","dual-equipment-racks","equipment-rack","cable-headend-rack","corner-cameras-conduit","fireplace-tv-after","media-wall-before","primary-suite-shades","shade-power-panels","dining-room"]),
+  gallery=["drop-down-projection-screen-living-room","lutron-keypads-four-gang","luxul-structured-media-enclosure","structured-media-panel-basement","ceiling-tv-lift-install","window-niche-sonos-arc","lutron-scene-keypad","video-intercom-door","living-room-tv-cellular-shades","projector-ceiling-speakers","greek-key-tile-thermostat","slat-wall-fireplace-speakers","lighting-keypad-gang","loft-shades-three-windows","waterfront-bedroom-blackout","terrace-slider-shade","fireplace-tv-vaulted","drop-screen-river-view","savant-remote","high-rise-bedroom-tv","loft-ceiling-speakers","condo-shades-track-lighting","walnut-media-wall","dual-equipment-racks","equipment-rack","cable-headend-rack","corner-cameras-conduit","fireplace-tv-after","media-wall-before","primary-suite-shades","shade-power-panels","dining-room"]),
  dict(slug="window-treatments", name="Window Treatments", kicker="Motorized Shades",
   title="Motorized Shades & Window Treatments in NYC & New Jersey",
   hero="primary-suite-shades",
   short="Motorized roller, Roman and blackout shades, recessed and wired during construction.",
   intro="The cleanest shades are planned before the ceiling closes: recessed pockets, power where it belongs, and fabrics chosen in the room. We handle selections, measuring, wiring, installation and programming.",
   includes=["Motorized roller and Roman shades","Blackout and solar fabrics","Drapery and track systems","Recessed shade pockets","Shade power panels and wiring","Keypad, app and schedule control","Fabric selection on site","Programming and scenes"],
-  gallery=["loft-shades-built-ins-wide","waterfront-bedroom-view","loft-shades-wide-floor","shade-sill-light-line","penthouse-river-view-shades","dining-room-shades-track-lighting","shade-pocket-ceiling-open","shade-pocket-motor-lead","living-room-tv-cellular-shades","loft-oak-bookcase-shades","loft-shades-three-windows","gable-window-shades-drapery","waterfront-bedroom-blackout","loft-recessed-shade-pocket","loft-shade-side-channel","shade-hembar-brush-seal","loft-sheer-arched-windows","waterfront-bedroom-shades-half","terrace-slider-shade","loft-blackout-evening","bay-window-shades-after","condo-shades-track-lighting","shade-install-high-rise","edison-chandelier-shades","primary-suite-shades","bay-window-shades-before","shade-selections","addition-interior","shade-power-panels"]),
+  gallery=["terrace-solar-shades-manhattan","brooklyn-bedroom-shades-raised","terrace-door-shade-living-room","ceiling-shade-pocket-solar","brooklyn-bedroom-blackout-shades","living-room-shades-lowered-evening","loft-shades-built-ins-wide","waterfront-bedroom-view","loft-shades-wide-floor","shade-sill-light-line","penthouse-river-view-shades","dining-room-shades-track-lighting","shade-pocket-ceiling-open","shade-pocket-motor-lead","living-room-tv-cellular-shades","loft-oak-bookcase-shades","loft-shades-three-windows","gable-window-shades-drapery","waterfront-bedroom-blackout","loft-recessed-shade-pocket","loft-shade-side-channel","shade-hembar-brush-seal","loft-sheer-arched-windows","waterfront-bedroom-shades-half","terrace-slider-shade","loft-blackout-evening","bay-window-shades-after","condo-shades-track-lighting","shade-install-high-rise","edison-chandelier-shades","primary-suite-shades","bay-window-shades-before","shade-selections","addition-interior","shade-power-panels"]),
  dict(slug="lighting-control", name="Lighting Control", kicker="Lighting & Control",
   title="Lighting Control & Design in NYC & New Jersey",
   hero="gallery-lighting",
@@ -107,6 +107,13 @@ SERVICES = [
 SVC = {s["slug"]: s for s in SERVICES}
 
 ALT = {
+ "brooklyn-bedroom-blackout-shades":"Blackout roller shades lowered in a Brooklyn bedroom with black fascia",
+ "brooklyn-bedroom-shades-raised":"Motorized roller shades half raised over tall bedroom windows with a rooftop view",
+ "terrace-door-shade-living-room":"Wide motorized shade over a terrace door with a matching shade on the side window",
+ "living-room-shades-lowered-evening":"Living room with both motorized shades lowered for privacy",
+ "terrace-solar-shades-manhattan":"Three solar roller shades over floor-to-ceiling glass facing a Manhattan terrace",
+ "ceiling-shade-pocket-solar":"Solar shades dropping from a recessed ceiling pocket along a window wall",
+ "drop-down-projection-screen-living-room":"Motorized projection screen lowered in front of walnut built-ins in a downtown living room",
  "lutron-keypads-four-gang":"Lutron dimmers and four-button scene keypads ganged in one wallplate",
  "waterfront-bedroom-view":"Waterfront bedroom with motorized shades fully raised to the marina view",
  "shade-sill-light-line":"Roller shade hem resting at the sill with a fine line of daylight",
@@ -587,7 +594,7 @@ work = f'''<section class="page-hero"><img src="{img("led-wall-lounge")}" alt=""
 </div>
 
 <div class="block"><div class="block-head"><h3>Manhattan loft, finished end to end</h3><span>Millwork · recessed shades · lighting · bath</span></div>
-{gallery(["loft-shade-pockets-cut","loft-oak-bookcase-shades","loft-shades-three-windows","loft-shades-built-ins-wide","loft-shades-wide-floor","loft-recessed-shade-pocket","loft-shade-side-channel","shade-hembar-brush-seal","loft-sheer-arched-windows","platform-room-pendants","walk-in-closet-led","oak-wardrobe-tile-wall","oak-panel-wall-cabinet","terrace-slider-shade","zellige-bath-freestanding-tub","zellige-double-vanity"])}</div>
+{gallery(["terrace-solar-shades-manhattan","drop-down-projection-screen-living-room","brooklyn-bedroom-shades-raised","loft-shade-pockets-cut","loft-oak-bookcase-shades","loft-shades-three-windows","loft-shades-built-ins-wide","loft-shades-wide-floor","loft-recessed-shade-pocket","loft-shade-side-channel","shade-hembar-brush-seal","loft-sheer-arched-windows","platform-room-pendants","walk-in-closet-led","oak-wardrobe-tile-wall","oak-panel-wall-cabinet","terrace-slider-shade","zellige-bath-freestanding-tub","zellige-double-vanity"])}</div>
 
 <div class="block grid g2" style="gap:44px 28px">
 {pair("Waterfront bedroom shades","waterfront-bedroom-shades-half","waterfront-bedroom-blackout","Daytime","Blackout")}
