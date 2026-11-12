@@ -25,28 +25,28 @@ SERVICES = [
   short="Room-by-room or whole-house, with plumbing, electrical and technology on the same schedule.",
   intro="Most renovations stall in the gaps between trades. We run every trade from one office, so framing, rough-in, inspections and finishes happen in the right order and nobody waits on anybody.",
   includes=["Design walkthrough and single written scope","Demolition and debris removal","Framing, drywall and taping","Flooring, tile and millwork","Paint and finish carpentry","Additions, decks and paver patios","Licensed plumbing and electrical","Lighting, shades, audio and network planned in"],
-  gallery=["mirror-tv-linear-fireplace","loft-oak-bookcase-shades","slat-wall-fireplace-speakers","oak-wardrobe-tile-wall","platform-room-pendants","oak-panel-wall-cabinet","walk-in-closet-led","vaulted-framing","vaulted-scaffolding","vaulted-finishes","vaulted-feature-wall","brick-loft-before","brick-loft-kitchen","addition-framing","addition-exterior","addition-interior","composite-deck","deck-paver-patio","paver-patio","protected-job-site"]),
+  gallery=["double-height-great-room","grid-glass-shower-farmhouse-sink","mirror-tv-linear-fireplace","loft-oak-bookcase-shades","slat-wall-fireplace-speakers","oak-wardrobe-tile-wall","platform-room-pendants","oak-panel-wall-cabinet","walk-in-closet-led","vaulted-framing","vaulted-scaffolding","vaulted-finishes","vaulted-feature-wall","brick-loft-before","brick-loft-kitchen","addition-framing","addition-exterior","addition-interior","composite-deck","deck-paver-patio","paver-patio","protected-job-site"]),
  dict(slug="kitchens", name="Kitchens", kicker="Kitchen Remodeling",
   title="Kitchen Remodeling in NYC & New Jersey",
   hero="glass-house-kitchen",
   short="Layout, cabinetry, plumbing, appliance circuits and lighting, built as one job.",
   intro="A kitchen touches every trade at once: gas and water lines, dedicated appliance circuits, venting, under-cabinet and scene lighting, and often built-in audio. We plan all of it on day one so the walls only get closed once.",
   includes=["Layout and cabinetry installation","Countertops, backsplash and tile","Sink, dishwasher, gas and water lines","Dedicated appliance circuits and panel work","Recessed, under-cabinet and pendant lighting","Lighting control scenes and keypads","Built-in ceiling speakers","Laundry and pantry build-outs"],
-  gallery=["blue-shaker-kitchen-waterfall-peninsula","white-slab-kitchen-peninsula","white-slab-kitchen-front","white-shaker-pantry-wall","glass-house-kitchen","gray-shaker-kitchen","white-shaker-kitchen","brick-loft-kitchen","beamed-kitchen","kitchen-laundry-after","brick-loft-before"]),
+  gallery=["kitchen-rough-in-blocking","blue-shaker-kitchen-waterfall-peninsula","white-slab-kitchen-peninsula","white-slab-kitchen-front","white-shaker-pantry-wall","glass-house-kitchen","gray-shaker-kitchen","white-shaker-kitchen","brick-loft-kitchen","beamed-kitchen","kitchen-laundry-after","brick-loft-before"]),
  dict(slug="bathrooms", name="Bathrooms", kicker="Bathroom Remodeling",
   title="Bathroom Remodeling in NYC & New Jersey",
   hero="double-vanity-marble-shower",
   short="Full gut to finish: tile, fixtures, glass, lighting and ventilation.",
   intro="From compact co-op baths to marble primary suites, we take bathrooms down to the studs and rebuild them with licensed plumbing, proper waterproofing and lighting that actually works at the mirror.",
   includes=["Full demolition and waterproofing","Walk-in showers, tubs and glass enclosures","Wall and floor tile, niches and benches","Vanities, medicine cabinets and mirrors","Licensed plumbing and fixture installation","Vanity, shower and recessed lighting","Exhaust fans and GFCI circuits","Smart toilets, heated floors and in-ceiling speakers"],
-  gallery=["sky-ceiling-led-bathroom","black-gold-powder-room","greek-key-tile-thermostat","zellige-bath-freestanding-tub","zellige-double-vanity","double-vanity-marble-shower","marble-shower","brass-zellige-bathroom","onyx-shower-sauna","black-white-smart-bath","greek-key-shower","walk-in-glass-shower","black-fixture-tub","hex-niche-bath","hex-niche-bath-2","hex-floor-tile","double-vanity-sconces","blue-subway-bath","soaking-tub","vanity-wainscot","subway-tub-surround","round-mirror-bath","octagon-floor-bath","subway-shelves-shower","subway-window-shower","patterned-floor-tile"]),
+  gallery=["grid-glass-shower-farmhouse-sink","green-tile-pebble-shower","wall-hung-sink-tile-mirror-cedar","sky-ceiling-led-bathroom","black-gold-powder-room","greek-key-tile-thermostat","zellige-bath-freestanding-tub","zellige-double-vanity","double-vanity-marble-shower","marble-shower","brass-zellige-bathroom","onyx-shower-sauna","black-white-smart-bath","greek-key-shower","walk-in-glass-shower","black-fixture-tub","hex-niche-bath","hex-niche-bath-2","hex-floor-tile","double-vanity-sconces","blue-subway-bath","soaking-tub","vanity-wainscot","subway-tub-surround","round-mirror-bath","octagon-floor-bath","subway-shelves-shower","subway-window-shower","patterned-floor-tile"]),
  dict(slug="gut-renovations", name="Gut Renovations", kicker="Full Gut Renovations",
   title="Gut Renovations in NYC & New Jersey",
   hero="vaulted-framing",
   short="Apartments, brownstones, lofts and houses, rebuilt from the studs out.",
   intro="A gut renovation is where coordination matters most. With the walls open, plumbing, electrical and low-voltage go in together, get inspected together, and are documented before anything is closed up.",
   includes=["Demolition down to the structure","New framing and layout changes","Plumbing supply, drain and venting rough-in","New panel, circuits and lighting rough-in","Low-voltage, network and speaker pre-wire","Insulation, drywall and finishes","Permits, filings and inspections","Final commissioning and walkthrough"],
-  gallery=["basement-theater-framing","high-rise-prewire-protected","zellige-bath-freestanding-tub","oak-wardrobe-tile-wall","walk-in-closet-led","vaulted-framing","brownstone-rough-in","steel-stud-rough-in","framing-rough-in","ceiling-rough-in","drywall-low-voltage","vaulted-scaffolding","vaulted-finishes","vaulted-feature-wall","kitchen-laundry-after","protected-job-site"]),
+  gallery=["brownstone-gut-spray-foam-bay-window","brownstone-hallway-rough-in","kitchen-rough-in-blocking","basement-theater-framing","high-rise-prewire-protected","zellige-bath-freestanding-tub","oak-wardrobe-tile-wall","walk-in-closet-led","vaulted-framing","brownstone-rough-in","steel-stud-rough-in","framing-rough-in","ceiling-rough-in","drywall-low-voltage","vaulted-scaffolding","vaulted-finishes","vaulted-feature-wall","kitchen-laundry-after","protected-job-site"]),
  dict(slug="plumbing", name="Plumbing", kicker="Licensed Plumbers",
   title="Licensed Plumbing in NYC & New Jersey",
   hero="marble-shower",
@@ -67,7 +67,7 @@ SERVICES = [
   short="Lighting, shades, audio, video, network and cameras, on one control system.",
   intro="We design and install the systems that make a home run itself: whole-home Wi-Fi and network, multi-room audio, video distribution, cameras, lighting and shades, all on one app and a few clean keypads. Wiring goes in during rough-in, so nothing is surface-mounted later.",
   includes=["Whole-home Wi-Fi and network","Equipment racks and structured wiring","Multi-room audio and video","Lighting and shade integration","Security cameras","Keypads, remotes and app control","Pre-wire during construction","Programming and owner training"],
-  gallery=["drop-down-projection-screen-living-room","lutron-keypads-four-gang","luxul-structured-media-enclosure","structured-media-panel-basement","ceiling-tv-lift-install","window-niche-sonos-arc","lutron-scene-keypad","video-intercom-door","living-room-tv-cellular-shades","projector-ceiling-speakers","greek-key-tile-thermostat","slat-wall-fireplace-speakers","lighting-keypad-gang","loft-shades-three-windows","waterfront-bedroom-blackout","terrace-slider-shade","fireplace-tv-vaulted","drop-screen-river-view","savant-remote","high-rise-bedroom-tv","loft-ceiling-speakers","condo-shades-track-lighting","walnut-media-wall","dual-equipment-racks","equipment-rack","cable-headend-rack","corner-cameras-conduit","fireplace-tv-after","media-wall-before","primary-suite-shades","shade-power-panels","dining-room"]),
+  gallery=["game-room-tv-soundbar","drop-down-projection-screen-living-room","lutron-keypads-four-gang","luxul-structured-media-enclosure","structured-media-panel-basement","ceiling-tv-lift-install","window-niche-sonos-arc","lutron-scene-keypad","video-intercom-door","living-room-tv-cellular-shades","projector-ceiling-speakers","greek-key-tile-thermostat","slat-wall-fireplace-speakers","lighting-keypad-gang","loft-shades-three-windows","waterfront-bedroom-blackout","terrace-slider-shade","fireplace-tv-vaulted","drop-screen-river-view","savant-remote","high-rise-bedroom-tv","loft-ceiling-speakers","condo-shades-track-lighting","walnut-media-wall","dual-equipment-racks","equipment-rack","cable-headend-rack","corner-cameras-conduit","fireplace-tv-after","media-wall-before","primary-suite-shades","shade-power-panels","dining-room"]),
  dict(slug="window-treatments", name="Window Treatments", kicker="Motorized Shades",
   title="Motorized Shades & Window Treatments in NYC & New Jersey",
   hero="primary-suite-shades",
@@ -107,6 +107,14 @@ SERVICES = [
 SVC = {s["slug"]: s for s in SERVICES}
 
 ALT = {
+ "brownstone-gut-spray-foam-bay-window":"Gutted brownstone parlor with spray-foam insulation, new bay windows and steel ceiling framing",
+ "brownstone-hallway-rough-in":"Brownstone hallway at rough-in with steel studs, new circuits and low-voltage runs before drywall",
+ "kitchen-rough-in-blocking":"Kitchen at rough-in with moisture-resistant board, cabinet blocking and island framing",
+ "grid-glass-shower-farmhouse-sink":"Bathroom with black grid glass shower, geometric tile and a wall-hung farmhouse sink",
+ "wall-hung-sink-tile-mirror-cedar":"Wall-hung farmhouse sink under a hand-painted tile mirror with linear sconces on cedar walls",
+ "green-tile-pebble-shower":"Glass shower with green glazed tile, a recessed niche, pebble floor and linear drain",
+ "double-height-great-room":"Double-height great room with steel columns, slat wall fireplace and clerestory windows",
+ "game-room-tv-soundbar":"Game room TV and soundbar mounted between windows above a shuffleboard table",
  "brooklyn-bedroom-blackout-shades":"Blackout roller shades lowered in a Brooklyn bedroom with black fascia",
  "brooklyn-bedroom-shades-raised":"Motorized roller shades half raised over tall bedroom windows with a rooftop view",
  "terrace-door-shade-living-room":"Wide motorized shade over a terrace door with a matching shade on the side window",
@@ -580,7 +588,7 @@ work = f'''<section class="page-hero"><img src="{img("led-wall-lounge")}" alt=""
 </div></div>
 
 <div class="block"><div class="block-head"><h3>Before the walls close</h3><span>Rough-in · pre-wire · back boxes</span></div>
-{gallery(["brownstone-rough-in","hydronic-manifold-pumps","wall-hung-navien-units","high-rise-prewire-protected","basement-theater-framing","tv-niche-drywall-prewire","led-wall-cabinets-back","theater-speaker-backboxes","steel-stud-rough-in","speaker-backbox-framing","theater-wall-prep","drywall-low-voltage"], wide=["brownstone-rough-in"])}</div>
+{gallery(["brownstone-gut-spray-foam-bay-window","brownstone-hallway-rough-in","kitchen-rough-in-blocking","brownstone-rough-in","hydronic-manifold-pumps","wall-hung-navien-units","high-rise-prewire-protected","basement-theater-framing","tv-niche-drywall-prewire","led-wall-cabinets-back","theater-speaker-backboxes","steel-stud-rough-in","speaker-backbox-framing","theater-wall-prep","drywall-low-voltage"], wide=["brownstone-rough-in"])}</div>
 
 <div class="block grid g2" style="gap:44px 28px">
 {pair("Brick loft kitchen","brick-loft-before","brick-loft-kitchen")}
