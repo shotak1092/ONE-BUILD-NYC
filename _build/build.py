@@ -3,7 +3,7 @@
 Edit content in this file, rerun, commit. Output goes to the repo root."""
 import os, json, html, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from content_seo import FAQS, AREAS_LIST, SVC_FAQS, HOME_FAQ
+from content_seo import FAQS, AREAS_LIST, SVC_FAQS, HOME_FAQ, PLANNING_FAQS
 from content_blog import POSTS
 from content_posts_md import load_md_posts
 POSTS = sorted(POSTS + load_md_posts(), key=lambda x: x["date"], reverse=True)
@@ -677,14 +677,15 @@ faq_body = f"""<section class="page-hero" style="min-height:380px"><img src="{im
 <div class="crumbs"><a href="/">Home</a> / FAQ</div><div class="eyebrow">FAQ</div>
 <h1>Questions &amp; answers.</h1><p>Permits, timelines, buildings, pricing, and how each trade works under one contract.</p></div></section>
 <section class="section"><div class="wrap" style="max-width:900px">
-<nav class="faq-jump"><a href="#general">General</a>{"".join(f'<a href="#{x["slug"]}">{x["name"]}</a>' for x in SERVICES)}</nav>
+<nav class="faq-jump"><a href="#general">General</a><a href="#planning">Budget, hiring &amp; planning</a>{"".join(f'<a href="#{x["slug"]}">{x["name"]}</a>' for x in SERVICES)}</nav>
 <h2 class="faq-group" id="general">General</h2>{faq_html(FAQS)}
+<h2 class="faq-group" id="planning">Budget, hiring &amp; planning</h2>{faq_html(PLANNING_FAQS)}
 {"".join(f'<h2 class="faq-group" id="{x["slug"]}">{esc(x["name"])} <a href="/services/{x["slug"]}/">View service →</a></h2>' + faq_html(SVC_FAQS[x["slug"]]) for x in SERVICES)}
 </div></section>
 {cta()}"""
 page("/faq/", "Renovation FAQ: Permits, Timelines & Costs in NYC | One Build NYC",
      "Answers about NYC renovation permits, co-op alterations, bathroom and gut renovation timelines, pricing, and adding smart home or theater during a remodel.",
-     faq_body, active="faq", og="ceiling-rough-in", extra_ld=[faq_ld(FAQS + [q for x in SERVICES for q in SVC_FAQS[x["slug"]]])])
+     faq_body, active="faq", og="ceiling-rough-in", extra_ld=[faq_ld(FAQS + PLANNING_FAQS + [q for x in SERVICES for q in SVC_FAQS[x["slug"]]])])
 
 for a in AREAS_LIST:
     pts = "".join(f'<div class="point"><b>{esc(t)}</b><span>{esc(d)}</span></div>' for t, d in a["points"])

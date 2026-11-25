@@ -88,6 +88,33 @@ AREAS_LIST = [
   faq=[8,10,12]),
 ]
 
+PLANNING_FAQS = [
+ ("How do you keep a renovation on budget?",
+  "Most overruns come from three things: a vague scope, finishes chosen after work starts, and changes made on site without a price. We start from one written proposal broken out by trade, get finishes and fixtures selected early so lead times and costs are known, and price any change in writing before the work is done. In prewar buildings we also recommend keeping a contingency for what's behind the walls."),
+ ("What happens if you find problems after demolition?",
+  "In older NYC apartments and brownstones it's common to open a wall and find galvanized or cast-iron pipe near the end of its life, outdated or undersized wiring, out-of-level floors or water damage. When that happens we stop, show you what we found, explain the options and give you the cost and schedule impact before anything else is done. Because plumbing, electrical and construction are on one contract, you get one answer instead of three trades pointing at each other."),
+ ("How should I compare renovation quotes?",
+  "Make sure every bid covers the same scope. Check who is doing the plumbing and electrical and whether those trades are licensed in New York, whether permits, DOB filings and building paperwork are included, whether finishes are specified or left as allowances, and whether there's a written schedule. A lower number that leaves out permits, a licensed plumber or the electrical work isn't a lower price. Our proposals break the scope out by trade so you can compare line by line."),
+ ("How do you handle changes during the project?",
+  "Changes happen on almost every renovation. Each one is written up with its cost and its effect on the schedule, and you approve it before the work is done, so the final bill doesn't hold surprises."),
+ ("How do I check that a contractor is legitimate?",
+  "In New York City, a contractor doing home improvement work needs a Home Improvement Contractor license from the Department of Consumer and Worker Protection, which you can look up online. Plumbing and electrical work must be done by city-licensed plumbers and electricians. Ask for certificates of insurance, photos of completed work similar to yours, and a written contract. Our NYC HIC license number is 621290, and you can see completed projects on our work page."),
+ ("Have you worked in buildings like mine?",
+  "Much of our work is in prewar and postwar co-ops and condos, brownstones and townhouses, and houses across Manhattan, Brooklyn, Queens, Staten Island, Long Island and Westchester. Tell us your building at the first call and we'll talk through how its rules, freight elevator and work hours affect the plan."),
+ ("Do I need Landmarks approval for my renovation?",
+  "If your building is an individual landmark or sits in a historic district, the Landmarks Preservation Commission generally requires a permit before work on the building. Interior work can need an LPC permit too, including when the work requires a Department of Buildings permit or affects the exterior. Check your address on the LPC's map early, because approval adds time before work can start."),
+ ("Is my wall load-bearing, and do I need an engineer?",
+  "You can't tell reliably by looking. Moving a load-bearing wall in NYC requires a Department of Buildings alteration permit filed by a licensed professional engineer or architect, who designs the new beam and supports. We bring in the engineer, coordinate the filing and build to the stamped drawings."),
+ ("Can you keep prewar details like moldings, plaster and mantels?",
+  "Yes. Original details are protected during demolition and worked around wherever possible. When a wall or ceiling has to be opened for new plumbing or wiring, we plan the route to limit damage and patch or match plaster and trim so the repair doesn't show."),
+ ("Will you help me choose materials and finishes?",
+  "Yes. We help you choose tile, fixtures, cabinets, lighting and hardware that fit the budget and the building, and we work with your designer or architect if you have one. You don't need a finished design to call us; a rough idea of what you want and photos you like are enough to start."),
+ ("Which renovations add the most value?",
+  "In our experience, kitchens and bathrooms, along with updated electrical and plumbing, do the most for both day-to-day living and resale, because buyers notice old wiring, weak water pressure and dated baths. In New York apartments, adding a washer and dryer or a second bathroom, where the building allows it, is often worth more than any finish upgrade."),
+ ("Can I add a washer and dryer to my co-op or condo apartment?",
+  "It depends on the building. Many co-ops and condos restrict or prohibit in-unit laundry, so start with the alteration agreement or the managing agent. Where it's allowed, the work usually needs a water supply, a drain, a dedicated circuit and either a vent to the outside or a ventless dryer, and the board will want to see the plan."),
+]
+
 SVC_FAQS = {
  "renovations": [
   ("Can you renovate one room at a time, or only whole houses?", "Both. We take on single rooms, full floors and whole houses. On smaller jobs we still check what's behind the walls so plumbing, electrical and wiring are updated while it's open."),
@@ -95,6 +122,7 @@ SVC_FAQS = {
   ("Who manages the project day to day?", "One project lead runs the schedule for every trade and is your single point of contact from walkthrough to final handoff."),
  ],
  "kitchens": [
+  ("How long does a kitchen remodel take?", "It depends on scope, building approvals and lead times. Once cabinets and materials are in hand, a typical kitchen remodel takes several weeks of on-site work. Cabinet lead times and co-op or condo approvals often add more time before work starts. You get a written schedule with the proposal."),
   ("Can you move the sink, range or island?", "Usually, yes. Moving plumbing, gas or electrical is routine for us; it typically requires permits, which our licensed plumbers and electricians file. In co-ops, the building may also need to approve the new layout."),
   ("Do you supply cabinets and countertops?", "We can source and install them, or install what you or your designer select. Either way, we coordinate measurements, templates and delivery with the rest of the schedule."),
   ("What electrical work does a new kitchen need?", "Most kitchens need dedicated circuits for appliances, GFCI protection near water, and new lighting circuits. We plan recessed, under-cabinet and pendant lighting with dimming, and can add keypads and ceiling speakers while the walls are open."),
@@ -105,6 +133,7 @@ SVC_FAQS = {
   ("Can you add heated floors, a smart toilet or speakers?", "Yes. Heated floors, smart toilets, lit mirrors and moisture-rated ceiling speakers are planned during rough-in, so the circuits and wiring are in place before tile."),
  ],
  "gut-renovations": [
+  ("How long does a brownstone or townhouse renovation take?", "Usually longer than an apartment of the same size, because there are more floors, mechanical systems and often structural or facade work. Landmarks approval in a historic district adds time before work starts. Most full townhouse renovations run many months; we give you a written schedule after the walkthrough."),
   ("What does a gut renovation include?", "Everything inside the walls is replaced or brought to current code: framing changes, plumbing supply and drains, electrical panel and circuits, insulation, drywall and all finishes, plus low-voltage and network wiring."),
   ("Do I need an architect for a gut renovation?", "Often, yes, especially when layouts change or the building requires stamped drawings. We work alongside your architect or can tell you upfront when one is required."),
   ("Why is one contract better for a gut renovation?", "Gut renovations are where trades collide. With one contract, rough-in, inspections and close-up happen in one coordinated sequence instead of four companies waiting on each other."),
@@ -120,6 +149,9 @@ SVC_FAQS = {
   ("Can you install an EV charger?", "Yes. We run the dedicated circuit, install the charger and handle the permit."),
  ],
  "smart-home": [
+  ("Is a smart home worth it, and is it easy to use?", "It's worth it when it is planned around how you live: lighting scenes, shades, climate and audio from a keypad or one app, not a dozen gadgets. A well-programmed system should be simpler than the switches it replaces. Installing it during a renovation keeps wiring hidden and costs less than retrofitting later."),
+  ("Hardwired or wireless?", "Both have a place. For a renovation with open walls, we hardwire what matters most, like network, speakers, shade power and lighting control, because wired connections are more reliable and easier to service. Wireless devices work well for retrofits and rooms where opening walls isn't practical."),
+  ("Does the equipment need its own space?", "Usually, yes. Network gear, audio amplifiers and control processors are grouped in a rack or structured media enclosure that needs power, ventilation and service access. We plan where it goes during design so it doesn't end up in a hot closet."),
   ("What brands do you work with?", "We design around the right system for the home, including Lutron lighting and shades, Sonos and whole-home audio, URC and Crestron control, and enterprise-grade networking and cameras."),
   ("Can you add a smart home to a house that's already finished?", "Yes. Wireless lighting control, shades, audio and mesh Wi-Fi can be added without opening walls. A renovation is still the best time, because everything can be hardwired and hidden."),
   ("Will I need a different app for everything?", "No. We set up one app, a few keypads and one remote, so lights, shades, music, TV and cameras work together."),
