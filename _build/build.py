@@ -821,7 +821,7 @@ page("/services/co-op-condo-renovation/", "Co-op & Condo Renovation Contractor N
       "areaServed":["Manhattan","Brooklyn","Queens","Staten Island"]}])
 
 # ---------------------------------------------------------------- instagram link-in-bio
-IG_PHOTOS = ["led-wall-lounge","double-vanity-marble-shower","white-slab-kitchen-peninsula","private-theater","brick-loft-kitchen","primary-suite-shades"]
+IG_PHOTOS = ["zellige-bath-freestanding-tub","blue-shaker-kitchen-waterfall-peninsula","bay-window-shades-after","marble-shower","white-shaker-kitchen","panel-rough-in-wood-studs"]
 def _ig_btn(href, label, sub="", main=False):
     return f'<a class="ig-btn{" main" if main else ""}" href="{href}"><b>{label}</b>{f"<span>{sub}</span>" if sub else ""}</a>'
 ig_body = f"""<div class="ig">
@@ -831,7 +831,7 @@ ig_body = f"""<div class="ig">
 {_ig_btn("/contact/?src=instagram", "Book a walkthrough", "Every trade at one visit", True)}
 {_ig_btn(f"tel:{PHONE_TEL}", f"Call {PHONE_DISPLAY}")}
 {_ig_btn(f"mailto:{EMAIL}", "Email us", EMAIL)}
-{_ig_btn("/work/", "See our projects", "Kitchens, baths, theaters, smart homes")}
+{_ig_btn("/work/", "See our projects", "Kitchens, baths, full renovations")}
 {_ig_btn("/services/co-op-condo-renovation/", "Co-op &amp; condo renovation", "Board packages and DOB filings handled")}
 </div>
 <h2 class="ig-h">Services</h2>
