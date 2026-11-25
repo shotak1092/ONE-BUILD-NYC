@@ -247,3 +247,11 @@ a.card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(0,0,0,.1)}
 .lutron-badge img{width:96px;height:auto;flex:none}
 .lutron-badge b{display:block;font-size:16px;margin-bottom:4px}
 .lutron-badge span{font-size:14px;color:var(--ink2,#5b544c);line-height:1.5}
+.mbar{display:none}
+@media (max-width:760px){
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--charcoal);border-top:1px solid rgba(255,255,255,.15);padding-bottom:env(safe-area-inset-bottom)}
+  .mbar a{display:flex;align-items:center;justify-content:center;min-height:54px;color:#fff;font-weight:700;font-size:15px;text-decoration:none}
+  .mbar a.go{background:var(--accent)}
+  body{padding-bottom:54px}
+}
+.form select{font:inherit;font-size:16px;padding:12px;border:1px solid var(--line,#ccc);background:#fff;width:100%}

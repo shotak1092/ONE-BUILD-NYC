@@ -5,6 +5,7 @@ import os, json, html, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from content_seo import FAQS, AREAS_LIST, SVC_FAQS, HOME_FAQ, PLANNING_FAQS
 from content_blog import POSTS
+from content_hoods import HOODS, GALLERY as HOOD_GALLERY, COOP_FAQ
 from content_posts_md import load_md_posts
 POSTS = sorted(POSTS + load_md_posts(), key=lambda x: x["date"], reverse=True)
 
@@ -302,7 +303,9 @@ def ld_json():
             "url":DOMAIN,"telephone":"+1-888-781-7547","email":EMAIL,
             "areaServed":["Manhattan","Brooklyn","Queens","Staten Island","Long Island","Westchester"],
             "description":"Design-build renovation company with licensed contractors, plumbers, electricians and automation specialists under one contract.",
-            "image":DOMAIN+img("glass-house-kitchen")}
+            "image":DOMAIN+img("glass-house-kitchen"),"logo":DOMAIN+"/assets/apple-touch-icon.png",
+            "hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"license","name":"NYC Home Improvement Contractor License #621290"},
+            "knowsAbout":["Co-op and condo renovation","Kitchen remodeling","Bathroom remodeling","Gut renovation","Plumbing","Electrical","Lutron lighting control","Motorized shades","Home theater","Smart home"]}
     return '<script type="application/ld+json">'+json.dumps(data)+'</script>'
 
 def header(active):
@@ -340,7 +343,7 @@ def footer():
 <p style="margin:18px 0 0;max-width:300px">Licensed contractors, plumbers, electricians and automation specialists. One contract, one crew, one schedule.</p></div>
 <div><h4>Services</h4>{svc}</div>
 <div><h4>Areas</h4>{areas_f}</div>
-<div><h4>Company</h4><a href="/work/">Our Work</a><a href="/process/">Process</a><a href="/faq/">FAQ</a><a href="/blog/">Blog</a><a href="/services/">All Services</a><a href="/contact/">Contact</a></div>
+<div><h4>Company</h4><a href="/work/">Our Work</a><a href="/process/">Process</a><a href="/services/co-op-condo-renovation/">Co-op &amp; Condo Renovation</a><a href="/faq/">FAQ</a><a href="/blog/">Blog</a><a href="/services/">All Services</a><a href="/contact/">Contact</a></div>
 <div><h4>Contact</h4><a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a><a href="mailto:{EMAIL}">{EMAIL}</a><p style="margin:10px 0 0">{AREAS}</p></div>
 </div>
 <div class="legal"><span>© 2026 One Build NYC. One Build NYC is a trade name of ISL Progress Inc. Licensed &amp; insured. NYC Home Improvement Contractor License #621290</span><span>Design-Build · New York City</span></div>
@@ -370,6 +373,7 @@ def page(path, title, desc, body, active="", og=None, extra_ld=None):
 {body}
 </main>
 {footer()}
+<div class="mbar"><a href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a><a class="go" href="/contact/">Book a Walkthrough</a></div>
 </body></html>'''
     out = os.path.join(ROOT, path.strip("/"), "index.html") if path != "/" else os.path.join(ROOT, "index.html")
     os.makedirs(os.path.dirname(out), exist_ok=True)
@@ -517,14 +521,15 @@ home = f'''<section class="hero">
 <p style="margin-top:22px"><a href="/faq/" style="color:var(--accent);font-weight:700">See all questions &amp; answers →</a></p>
 </div></section>
 {cta()}'''
-page("/", "One Build NYC | Design-Build Renovations, Kitchens, Bathrooms & Home Theater",
+page("/", "Design-Build Renovation Contractor in NYC | One Build NYC",
      "Design-build renovation in New York City, Long Island and Westchester. Licensed contractors, plumbers, electricians and automation under one contract. Call (888) 781-7547.", home, og="glass-house-kitchen", extra_ld=[faq_ld([FAQS[i] for i in HOME_FAQ])])
 
 # ---------------------------------------------------------------- services index
 idx = f'''<section class="page-hero"><img src="{img("vaulted-feature-wall")}" alt="" fetchpriority="high"><div class="wrap">
 <div class="crumbs"><a href="/">Home</a> / Services</div><div class="eyebrow">Services</div>
 <h1>Every trade, one contract.</h1><p>Renovation, plumbing, electrical and technology, planned together and built by one crew.</p></div></section>
-<section class="section"><div class="wrap">{svc_cards()}</div></section>
+<section class="section"><div class="wrap">{svc_cards()}
+<div class="article-cta" style="margin-top:36px"><b>Renovating in a co-op or condo?</b><span>Board packages, alteration agreements, insurance certificates and DOB filings, handled for you.</span><div class="btn-row"><a class="btn btn-accent" href="/services/co-op-condo-renovation/">Co-op &amp; condo renovation</a></div></div></div></section>
 {cta()}'''
 page("/services/", "Services | One Build NYC", "Renovations, kitchens, bathrooms, gut renovations, plumbing, electrical, smart home, window treatments, lighting control and home theater in New York City, Long Island and Westchester.", idx)
 
@@ -664,6 +669,7 @@ contact = f'''<section class="page-hero" style="min-height:380px"><img src="{img
 <label>Email<input name="email" type="email" autocomplete="email"></label>
 <label>Project location<input name="location" placeholder="Neighborhood or town"></label>
 <fieldset class="full"><legend>What do you need?</legend><div class="checks">{checks}</div></fieldset>
+<label class="full">How did you hear about us?<select name="source"><option value="">Choose one</option><option>Google search</option><option>Google Maps</option><option>ChatGPT or another AI assistant</option><option>Houzz</option><option>Instagram</option><option>Referral from a friend or client</option><option>Architect or designer</option><option>Building or managing agent</option><option>Other</option></select></label>
 <label class="full">Tell us about the project<textarea name="message"></textarea></label>
 <div class="full"><button class="btn btn-accent" type="submit" style="border:0;cursor:pointer;font-family:inherit">Request a Walkthrough</button></div>
 </form>
@@ -672,6 +678,13 @@ page("/contact/", "Contact | Book a Walkthrough | One Build NYC", "Book a walkth
 
 
 # ---------------------------------------------------------------- FAQ + areas
+def hood_links(borough):
+    hs = [h for h in HOODS if h["borough"] == borough]
+    if not hs: return ""
+    bn = next(x["name"] for x in AREAS_LIST if x["slug"] == borough)
+    links = "".join(f'<a class="btn btn-line btn-sm" href="/areas/{borough}/{h["slug"]}/">{esc(h["name"])}</a>' for h in hs)
+    return f'<section class="section" style="padding:56px 0 0"><div class="wrap"><div class="eyebrow" style="margin-bottom:16px">{esc(bn)} neighborhoods</div><div class="btn-row">{links}</div></div></section>'
+
 
 faq_body = f"""<section class="page-hero" style="min-height:380px"><img src="{img("ceiling-rough-in")}" alt="" fetchpriority="high"><div class="wrap">
 <div class="crumbs"><a href="/">Home</a> / FAQ</div><div class="eyebrow">FAQ</div>
@@ -714,12 +727,96 @@ for a in AREAS_LIST:
 {faq_html(items)}
 <p style="margin-top:22px"><a href="/faq/" style="color:var(--accent);font-weight:700">See all questions →</a></p>
 </div></section>
+{hood_links(a["slug"])}
 <section class="section" style="padding:56px 0"><div class="wrap"><div class="eyebrow" style="margin-bottom:16px">Other areas we serve</div><div class="btn-row">{others}</div></div></section>
 {cta(bg=a["hero"])}"""
     page(f'/areas/{a["slug"]}/', f'{a["title"]} | One Build NYC',
-         f'{a["lead"]} Licensed contractors, plumbers, electricians and automation under one contract. Call (888) 781-7547.',
+         (a["lead"] + " Call (888) 781-7547.") if len(a["lead"]) < 138 else a["lead"],
          body, og=a["hero"], extra_ld=[faq_ld(items)])
 
+
+# ---------------------------------------------------------------- neighborhoods
+SEG_NAMES.update({x["slug"]: x["name"] for x in AREAS_LIST})
+for h in HOODS:
+    bo = next(x for x in AREAS_LIST if x["slug"] == h["borough"])
+    pts = "".join(f'<div class="point"><b>{esc(t)}</b><span>{esc(d)}</span></div>' for t, d in h["points"])
+    paras = "".join(f'<p class="lead" style="margin:0">{esc(p_)}</p>' for p_ in h["intro"])
+    sibs = "".join(f'<a class="btn btn-line btn-sm" href="/areas/{o["borough"]}/{o["slug"]}/">{esc(o["name"])}</a>' for o in HOODS if o["borough"] == h["borough"] and o["slug"] != h["slug"])
+    coop = '<p style="margin:0">Renovating in a co-op or condo? See <a href="/services/co-op-condo-renovation/" style="color:var(--accent);font-weight:700">how we handle board approvals</a>.</p>'
+    body = f"""<section class="page-hero"><img src="{img(h["hero"])}" alt="" fetchpriority="high"><div class="wrap">
+<div class="crumbs"><a href="/">Home</a> / <a href="/areas/{bo["slug"]}/">{esc(bo["name"])}</a> / {esc(h["name"])}</div><div class="eyebrow">{esc(h["name"])}, {esc(bo["name"])}</div>
+<h1>{esc(h["name"])} Renovation Contractor</h1><p>{esc(h["lead"])}</p>
+<div class="btn-row" style="margin-top:26px"><a class="btn btn-accent" href="/contact/">Book a Walkthrough</a><a class="btn btn-line" style="color:#fff;border-color:rgba(255,255,255,.6)" href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a></div>
+</div></section>
+<section class="section"><div class="wrap split">
+<div style="display:flex;flex-direction:column;gap:18px"><div class="eyebrow">Renovating in {esc(h["name"])}</div>
+<h2 class="h2">What the buildings here ask for.</h2>{paras}{coop}</div>
+<div class="points">{pts}</div>
+</div></section>
+<section class="section alt"><div class="wrap">
+<div class="section-head"><div class="eyebrow">Services in {esc(h["name"])}</div><h2 class="h2">Four licensed trades, one contract.</h2></div>
+{svc_cards([SVC[x] for x in h["services"]])}
+</div></section>
+<section class="section"><div class="wrap">
+<div class="section-head"><div class="eyebrow">Our Work</div><h2 class="h2">Project photos.</h2></div>
+{gallery(HOOD_GALLERY, wide=[HOOD_GALLERY[0]])}
+<div style="margin-top:28px"><a class="btn btn-line" href="/work/">See all projects</a></div>
+</div></section>
+<section class="section alt"><div class="wrap" style="max-width:900px">
+<div class="section-head"><div class="eyebrow">Questions</div><h2 class="h2">{esc(h["name"])} renovation questions.</h2></div>
+{faq_html(h["faq"])}
+</div></section>
+<section class="section" style="padding:56px 0"><div class="wrap"><div class="eyebrow" style="margin-bottom:16px">Nearby in {esc(bo["name"])}</div><div class="btn-row"><a class="btn btn-line btn-sm" href="/areas/{bo["slug"]}/">All of {esc(bo["name"])}</a>{sibs}</div></div></section>
+{cta(bg=h["hero"])}"""
+    title = f'{h["name"]} Renovation Contractor | One Build NYC'
+    desc = h["lead"] if len(h["lead"]) <= 158 else h["lead"][:155].rsplit(" ", 1)[0] + "…"
+    page(f'/areas/{bo["slug"]}/{h["slug"]}/', title, desc, body, og=h["hero"], extra_ld=[faq_ld(h["faq"])])
+
+# ---------------------------------------------------------------- co-op / condo page
+coop_body = f"""<section class="page-hero"><img src="{img("beamed-kitchen")}" alt="" fetchpriority="high"><div class="wrap">
+<div class="crumbs"><a href="/">Home</a> / <a href="/services/">Services</a> / Co-op &amp; Condo Renovation</div><div class="eyebrow">Co-op &amp; Condo Renovation</div>
+<h1>Co-op &amp; Condo Renovation in NYC</h1><p>Board packages, alteration agreements, insurance certificates, DOB filings and licensed trades, handled by one company.</p>
+<div class="btn-row" style="margin-top:26px"><a class="btn btn-accent" href="/contact/">Book a Walkthrough</a><a class="btn btn-line" style="color:#fff;border-color:rgba(255,255,255,.6)" href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a></div>
+</div></section>
+<section class="section"><div class="wrap split">
+<div style="display:flex;flex-direction:column;gap:18px"><div class="eyebrow">Why buildings are different</div>
+<h2 class="h2">The building is a party to your renovation.</h2>
+<p class="lead" style="margin:0">In a co-op or condo, the board and managing agent approve your plans before work starts, set the hours your crew can work, decide when the freight elevator is yours, and hold a deposit until the job is signed off. A leak or a dust complaint becomes the building's problem, which is why boards look hard at who is doing the plumbing and electrical.</p>
+<p class="lead" style="margin:0">At One Build NYC, construction, licensed plumbing, licensed electrical and low-voltage work are under one contract. That means one insurance package, one set of license documents and one contact for the managing agent.</p></div>
+<div class="points">
+<div class="point"><b>Board package</b><span>Plans, scope, schedule, licenses and insurance certificates assembled for the managing agent and the building's reviewing architect.</span></div>
+<div class="point"><b>DOB filings</b><span>Plumbing and electrical permits filed by licensed professionals; structural or layout changes filed with drawings.</span></div>
+<div class="point"><b>Building rules</b><span>Work hours, elevator bookings, hallway protection and debris removal planned before demo.</span></div>
+<div class="point"><b>Close-out</b><span>Inspections, sign-offs and the paperwork the board needs to return your deposit.</span></div>
+</div></div></section>
+<section class="section alt"><div class="wrap" style="max-width:900px">
+<div class="section-head"><div class="eyebrow">How it runs</div><h2 class="h2">From alteration agreement to sign-off.</h2></div>
+<ol class="steps">
+<li><span class="n">I</span><b>Walkthrough</b><span>Every trade looks at the space, the risers and the alteration agreement with you.</span></li>
+<li><span class="n">II</span><b>Plans &amp; proposal</b><span>Layout checked against building rules such as wet-over-dry, then one scope and price.</span></li>
+<li><span class="n">III</span><b>Board &amp; DOB</b><span>Board package submitted; asbestos assessment and DOB filings prepared once the board signs off.</span></li>
+<li><span class="n">IV</span><b>Build</b><span>Demolition, rough-in, inspections and finishes inside the building's hours.</span></li>
+<li><span class="n">V</span><b>Sign-off</b><span>Final inspections, building walk-through and close-out documents.</span></li>
+</ol>
+<p style="margin-top:28px">More detail: <a href="/blog/nyc-co-op-condo-renovation-alteration-process/" style="color:var(--accent);font-weight:700">the NYC co-op and condo alteration process</a> and <a href="/blog/condo-renovation-contractor-nyc/" style="color:var(--accent);font-weight:700">how to hire a condo renovation contractor</a>.</p>
+</div></section>
+<section class="section"><div class="wrap">
+<div class="section-head"><div class="eyebrow">Services</div><h2 class="h2">What we build in co-ops and condos.</h2></div>
+{svc_cards([SVC[x] for x in ["kitchens","bathrooms","gut-renovations","plumbing","electrical","lighting-control"]])}
+</div></section>
+<section class="section alt"><div class="wrap" style="max-width:900px">
+<div class="section-head"><div class="eyebrow">Questions</div><h2 class="h2">Co-op and condo renovation questions.</h2></div>
+{faq_html(COOP_FAQ)}
+<p style="margin-top:22px">Sources: <a href="https://www.nyc.gov/site/buildings/dob/project-requirements-asbestos.page" rel="noopener">NYC DOB asbestos requirements</a>, <a href="https://www.nyc.gov/assets/buildings/pdf/co-op_board-sn.pdf" rel="noopener">DOB service notice on condo/co-op board stakeholders</a>.</p>
+</div></section>
+<section class="section" style="padding:56px 0"><div class="wrap"><div class="eyebrow" style="margin-bottom:16px">Neighborhoods</div><div class="btn-row">{"".join(f'<a class="btn btn-line btn-sm" href="/areas/{h["borough"]}/{h["slug"]}/">{esc(h["name"])}</a>' for h in HOODS)}</div></div></section>
+{cta(bg="beamed-kitchen")}"""
+page("/services/co-op-condo-renovation/", "Co-op & Condo Renovation Contractor NYC | One Build NYC",
+     "Co-op and condo renovations in NYC: board packages, alteration agreements, COIs, DOB filings and licensed plumbing and electrical under one contract.",
+     coop_body, og="beamed-kitchen", extra_ld=[faq_ld(COOP_FAQ),
+     {"@context":"https://schema.org","@type":"Service","name":"Co-op & Condo Renovation","url":DOMAIN+"/services/co-op-condo-renovation/",
+      "provider":{"@type":"HomeAndConstructionBusiness","name":"One Build NYC","url":DOMAIN,"telephone":"+1-888-781-7547"},
+      "areaServed":["Manhattan","Brooklyn","Queens","Staten Island"]}])
 
 # ---------------------------------------------------------------- blog
 import datetime as _dt
@@ -753,7 +850,7 @@ for pst in POSTS:
            "datePublished":pst["date"],"dateModified":pst["date"],"image":DOMAIN + img(pst["hero"]),
            "author":{"@type":"Organization","name":"One Build NYC"},"publisher":{"@type":"Organization","name":"One Build NYC"},
            "mainEntityOfPage":f'{DOMAIN}/blog/{pst["slug"]}/'}
-    page(f'/blog/{pst["slug"]}/', f'{pst["title"]} | One Build NYC', pst["desc"], body, active="blog", og=pst["hero"], extra_ld=[art])
+    page(f'/blog/{pst["slug"]}/', pst["title"] if len(pst["title"]) > 48 else f'{pst["title"]} | One Build NYC', pst["desc"], body, active="blog", og=pst["hero"], extra_ld=[art])
 
 blog_idx = f"""<section class="page-hero" style="min-height:380px"><img src="{img("vaulted-scaffolding")}" alt="" fetchpriority="high"><div class="wrap">
 <div class="crumbs"><a href="/">Home</a> / Blog</div><div class="eyebrow">Blog</div>
