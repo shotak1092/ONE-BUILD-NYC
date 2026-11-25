@@ -255,3 +255,17 @@ a.card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(0,0,0,.1)}
   body{padding-bottom:54px}
 }
 .form select{font:inherit;font-size:16px;padding:12px;border:1px solid var(--line,#ccc);background:#fff;width:100%}
+.ig{max-width:480px;margin:0 auto;padding:32px 16px 48px;display:flex;flex-direction:column;gap:14px}
+.ig-brand{display:flex;gap:14px;align-items:center;text-decoration:none;color:var(--charcoal)}
+.ig-brand b{display:block;font-size:20px}.ig-brand small{display:block;color:var(--accent);font-weight:600;letter-spacing:.04em}
+.ig-tag{margin:0 0 6px;font-size:15px;line-height:1.5}
+.ig-links{display:flex;flex-direction:column;gap:10px}
+.ig-btn{display:flex;flex-direction:column;align-items:center;text-align:center;padding:15px 16px;border:2px solid var(--charcoal);background:#fff;color:var(--charcoal);text-decoration:none;font-size:16px}
+.ig-btn span{font-size:13px;opacity:.75;margin-top:2px}
+.ig-btn.main{background:var(--accent);border-color:var(--accent);color:#fff}
+.ig-h{font-family:var(--serif);font-weight:400;font-size:22px;margin:18px 0 0}
+.ig-chips{display:flex;flex-wrap:wrap;gap:8px}
+.ig-chips a{padding:8px 12px;border:1px solid rgba(0,0,0,.25);border-radius:999px;color:var(--charcoal);text-decoration:none;font-size:14px;background:#fff}
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.ig-grid img{width:100%;aspect-ratio:1;object-fit:cover;display:block;height:auto}
+.ig-foot{text-align:center;margin-top:18px}.ig-foot a{color:var(--accent);font-weight:700}

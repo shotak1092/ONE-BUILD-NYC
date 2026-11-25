@@ -349,7 +349,7 @@ def footer():
 <div class="legal"><span>© 2026 One Build NYC. One Build NYC is a trade name of ISL Progress Inc. Licensed &amp; insured. NYC Home Improvement Contractor License #621290</span><span>Design-Build · New York City</span></div>
 </div></footer>'''
 
-def page(path, title, desc, body, active="", og=None, extra_ld=None):
+def page(path, title, desc, body, active="", og=None, extra_ld=None, minimal=False):
     canon = DOMAIN + path
     ogimg = DOMAIN + img(og or "glass-house-kitchen")
     lds = list(extra_ld or [])
@@ -360,7 +360,7 @@ def page(path, title, desc, body, active="", og=None, extra_ld=None):
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc)}">
-<link rel="canonical" href="{canon}">
+{'<meta name="robots" content="noindex,follow">' if minimal else ""}<link rel="canonical" href="{canon}">
 <meta property="og:type" content="website"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{canon}"><meta property="og:image" content="{ogimg}">
 <meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#2E2B27">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -368,20 +368,21 @@ def page(path, title, desc, body, active="", og=None, extra_ld=None):
 <link rel="stylesheet" href="/assets/site.css?v={CSS_V}">
 {ld_json()}{extra}
 </head><body>
-{header(active)}
+{"" if minimal else header(active)}
 <main id="main">
 {body}
 </main>
-{footer()}
-<div class="mbar"><a href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a><a class="go" href="/contact/">Book a Walkthrough</a></div>
+{"" if minimal else footer()}
+{"" if minimal else MBAR}
 </body></html>'''
     out = os.path.join(ROOT, path.strip("/"), "index.html") if path != "/" else os.path.join(ROOT, "index.html")
     os.makedirs(os.path.dirname(out), exist_ok=True)
     doc = add_img_dims(doc)
     with open(out, "w") as f: f.write(doc)
-    PAGES.append(path)
+    if not minimal: PAGES.append(path)
 
 PAGES = []
+MBAR = f'<div class="mbar"><a href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a><a class="go" href="/contact/">Book a Walkthrough</a></div>'
 import hashlib
 CSS_V = hashlib.md5(open(os.path.join(ROOT,'assets','site.css'),'rb').read()).hexdigest()[:8]
 import datetime
@@ -674,6 +675,7 @@ contact = f'''<section class="page-hero" style="min-height:380px"><img src="{img
 <div class="full"><button class="btn btn-accent" type="submit" style="border:0;cursor:pointer;font-family:inherit">Request a Walkthrough</button></div>
 </form>
 </div></section>'''
+contact += '''<script>try{var q=new URLSearchParams(location.search).get("src");if(q==="instagram"){var s=document.querySelector('select[name="source"]');if(s)s.value="Instagram";}}catch(e){}</script>'''
 page("/contact/", "Contact | Book a Walkthrough | One Build NYC", "Book a walkthrough with One Build NYC. Call (888) 781-7547 or email info@onebuildnyc.com.", contact, active="contact")
 
 
@@ -817,6 +819,32 @@ page("/services/co-op-condo-renovation/", "Co-op & Condo Renovation Contractor N
      {"@context":"https://schema.org","@type":"Service","name":"Co-op & Condo Renovation","url":DOMAIN+"/services/co-op-condo-renovation/",
       "provider":{"@type":"HomeAndConstructionBusiness","name":"One Build NYC","url":DOMAIN,"telephone":"+1-888-781-7547"},
       "areaServed":["Manhattan","Brooklyn","Queens","Staten Island"]}])
+
+# ---------------------------------------------------------------- instagram link-in-bio
+IG_PHOTOS = ["led-wall-lounge","double-vanity-marble-shower","white-slab-kitchen-peninsula","private-theater","brick-loft-kitchen","primary-suite-shades"]
+def _ig_btn(href, label, sub="", main=False):
+    return f'<a class="ig-btn{" main" if main else ""}" href="{href}"><b>{label}</b>{f"<span>{sub}</span>" if sub else ""}</a>'
+ig_body = f"""<div class="ig">
+<a class="ig-brand" href="/"><span class="brand-mark">1</span><span><b>One Build NYC</b><small>Design-build renovation · NYC</small></span></a>
+<p class="ig-tag">Licensed contractors, plumbers, electricians and smart home under one contract. NYC HIC License #621290.</p>
+<div class="ig-links">
+{_ig_btn("/contact/?src=instagram", "Book a walkthrough", "Every trade at one visit", True)}
+{_ig_btn(f"tel:{PHONE_TEL}", f"Call {PHONE_DISPLAY}")}
+{_ig_btn(f"mailto:{EMAIL}", "Email us", EMAIL)}
+{_ig_btn("/work/", "See our projects", "Kitchens, baths, theaters, smart homes")}
+{_ig_btn("/services/co-op-condo-renovation/", "Co-op &amp; condo renovation", "Board packages and DOB filings handled")}
+</div>
+<h2 class="ig-h">Services</h2>
+<div class="ig-chips">{"".join(f'<a href="/services/{x}/">{esc(SVC[x]["name"])}</a>' for x in ["kitchens","bathrooms","gut-renovations","smart-home","lighting-control","window-treatments","home-theater","electrical","plumbing"])}</div>
+<h2 class="ig-h">Recent work</h2>
+<a class="ig-grid" href="/work/">{"".join(f'<img src="{img(n)}" alt="{esc(ALT[n])}" loading="lazy">' for n in IG_PHOTOS)}</a>
+<h2 class="ig-h">Latest guides</h2>
+<div class="ig-links">{"".join(_ig_btn(f'/blog/{p_["slug"]}/', esc(p_["title"])) for p_ in sorted(POSTS, key=lambda x: x["date"], reverse=True)[:3])}</div>
+<h2 class="ig-h">Where we work</h2>
+<div class="ig-chips">{"".join(f'<a href="/areas/{a["slug"]}/">{esc(a["name"])}</a>' for a in AREAS_LIST)}</div>
+<p class="ig-foot"><a href="/">onebuildnyc.com</a></p>
+</div>"""
+page("/ig/", "One Build NYC | Links", "Book a walkthrough, call, or see projects from One Build NYC, a design-build renovation company in New York City.", ig_body, og="led-wall-lounge", minimal=True)
 
 # ---------------------------------------------------------------- blog
 import datetime as _dt
