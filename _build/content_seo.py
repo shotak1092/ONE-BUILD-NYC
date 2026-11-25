@@ -24,7 +24,7 @@ FAQS = [
  ("Do you provide design, or do I need an architect?",
   "We plan layouts, finishes, lighting and technology with you, and we work alongside your architect or interior designer when you have one. If your project needs stamped drawings for permits, we'll tell you upfront."),
  ("What areas do you serve?",
-  "Manhattan, Brooklyn, Queens, Staten Island, Long Island, Westchester and New Jersey, for both homes and commercial spaces."),
+  "Manhattan, Brooklyn, Queens, Staten Island, Long Island and Westchester, for both homes and commercial spaces."),
  ("How do we get started?",
   "Call (888) 781-7547 or request a walkthrough online. We come out, look at the space with you, and follow up with a single written proposal and schedule."),
 ]
@@ -78,14 +78,6 @@ AREAS_LIST = [
   services=["renovations","kitchens","bathrooms","smart-home","window-treatments","lighting-control"],
   gallery=["vaulted-framing","vaulted-finishes","vaulted-feature-wall","addition-interior","double-vanity-sconces","walnut-media-wall"],
   faq=[6,8,10]),
- dict(slug="new-jersey", name="New Jersey", hero="led-wall-lounge",
-  title="Renovation & Design-Build Contractor in New Jersey",
-  lead="Renovations, bathrooms, home theaters and smart home installations across North and Central Jersey.",
-  intro="We bring the same one-crew approach to New Jersey homes: renovations, bathrooms and kitchens, plus the technology that makes them work, from lighting control and shades to dedicated theaters and LED walls.",
-  points=[("Renovation plus technology","Construction and low voltage planned together."),("Theaters and lounges","Projection, LED walls, surround audio and lighting scenes."),("One contract","One proposal and one schedule for every trade.")],
-  services=["renovations","bathrooms","home-theater","led-walls","smart-home","commercial"],
-  gallery=["led-wall-lounge","led-theater-lounge","glass-cantilever-stair","onyx-shower-sauna","lounge-bar","private-theater"],
-  faq=[8,10,12]),
 ]
 
 PLANNING_FAQS = [

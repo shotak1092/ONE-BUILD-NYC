@@ -13,91 +13,91 @@ DOMAIN = "https://onebuildnyc.com"
 PHONE_DISPLAY = "(888) 781-7547"
 PHONE_TEL = "8887817547"
 EMAIL = "info@onebuildnyc.com"
-AREAS = "Manhattan · Brooklyn · Queens · Staten Island · Long Island · Westchester · New Jersey"
+AREAS = "Manhattan · Brooklyn · Queens · Staten Island · Long Island · Westchester"
 
 def img(name): return f"/images/{name}.jpg"
 
 # ---------------------------------------------------------------- services
 SERVICES = [
  dict(slug="renovations", name="Renovations", kicker="Construction & Remodeling",
-  title="Home Renovations in NYC & New Jersey",
+  title="Home Renovations in NYC",
   hero="vaulted-feature-wall",
   short="Room-by-room or whole-house, with plumbing, electrical and technology on the same schedule.",
   intro="Most renovations stall in the gaps between trades. We run every trade from one office, so framing, rough-in, inspections and finishes happen in the right order and nobody waits on anybody.",
   includes=["Design walkthrough and single written scope","Demolition and debris removal","Framing, drywall and taping","Flooring, tile and millwork","Paint and finish carpentry","Additions, decks and paver patios","Licensed plumbing and electrical","Lighting, shades, audio and network planned in"],
   gallery=["double-height-great-room","grid-glass-shower-farmhouse-sink","mirror-tv-linear-fireplace","loft-oak-bookcase-shades","slat-wall-fireplace-speakers","oak-wardrobe-tile-wall","platform-room-pendants","oak-panel-wall-cabinet","walk-in-closet-led","vaulted-framing","vaulted-scaffolding","vaulted-finishes","vaulted-feature-wall","brick-loft-before","brick-loft-kitchen","addition-framing","addition-exterior","addition-interior","composite-deck","deck-paver-patio","paver-patio","protected-job-site"]),
  dict(slug="kitchens", name="Kitchens", kicker="Kitchen Remodeling",
-  title="Kitchen Remodeling in NYC & New Jersey",
+  title="Kitchen Remodeling in NYC",
   hero="glass-house-kitchen",
   short="Layout, cabinetry, plumbing, appliance circuits and lighting, built as one job.",
   intro="A kitchen touches every trade at once: gas and water lines, dedicated appliance circuits, venting, under-cabinet and scene lighting, and often built-in audio. We plan all of it on day one so the walls only get closed once.",
   includes=["Layout and cabinetry installation","Countertops, backsplash and tile","Sink, dishwasher, gas and water lines","Dedicated appliance circuits and panel work","Recessed, under-cabinet and pendant lighting","Lighting control scenes and keypads","Built-in ceiling speakers","Laundry and pantry build-outs"],
   gallery=["kitchen-rough-in-blocking","blue-shaker-kitchen-waterfall-peninsula","white-slab-kitchen-peninsula","white-slab-kitchen-front","white-shaker-pantry-wall","glass-house-kitchen","gray-shaker-kitchen","white-shaker-kitchen","brick-loft-kitchen","beamed-kitchen","kitchen-laundry-after","brick-loft-before"]),
  dict(slug="bathrooms", name="Bathrooms", kicker="Bathroom Remodeling",
-  title="Bathroom Remodeling in NYC & New Jersey",
+  title="Bathroom Remodeling in NYC",
   hero="double-vanity-marble-shower",
   short="Full gut to finish: tile, fixtures, glass, lighting and ventilation.",
   intro="From compact co-op baths to marble primary suites, we take bathrooms down to the studs and rebuild them with licensed plumbing, proper waterproofing and lighting that actually works at the mirror.",
   includes=["Full demolition and waterproofing","Walk-in showers, tubs and glass enclosures","Wall and floor tile, niches and benches","Vanities, medicine cabinets and mirrors","Licensed plumbing and fixture installation","Vanity, shower and recessed lighting","Exhaust fans and GFCI circuits","Smart toilets, heated floors and in-ceiling speakers"],
   gallery=["grid-glass-shower-farmhouse-sink","green-tile-pebble-shower","wall-hung-sink-tile-mirror-cedar","sky-ceiling-led-bathroom","black-gold-powder-room","greek-key-tile-thermostat","zellige-bath-freestanding-tub","zellige-double-vanity","double-vanity-marble-shower","marble-shower","brass-zellige-bathroom","onyx-shower-sauna","black-white-smart-bath","greek-key-shower","walk-in-glass-shower","black-fixture-tub","hex-niche-bath","hex-niche-bath-2","hex-floor-tile","double-vanity-sconces","blue-subway-bath","soaking-tub","vanity-wainscot","subway-tub-surround","round-mirror-bath","octagon-floor-bath","subway-shelves-shower","subway-window-shower","patterned-floor-tile"]),
  dict(slug="gut-renovations", name="Gut Renovations", kicker="Full Gut Renovations",
-  title="Gut Renovations in NYC & New Jersey",
+  title="Gut Renovations in NYC",
   hero="vaulted-framing",
   short="Apartments, brownstones, lofts and houses, rebuilt from the studs out.",
   intro="A gut renovation is where coordination matters most. With the walls open, plumbing, electrical and low-voltage go in together, get inspected together, and are documented before anything is closed up.",
   includes=["Demolition down to the structure","New framing and layout changes","Plumbing supply, drain and venting rough-in","New panel, circuits and lighting rough-in","Low-voltage, network and speaker pre-wire","Insulation, drywall and finishes","Permits, filings and inspections","Final commissioning and walkthrough"],
   gallery=["brownstone-gut-spray-foam-bay-window","brownstone-hallway-rough-in","panel-rough-in-steel-studs","kitchen-rough-in-blocking","basement-theater-framing","high-rise-prewire-protected","zellige-bath-freestanding-tub","oak-wardrobe-tile-wall","walk-in-closet-led","vaulted-framing","brownstone-rough-in","steel-stud-rough-in","framing-rough-in","ceiling-rough-in","drywall-low-voltage","vaulted-scaffolding","vaulted-finishes","vaulted-feature-wall","kitchen-laundry-after","protected-job-site"]),
  dict(slug="plumbing", name="Plumbing", kicker="Licensed Plumbers",
-  title="Licensed Plumbing in NYC & New Jersey",
+  title="Licensed Plumbing in NYC",
   hero="marble-shower",
   short="Licensed in New York. Kitchen and bath rough-in, fixtures, gas and water heaters.",
   intro="Our plumbing is done by licensed New York plumbers, permitted and inspected. Because they work on the same schedule as the rest of the crew, rough-in is finished before tile and drywall, not squeezed in after.",
   includes=["Kitchen and bathroom rough-in","Supply and drain line replacement","Shower valves, tubs and fixtures","Gas lines for ranges and appliances","Water heaters","Washer and laundry hookups","Permits and DOB filings","Leak repairs and upgrades"],
   gallery=["hydronic-manifold-pumps","wall-hung-navien-units","zellige-double-vanity","framing-rough-in","marble-shower","onyx-shower-sauna","walk-in-glass-shower","black-fixture-tub","greek-key-shower","soaking-tub","subway-window-shower","kitchen-laundry-after"]),
  dict(slug="electrical", name="Electrical", kicker="Licensed Electricians",
-  title="Licensed Electricians in NYC & New Jersey",
+  title="Licensed Electricians in NYC",
   hero="shade-power-panels",
   short="Licensed in New York. Panels, circuits, lighting, dedicated lines and permits.",
   intro="Licensed New York electricians handle panels, new circuits and every line that feeds the lighting, shades and AV, so power and control are designed as one system instead of patched together.",
   includes=["Panel upgrades and new circuits","Dedicated lines for appliances and equipment","Recessed, track and cove lighting","Lighting control and dimming panels","Shade power and motor circuits","Outdoor and landscape lighting power","EV charger circuits","Permits, filings and inspections"],
   gallery=["panel-rough-in-wood-studs","lutron-dimming-panels-closet","stair-step-lights-install","shade-power-panels","electrical-panel-drivers","panel-rough-in-steel-studs","camera-conduit-brick","ceiling-rough-in","gallery-lighting","framing-rough-in"]),
  dict(slug="smart-home", name="Smart Home", kicker="Licensed Automation & Low Voltage",
-  title="Smart Home Automation in NYC & New Jersey",
+  title="Smart Home Automation in NYC",
   hero="walnut-media-wall",
   short="Lighting, shades, audio, video, network and cameras, on one control system.",
   intro="We design and install the systems that make a home run itself: whole-home Wi-Fi and network, multi-room audio, video distribution, cameras, lighting and shades, all on one app and a few clean keypads. Wiring goes in during rough-in, so nothing is surface-mounted later.",
   includes=["Whole-home Wi-Fi and network","Equipment racks and structured wiring","Multi-room audio and video","Lighting and shade integration","Security cameras","Keypads, remotes and app control","Pre-wire during construction","Programming and owner training"],
   gallery=["game-room-tv-soundbar","drop-down-projection-screen-living-room","lutron-keypads-four-gang","luxul-structured-media-enclosure","structured-media-panel-basement","ceiling-tv-lift-install","window-niche-sonos-arc","lutron-scene-keypad","video-intercom-door","living-room-tv-cellular-shades","projector-ceiling-speakers","greek-key-tile-thermostat","slat-wall-fireplace-speakers","lighting-keypad-gang","loft-shades-three-windows","waterfront-bedroom-blackout","terrace-slider-shade","fireplace-tv-vaulted","drop-screen-river-view","savant-remote","high-rise-bedroom-tv","loft-ceiling-speakers","condo-shades-track-lighting","walnut-media-wall","dual-equipment-racks","equipment-rack","cable-headend-rack","corner-cameras-conduit","fireplace-tv-after","media-wall-before","primary-suite-shades","shade-power-panels","dining-room"]),
  dict(slug="window-treatments", name="Window Treatments", kicker="Motorized Shades",
-  title="Motorized Shades & Window Treatments in NYC & New Jersey",
+  title="Motorized Shades & Window Treatments in NYC",
   hero="primary-suite-shades",
   short="Motorized roller, Roman and blackout shades, recessed and wired during construction.",
   intro="The cleanest shades are planned before the ceiling closes: recessed pockets, power where it belongs, and fabrics chosen in the room. We handle selections, measuring, wiring, installation and programming.",
   includes=["Motorized roller and Roman shades","Blackout and solar fabrics","Drapery and track systems","Recessed shade pockets","Shade power panels and wiring","Keypad, app and schedule control","Fabric selection on site","Programming and scenes"],
   gallery=["terrace-solar-shades-manhattan","brooklyn-bedroom-shades-raised","terrace-door-shade-living-room","ceiling-shade-pocket-solar","brooklyn-bedroom-blackout-shades","living-room-shades-lowered-evening","loft-shades-built-ins-wide","waterfront-bedroom-view","loft-shades-wide-floor","shade-sill-light-line","penthouse-river-view-shades","dining-room-shades-track-lighting","shade-pocket-ceiling-open","shade-pocket-motor-lead","living-room-tv-cellular-shades","loft-oak-bookcase-shades","loft-shades-three-windows","gable-window-shades-drapery","waterfront-bedroom-blackout","loft-recessed-shade-pocket","loft-shade-side-channel","shade-hembar-brush-seal","loft-sheer-arched-windows","waterfront-bedroom-shades-half","terrace-slider-shade","loft-blackout-evening","bay-window-shades-after","condo-shades-track-lighting","shade-install-high-rise","edison-chandelier-shades","primary-suite-shades","bay-window-shades-before","shade-selections","addition-interior","shade-power-panels"]),
  dict(slug="lighting-control", name="Lighting Control", kicker="Lighting & Control",
-  title="Lighting Control & Design in NYC & New Jersey",
+  title="Lighting Control & Design in NYC",
   hero="gallery-lighting",
   short="Dimming, scenes and keypads, with track, cove and landscape lighting.",
   intro="Good lighting is designed with the room, not added after. We lay out fixtures, run the circuits, install the dimming panels and program scenes, so one button sets the whole space.",
   includes=["Lighting layout and fixture selection","Recessed, track and cove lighting","Dimming panels and keypads","Scenes, schedules and app control","Landscape and step lighting","Art and gallery lighting","Integration with shades and AV","Programming and fine-tuning"],
   gallery=["lutron-keypads-four-gang","homeworks-qs-processor-panel","lutron-dimming-panels-closet","stair-step-lights-finished","monorail-track-kitchen","lutron-scene-keypad-closeup","lutron-scene-keypad","lighting-keypad-gang","platform-room-pendants","walk-in-closet-led","gallery-lighting","brick-stair-step-lights","lit-oak-shelving","cabinet-led-install","condo-shades-track-lighting","edison-chandelier-shades","led-accent-theater","dimming-panel","electrical-panel-drivers","led-wall-lounge","patio-lighting-rendering","beamed-kitchen"]),
  dict(slug="home-theater", name="Home Theater", kicker="Home Theater & Media Rooms",
-  title="Home Theater Installation in NYC & New Jersey",
+  title="Home Theater Installation in NYC",
   hero="private-theater",
   short="Dedicated theaters, media walls, LED walls and lounges, built around the system.",
   intro="We build the room and the system together: framing for the screen and speakers, dedicated circuits, acoustic treatment, lighting scenes, then calibrated audio and video. From a clean media wall to a full LED-wall lounge.",
   includes=["Dedicated theaters and media rooms","Projection screens and large-format displays","LED video walls","In-wall and in-ceiling surround audio","Acoustic treatment and seating layout","Lighting scenes and blackout shades","Concealed wiring and equipment racks","Calibration and one-remote control"],
   gallery=["mirror-tv-linear-fireplace","tv-niche-soundbar-flush","ceiling-tv-lift-install","projector-ceiling-speakers","basement-theater-framing","tv-niche-drywall-prewire","homeworks-qs-processor-panel","luxul-structured-media-enclosure","lutron-dimming-panels-closet","slat-wall-fireplace-speakers","private-theater","drop-screen-river-view","led-accent-theater","projector-media-room","fireplace-tv-sunlight","theater-seats-screen","theater-riser-seating","audio-listening-room","projector-install","theater-speaker-backboxes","theater-wall-prep","speaker-backbox-framing","led-wall-lounge","led-theater-lounge","walnut-media-wall","fireplace-tv-after","media-wall-after","lounge-bar"]),
  dict(slug="led-walls", name="LED Walls", kicker="LED Video Walls", extra=True,
-  title="LED Video Wall Installation in NYC & New Jersey",
+  title="LED Video Wall Installation in NYC",
   hero="led-wall-lounge",
   short="Fine-pitch LED walls for theaters, lounges, retail and event spaces, framed, powered and processed properly.",
   intro="An LED wall is a structure, a power load and a video system at the same time. We build the support and framing, run dedicated circuits, mount and align the cabinets seam-free, then configure the processor, scaling and color so the image holds up from the front row and the back of the room.",
   includes=["Pixel pitch and viewing-distance planning","Structural framing, mounts and bezel trim","Dedicated circuits and power distribution","Seam alignment and cabinet calibration","Video processor setup and mapping","Multi-wall sync and content playback","Lighting and audio integrated with the wall","Serviceable access and spare modules"],
   gallery=["led-wall-cabinets-back","led-wall-lounge","led-theater-lounge","lounge-bar","glass-cantilever-stair","private-theater","equipment-rack","electrical-panel-drivers"]),
  dict(slug="commercial", name="Commercial", kicker="Commercial Build-Outs & AV", extra=True,
-  title="Commercial Build-Outs & AV in NYC & New Jersey",
+  title="Commercial Build-Outs & AV in NYC",
   hero="boardroom-av",
   short="Retail, offices, restaurants, dispensaries and houses of worship: construction, power and technology from one team.",
   intro="Commercial spaces open on a date, not when the trades finish arguing. We build out the space, run the power, and install the systems the business runs on: network and Wi-Fi, cameras, conference rooms, background music, displays, LED walls and live streaming, all handed over tested and documented.",
@@ -300,7 +300,7 @@ FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="p
 def ld_json():
     data = {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"One Build NYC","legalName":"ISL Progress Inc.",
             "url":DOMAIN,"telephone":"+1-888-781-7547","email":EMAIL,
-            "areaServed":["Manhattan","Brooklyn","Queens","Staten Island","Long Island","Westchester","New Jersey"],
+            "areaServed":["Manhattan","Brooklyn","Queens","Staten Island","Long Island","Westchester"],
             "description":"Design-build renovation company with licensed contractors, plumbers, electricians and automation specialists under one contract.",
             "image":DOMAIN+img("glass-house-kitchen")}
     return '<script type="application/ld+json">'+json.dumps(data)+'</script>'
@@ -343,7 +343,7 @@ def footer():
 <div><h4>Company</h4><a href="/work/">Our Work</a><a href="/process/">Process</a><a href="/faq/">FAQ</a><a href="/blog/">Blog</a><a href="/services/">All Services</a><a href="/contact/">Contact</a></div>
 <div><h4>Contact</h4><a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a><a href="mailto:{EMAIL}">{EMAIL}</a><p style="margin:10px 0 0">{AREAS}</p></div>
 </div>
-<div class="legal"><span>© 2026 One Build NYC. One Build NYC is a trade name of ISL Progress Inc. Licensed &amp; insured. NYC Home Improvement Contractor License #621290</span><span>Design-Build · NYC · New Jersey</span></div>
+<div class="legal"><span>© 2026 One Build NYC. One Build NYC is a trade name of ISL Progress Inc. Licensed &amp; insured. NYC Home Improvement Contractor License #621290</span><span>Design-Build · New York City</span></div>
 </div></footer>'''
 
 def page(path, title, desc, body, active="", og=None, extra_ld=None):
@@ -413,7 +413,7 @@ def service_ld(s):
     return {"@context":"https://schema.org","@type":"Service","name":s["name"],"serviceType":s["kicker"],
             "description":s["intro"],"url":f'{DOMAIN}/services/{s["slug"]}/',
             "provider":{"@type":"HomeAndConstructionBusiness","name":"One Build NYC","url":DOMAIN,"telephone":"+1-888-781-7547"},
-            "areaServed":["Manhattan","Brooklyn","Queens","Staten Island","Long Island","Westchester","New Jersey"]}
+            "areaServed":["Manhattan","Brooklyn","Queens","Staten Island","Long Island","Westchester"]}
 
 # ---------------------------------------------------------------- pieces
 def fig(name, cls="", cap=None, eager=False):
@@ -475,7 +475,7 @@ home = f'''<section class="hero">
 <img src="{img("glass-house-kitchen")}" alt="" fetchpriority="high"><img src="{img("shades-dining-glass")}" alt=""><img src="{img("brass-zellige-bathroom")}" alt=""><img src="{img("vaulted-framing")}" alt=""><img src="{img("walnut-media-wall")}" alt="">
 </div><div class="hero-veil" aria-hidden="true"></div>
 <div class="wrap"><div class="hero-inner">
-<div class="eyebrow">Design-Build · NYC · New Jersey</div>
+<div class="eyebrow">Design-Build · New York City</div>
 <h1>Four licensed trades.<span>One crew. One schedule. One contract. One number to call. No finger-pointing.</span></h1>
 <div class="btn-row"><a class="btn btn-accent" href="/contact/">Book a Walkthrough</a><a class="btn btn-dark" href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a></div>
 <ul class="cats">{cats}</ul>
@@ -518,7 +518,7 @@ home = f'''<section class="hero">
 </div></section>
 {cta()}'''
 page("/", "One Build NYC | Design-Build Renovations, Kitchens, Bathrooms & Home Theater",
-     "Design-build renovation in NYC and New Jersey. Licensed contractors, plumbers, electricians and automation under one contract. Call (888) 781-7547.", home, og="glass-house-kitchen", extra_ld=[faq_ld([FAQS[i] for i in HOME_FAQ])])
+     "Design-build renovation in New York City, Long Island and Westchester. Licensed contractors, plumbers, electricians and automation under one contract. Call (888) 781-7547.", home, og="glass-house-kitchen", extra_ld=[faq_ld([FAQS[i] for i in HOME_FAQ])])
 
 # ---------------------------------------------------------------- services index
 idx = f'''<section class="page-hero"><img src="{img("vaulted-feature-wall")}" alt="" fetchpriority="high"><div class="wrap">
@@ -526,7 +526,7 @@ idx = f'''<section class="page-hero"><img src="{img("vaulted-feature-wall")}" al
 <h1>Every trade, one contract.</h1><p>Renovation, plumbing, electrical and technology, planned together and built by one crew.</p></div></section>
 <section class="section"><div class="wrap">{svc_cards()}</div></section>
 {cta()}'''
-page("/services/", "Services | One Build NYC", "Renovations, kitchens, bathrooms, gut renovations, plumbing, electrical, smart home, window treatments, lighting control and home theater in NYC and New Jersey.", idx)
+page("/services/", "Services | One Build NYC", "Renovations, kitchens, bathrooms, gut renovations, plumbing, electrical, smart home, window treatments, lighting control and home theater in New York City, Long Island and Westchester.", idx)
 
 # ---------------------------------------------------------------- service pages
 for s in SERVICES:
@@ -558,7 +558,7 @@ for s in SERVICES:
 {WHY}
 </div></section>
 
-<section class="section" style="padding:56px 0"><div class="wrap"><div class="eyebrow" style="margin-bottom:16px">{esc(s["name"])} across NYC &amp; New Jersey</div><div class="btn-row">{"".join(f'<a class="btn btn-line btn-sm" href="/areas/{a["slug"]}/">{a["name"]}</a>' for a in AREAS_LIST)}</div></div></section>
+<section class="section" style="padding:56px 0"><div class="wrap"><div class="eyebrow" style="margin-bottom:16px">{esc(s["name"])} across New York</div><div class="btn-row">{"".join(f'<a class="btn btn-line btn-sm" href="/areas/{a["slug"]}/">{a["name"]}</a>' for a in AREAS_LIST)}</div></div></section>
 
 <section class="section alt"><div class="wrap" style="max-width:900px">
 <div class="section-head"><div class="eyebrow">Questions &amp; Answers</div><h2 class="h2">{esc(s["name"])} questions.</h2></div>
@@ -627,7 +627,7 @@ work = f'''<section class="page-hero"><img src="{img("led-wall-lounge")}" alt=""
 </div></section>
 {cta()}'''
 page("/work/", "Our Work | Renovation, Bathroom & Home Theater Projects | One Build NYC",
-     "Before and after renovation, kitchen, bathroom, home theater and outdoor projects by One Build NYC in NYC and New Jersey.", work, active="work", og="led-wall-lounge")
+     "Before and after renovation, kitchen, bathroom, home theater and outdoor projects by One Build NYC in New York City, Long Island and Westchester.", work, active="work", og="led-wall-lounge")
 
 # ---------------------------------------------------------------- process
 proc = f'''<section class="page-hero"><img src="{img("ceiling-rough-in")}" alt="" fetchpriority="high"><div class="wrap">
@@ -757,7 +757,7 @@ for pst in POSTS:
 
 blog_idx = f"""<section class="page-hero" style="min-height:380px"><img src="{img("vaulted-scaffolding")}" alt="" fetchpriority="high"><div class="wrap">
 <div class="crumbs"><a href="/">Home</a> / Blog</div><div class="eyebrow">Blog</div>
-<h1>Notes from the job site.</h1><p>How renovations actually get built in NYC and New Jersey: permits, sequencing, technology and what to plan before the walls close.</p></div></section>
+<h1>Notes from the job site.</h1><p>How renovations actually get built in New York City, Long Island and Westchester: permits, sequencing, technology and what to plan before the walls close.</p></div></section>
 <section class="section"><div class="wrap"><div class="grid g3">{"".join(post_card(p_) for p_ in POSTS)}</div></div></section>
 {cta()}"""
 page("/blog/", "Renovation & Smart Home Blog | One Build NYC", "Practical guides on NYC renovations, co-op alterations, bathroom sequencing and pre-wiring for smart home and theater.", blog_idx, active="blog", og="vaulted-scaffolding")
