@@ -2,7 +2,7 @@
 title: Electrical Panel Upgrade: Costs, Signs, Permits and Planning
 description: What a panel upgrade costs in New York City, the signs you need one, how DOB permits work, and how to plan it with a renovation so you pay once.
 date: 2026-10-22
-hero: electrical-panel-drivers
+hero: panel-rough-in-wood-studs
 services: electrical, renovations, smart-home
 intro: An electrical panel upgrade replaces the breaker panel that feeds every circuit in your home, usually to add capacity, fix aging or unsafe equipment, or make room for a heat pump, induction range, EV charger or a smart home. In NYC, a standard panel replacement typically runs $1,500 to $3,000, and a 100 to 200 amp upgrade runs $3,000 to $5,000. Before you pay for either, get a load calculation. Plenty of homes don't need the biggest panel on the market.
 ---
